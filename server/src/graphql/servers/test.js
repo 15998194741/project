@@ -1,29 +1,12 @@
 class value{
 	async hello({name, time}){
 		console.log(name, time);
-		return 'helloworld'+'4546';
+		return 'helloworld'+'123123s';
 	}
-	super(){
+	async super(){
 		return 'ojbk';
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = new value();

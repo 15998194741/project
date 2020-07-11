@@ -9,9 +9,11 @@ const mount = require('koa-mount');
 const koa = require('koa');
 const schemaone = require('./controllers/index');
 
-// import { resolve } from 'path';
-// const dir = path => resolve(__dirname, path);
-// const apiPath = dir('./controllers');
+import { resolve } from 'path';
+const dir = path => resolve(__dirname, path);
+const apiPath = dir('./controllers');
+import fs from 'fs';
+import path  from 'path';
 
 
 
@@ -37,8 +39,13 @@ let app = new koa();
 // 	rootValue: valueteo,
 // 	graphiql: true,
 // })));
+// import apps from './controllers';
+let apps = fs.readdirSync(apiPath);
+for(let i of apps){
+	app.use(require(path.join(apiPath, i)));
+}
 
-app.use(schemaone);
+
 
 
 
