@@ -1,0 +1,313 @@
+[2020-07-07T11:29:25.630] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/qf
+request client ip:  ::ffff:10.1.35.78
+request query:  {}
+response time: 1594092565630
+err name: ReferenceError
+err message: Ta is not defined
+err stack: ReferenceError: Ta is not defined
+    at _callee2$ (E:\third\fancy-game-master\server\src\app\controllers\user.js:103:17)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at qf (E:\third\fancy-game-master\server\src\app\controllers\user.js:118:20)
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\fancy-game-master\server\src\middleware\/auth.js:19:9)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-07T11:30:28.202] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594092628200
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-07T11:30:35.801] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?plaform=Android&channel=%E4%B9%85%E6%B8%B8&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1&ok=2
+request client ip:  ::ffff:10.1.35.78
+request query:  {"plaform":"Android","channel":"久游","gamename":"空翼冒险团","page":"1","ok":"2"}
+response time: 1594092635801
+err name: ReferenceError
+err message: result is not defined
+err stack: ReferenceError: result is not defined
+    at _callee6$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:88:48)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-07T11:32:33.755] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594092753755
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-07T11:35:44.072] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&ok=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"gamename":"空翼冒险团","ok":"1"}
+response time: 1594092944072
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-07T11:35:50.854] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594092950854
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-07T11:37:08.095] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594093028094
+err name: ReferenceError
+err message: result is not defined
+err stack: ReferenceError: result is not defined
+    at _callee6$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:88:48)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-07T11:46:02.925] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594093562925
+err name: ReferenceError
+err message: result is not defined
+err stack: ReferenceError: result is not defined
+    at _callee6$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:88:48)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-07T11:46:42.327] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594093602326
+err name: ReferenceError
+err message: result is not defined
+err stack: ReferenceError: result is not defined
+    at _callee6$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:88:48)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-07T11:46:57.863] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594093617862
+err name: ReferenceError
+err message: result is not defined
+err stack: ReferenceError: result is not defined
+    at _callee6$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:89:48)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-07T11:48:35.194] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/selectserver/if?ok=1&gamename=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&page=1
+request client ip:  ::ffff:10.1.35.78
+request query:  {"ok":"1","gamename":"空翼冒险团","page":"1"}
+response time: 1594093715192
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-07T11:50:43.529] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/create
+request client ip:  ::ffff:10.1.35.78
+request body: 
+{"name":"1","platform":"不限制","client":"不限制","ip_port":"1","show_status":"空闲","open_time":"2020-06-30T16:00:00.000Z","address":"1","gamename":"空翼冒险团"}
+response time: 1594093843529
+err name: Error
+err message: options.uri is a required argument
+err stack: Error: options.uri is a required argument
+    at Request.init (E:\third\fancy-game-master\server\node_modules\request\request.js:231:31)
+    at new Request (E:\third\fancy-game-master\server\node_modules\request\request.js:127:8)
+    at request (E:\third\fancy-game-master\server\node_modules\request\index.js:53:10)
+    at E:\third\fancy-game-master\server\src\utils\/requests.js:87:4
+    at new Promise (<anonymous>)
+    at _callee3$ (E:\third\fancy-game-master\server\src\utils\/requests.js:86:10)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at Ta.<anonymous> (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at Ta.create (E:\third\fancy-game-master\server\src\utils\requests.js:183:24)
+    at _callee$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:16:26)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\fancy-game-master\server\src\app\controllers\server.js:82:30)
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:346:16
+*************** error log end ***************
+
+[2020-07-07T12:03:50.214] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/server/create
+request client ip:  ::ffff:10.1.35.78
+request body: 
+{"name":"1","platform":"不限制","client":"不限制","ip_port":"1","show_status":"空闲","open_time":"2020-06-30T16:00:00.000Z","address":"1","gamename":"空翼冒险团"}
+response time: 1594094630214
+err name: Error
+err message: options.uri is a required argument
+err stack: Error: options.uri is a required argument
+    at Request.init (E:\third\fancy-game-master\server\node_modules\request\request.js:231:31)
+    at new Request (E:\third\fancy-game-master\server\node_modules\request\request.js:127:8)
+    at request (E:\third\fancy-game-master\server\node_modules\request\index.js:53:10)
+    at E:\third\fancy-game-master\server\src\utils\/requests.js:87:4
+    at new Promise (<anonymous>)
+    at _callee3$ (E:\third\fancy-game-master\server\src\utils\/requests.js:86:10)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at Ta.<anonymous> (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at Ta.create (E:\third\fancy-game-master\server\src\utils\requests.js:183:24)
+    at _callee$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:16:26)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\fancy-game-master\server\src\app\controllers\server.js:82:30)
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:346:16
+*************** error log end ***************
+
+[2020-07-07T17:28:23.342] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: PUT
+request originalUrl:  /api/server/allupdate
+request client ip:  ::ffff:10.1.35.78
+request body: 
+{"server":[{"pid":null,"serverid":"1594102312708","servername":"11","plaform":"不限制","client":"不限制","showstatus":"空闲","load":"1","srttime":"2020-07-08T08:00:00.000Z","ip":"111","address":"1","test":"1"},{"pid":null,"serverid":"1594102169143","servername":"111","plaform":"IOS","client":"不限制","showstatus":"繁忙","load":"1","srttime":"2020-07-07T08:00:00.000Z","ip":"111","address":"111","test":"1"},{"pid":null,"serverid":"1594112892312","servername":"123","plaform":"不限制","client":"不限制","showstatus":"空闲","load":null,"srttime":"2020-07-07T08:00:00.000Z","ip":"123","address":"123","test":null},{"pid":null,"serverid":"1594112973736","servername":"123","plaform":"不限制","client":"不限制","showstatus":"空闲","load":null,"srttime":"2020-07-22T08:00:00.000Z","ip":"123","address":"123","test":null},{"pid":null,"serverid":"1594110282981","servername":"1111","plaform":"Android","client":"不限制","showstatus":"爆满","load":null,"srttime":"2020-07-07T08:00:00.000Z","ip":"111","address":"111","test":null},{"pid":null,"serverid":"1594113016033","servername":"123","plaform":"不限制","client":"不限制","showstatus":"维护","load":null,"srttime":"2020-06-29T08:00:00.000Z","ip":"11","address":"1","test":null}],"merge":true,"showstatus":"繁忙","gameid":1}
+response time: 1594114103341
+err name: Error
+err message: options.uri is a required argument
+err stack: Error: options.uri is a required argument
+    at Request.init (E:\third\fancy-game-master\server\node_modules\request\request.js:231:31)
+    at new Request (E:\third\fancy-game-master\server\node_modules\request\request.js:127:8)
+    at request (E:\third\fancy-game-master\server\node_modules\request\index.js:53:10)
+    at E:\third\fancy-game-master\server\src\utils\/requests.js:120:4
+    at new Promise (<anonymous>)
+    at _callee5$ (E:\third\fancy-game-master\server\src\utils\/requests.js:119:10)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at Ta.<anonymous> (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at Ta.operating (E:\third\fancy-game-master\server\src\utils\requests.js:261:27)
+    at _callee3$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:36:26)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at allupdateserver (E:\third\fancy-game-master\server\src\app\controllers\server.js:148:33)
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:346:16
+*************** error log end ***************
+

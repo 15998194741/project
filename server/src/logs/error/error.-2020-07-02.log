@@ -1,0 +1,90 @@
+[2020-07-02T11:06:53.719] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:10.1.35.30
+request query:  {"username":"admin"}
+response time: 1593659213718
+err name: TypeError
+err message: Cannot read property 'game_name' of undefined
+err stack: TypeError: Cannot read property 'game_name' of undefined
+    at _callee$ (E:\third\fancy-game-master\server\src\app\service\/user.js:41:20)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-02T11:08:21.246] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:10.1.35.30
+request query:  {"username":"admin"}
+response time: 1593659301246
+err name: TypeError
+err message: Cannot read property 'game_name' of undefined
+err stack: TypeError: Cannot read property 'game_name' of undefined
+    at _callee$ (E:\third\fancy-game-master\server\src\app\service\/user.js:41:20)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-02T11:08:33.322] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:10.1.35.30
+request query:  {"username":"admin"}
+response time: 1593659313322
+err name: TypeError
+err message: Cannot read property 'game_name' of undefined
+err stack: TypeError: Cannot read property 'game_name' of undefined
+    at _callee$ (E:\third\fancy-game-master\server\src\app\service\/user.js:41:20)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-02T17:11:43.152] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/select/areaclothing
+request client ip:  ::ffff:10.1.35.78
+request query:  {}
+response time: 1593681103152
+err name: TypeError
+err message: (0 , _Components2.default) is not a function
+err stack: TypeError: (0 , _Components2.default) is not a function
+    at _callee2$ (E:\third\fancy-game-master\server\src\app\controllers\/server.js:22:16)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at findtg (E:\third\fancy-game-master\server\src\app\controllers\server.js:109:24)
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\fancy-game-master\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\fancy-game-master\server\node_modules\koa-router\lib\router.js:351:31)
+    at next (E:\third\fancy-game-master\server\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\fancy-game-master\server\src\middleware\/auth.js:19:9)
+    at tryCatch (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\fancy-game-master\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\fancy-game-master\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
