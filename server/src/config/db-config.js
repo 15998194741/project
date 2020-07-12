@@ -3,7 +3,7 @@ const config = {
 	user:'postgres',
 	password:'Ll789456',
 	database:'fancy',
-	host:'106.75.7.83',
+	host:'123.57.86.38',
 	port:5432,
 	dialect: 'postgres',
 	// 扩展属性

@@ -25,8 +25,6 @@ export class UserController {
 		let result = await Components.updateserver(form);
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
-
-
 	@put('/allupdate')
 	async allupdateserver(ctx) {
 		ctx.log.resourceDesc = '区服批量操作';
@@ -73,7 +71,8 @@ export class UserController {
 	@get('/selectComponent')
     async findComponent(ctx) {
     	ctx.log.resourceDesc = '根据游戏ID 组件名称搜索 区服组件';
-    	let query = ctx.query;
+		let query = ctx.query;
+		console.log(query)
     	let result = await GmDictService.findcomponent(query);
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
     }
@@ -104,10 +103,16 @@ export class UserController {
 	 */
 	@get('/findServer')
 	async findServer(ctx){
-		// console.log(ctx.query);
 		let findForm = ctx.query;
-		let result = await gmServerService.findByParam(findForm);
+		let result = await gmServerService.serverFindByParam(findForm);
 		ctx.body = statusCode.SUCCESS_200('查找', result);
 	}
- 
+	@get('/findServerByID')
+	async findServerByID(ctx){
+		ctx.log.resourceDesc = '根据区服ID搜索';
+		let findForm = ctx.query;
+		let result = await gmServerService.findServerByID(findForm);
+		ctx.body = statusCode.SUCCESS_200('查找', result);
+
+	}
 }
