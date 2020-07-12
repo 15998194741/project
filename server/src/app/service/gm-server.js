@@ -17,12 +17,14 @@ class GmServerService extends BaseService{
 		let channel = findForm[1];
 		let page = findForm[5]?findForm[5]:1;
 		let srttime = findForm[4]?JSON.parse(findForm[4]):undefined;
+		let test = findForm[6]
 		findForm = {
 		  'plaform': findForm[0],
 		  'display': findForm[2],
 		  'load': findForm[3],
-		  gameid:findForm.gameid
+		  gameid:findForm.gameid,
 		};
+		console.log(findForm.test,123)
 		let  whereObj = {};
 		for (const key in this.gmServerDO) {
 			if (findForm[key] && findForm[key]!='0') {
@@ -40,7 +42,9 @@ class GmServerService extends BaseService{
 		}
 		where += channel? ` and '${channel}'=ANY(channel)`:'';
 		where += srttime?` and srttime BETWEEN '${srttime.startTime}' and '${srttime.endTime}' `:'';
+		where += `and test='${test}'`;
 		let selectSql = `select * from gm_server  ${where} order by id limit 100 offset (100*${page-1})`;
+
 		let arr =  await dbSequelize.query(selectSql);
 		let totalSql = `select count(*) as total from gm_server ${where}`;
 		let total = await dbSequelize.query(totalSql);

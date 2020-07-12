@@ -25,7 +25,16 @@
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click='filterFormClick'>
         </el-button>
+                      <el-popover
+    placement="top-start"
+    title="测试机"
+    width="200"
+    trigger="hover"
+    content="绿色按钮为搜索测试机，红色相反">
+     <el-switch v-model="filterForm[6]" active-color="#13ce66"   active-value='1' inactive-value='0' slot="reference" inactive-color="#ff4949"></el-switch>
+  </el-popover>
       </div>
+     
       <div class="comprehensive-container">
         <div v-for='(i,index) in selectForm' :key='index' :multiple='i.multiple' class="select-item"   > {{i.label}}:
           <el-select v-model="filterForm[index]" placeholder="请选择" size='small' @change='filterFormChange'>
@@ -37,6 +46,7 @@
           <el-date-picker   v-model="filterForm[4]"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
           </el-date-picker>
         </div>
+        
       </div>
     </div>
     <div class="table-container">
@@ -344,7 +354,7 @@ export default {
         ]
       },
       //筛选栏过滤
-      filterForm: ['0', '', '', '', undefined, 1],
+      filterForm: ['0', '', '', '', undefined, 1,1],
       //id查找区服
       filterServerIdForm:{
         key:'serverid',
@@ -559,9 +569,9 @@ export default {
   },
   async filterFormClick(){
     let req = this.filterServerIdForm;
-    console.log(req.value)
+    // console.log(req.value)
     if(req.value =='' ){
-      console.log(req.value)
+      // console.log(req.value)
         this.$message({
           message: '警告哦，不可以搜索空哦',
           type: 'warning'

@@ -190,3 +190,75 @@ err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROU
     at processImmediate (internal/timers.js:456:21)
 *************** error log end ***************
 
+[2020-07-12T23:54:37.257] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?0=0&1=&2=&3=&5=1&6=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"0":"0","1":"","2":"","3":"","5":"1","6":"1","gameid":"1"}
+response time: 1594569277256
+err name: SequelizeDatabaseError
+err message: syntax error at or near "1"
+err stack: SequelizeDatabaseError: syntax error at or near "1"
+    at Query.formatError (H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (H:\project\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (H:\project\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (H:\project\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (H:\project\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (H:\project\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (H:\project\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (H:\project\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (H:\project\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (H:\project\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-12T23:57:00.155] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?0=0&1=&2=&3=&5=1&6=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"0":"0","1":"","2":"","3":"","5":"1","6":"1","gameid":"1"}
+response time: 1594569420155
+err name: SequelizeDatabaseError
+err message: syntax error at or near "test"
+err stack: SequelizeDatabaseError: syntax error at or near "test"
+    at Query.formatError (H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (H:\project\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (H:\project\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (H:\project\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (H:\project\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (H:\project\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (H:\project\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (H:\project\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (H:\project\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (H:\project\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-12T23:57:26.872] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?0=0&1=&2=&3=&5=1&6=1
+request client ip:  ::ffff:127.0.0.1
+request query:  {"0":"0","1":"","2":"","3":"","5":"1","6":"1","gameid":"1"}
+response time: 1594569446871
+err name: SequelizeDatabaseError
+err message: operator does not exist: character varying = integer
+err stack: SequelizeDatabaseError: operator does not exist: character varying = integer
+    at Query.formatError (H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at H:\project\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (H:\project\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (H:\project\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (H:\project\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (H:\project\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (H:\project\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (H:\project\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (H:\project\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (H:\project\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (H:\project\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
