@@ -100,7 +100,7 @@ class components extends BaseService{
 		// return serverall;
 	}
 	async updateserver(form){
-		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:sid', form);
+		let gametable = await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid', form);
 		return gametable;
 	}
 	async updateserversnomerge(forms, gameid, display, merge){
@@ -122,7 +122,7 @@ class components extends BaseService{
 		return true;
 	}
 	async stopserver(form){
-		let a = '停用';
+		let a = '5';
 		await UserDao.findSqlByParamsToOne('update gm_server set display = :a where  gameid=:gameid and serverid=:serverid', {...form, a});
 		return true;
 	}

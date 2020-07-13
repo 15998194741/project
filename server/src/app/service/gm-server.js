@@ -13,12 +13,11 @@ class GmServerService extends BaseService{
 	}
   
 	//区服按需查找
-	async findByParam(findForm) {
+	async serverFindByParam(findForm) {
 		let channel = findForm[1];
-		let page = findForm[7]?findForm[7]:1;
+		let page = findForm[5]?findForm[5]:1;
 		let srttime = findForm[4]?JSON.parse(findForm[4]):undefined;
 		findForm = {
-		  [findForm[5]]: findForm[6],
 		  'plaform': findForm[0],
 		  'display': findForm[2],
 		  'load': findForm[3],
@@ -55,8 +54,22 @@ class GmServerService extends BaseService{
 		};
 		return res;
 	}
+
+
+	async findServerByID(query){
+		
+		let where = `where ${query.key}='${query.value}' and gameid='${query.gameid}'`
+		if(query.value === ''){	
+			 where = `where gameid='${query.gameid}'`
+		}
+		let idFindSql = `SELECT *   from gm_server ${where}`;
+		let res = await dbSequelize.query(idFindSql);
+		return res[0] 
+	}
   
 
 }
 
 export default new GmServerService();
+
+

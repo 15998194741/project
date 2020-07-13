@@ -34,7 +34,7 @@ export function servercreate(data) {
 }
 
 //服务器修改
-export function serverupdate(data) {
+export function serverUpdateToOne(data) {
   return request({
     url: 'server/update',
     method: 'put',
@@ -93,6 +93,16 @@ export function stopserver(gamename) {
 export function findServer(params) {
   return request({
     url: 'server/findServer',
+    method: 'get',
+    params 
+  });
+}
+
+
+
+export function findServerByID(params) {
+  return request({
+    url: 'server/findServerByID',
     method: 'get',
     params 
   });

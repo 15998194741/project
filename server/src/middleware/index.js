@@ -16,7 +16,7 @@ module.exports = (app) => {
 	app.use(cors);
 	app.use(interceptor());
 	app.use(permission());
-	// app.use(auth);
+	app.use(auth);
 	app.use(graphql);
 	router(app); // 加载路由中间件
 	// app.use(error);
