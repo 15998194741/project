@@ -15,31 +15,8 @@ const apiPath = dir('./controllers');
 import fs from 'fs';
 import path  from 'path';
 
-
-
 let app = new koa();
 
-
-// let schematwo = buildSchema(`
-//     type Query {
-//         hello:String,
-//         super:String
-//     }
-//     `);
-// class valueteo{
-// 	static hello(){
-// 		return '2234';
-// 	}
-// 	static super(){
-// 		return '342';
-// 	}
-// }
-// app.use(mount('/1111', graphqlHTTP({
-// 	schema: schematwo,
-// 	rootValue: valueteo,
-// 	graphiql: true,
-// })));
-// import apps from './controllers';
 let apps = fs.readdirSync(apiPath);
 for(let i of apps){
 	app.use(require(path.join(apiPath, i)));

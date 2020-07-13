@@ -14,15 +14,6 @@ type Query {
 }
 `);
 
-
-
-
-
-
-
-
-
-
 module.exports =  mount('/api', graphqlHTTP({
 	schema: schemaone,
 	rootValue: value,

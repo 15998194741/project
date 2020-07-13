@@ -1,26 +1,13 @@
 class value{
-	async hello({name, time}){
-		console.log(name, time);
-		return 'helloworld'+'4546';
+	async hello(ctx, test, ok){
+		console.log( ctx, test, ok);
+		return JSON.stringify({hello:'helloworld',
+			ok:'4546'});
 	}
-	super(){
+	async super(){
 		return 'ojbk';
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

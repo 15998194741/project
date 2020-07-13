@@ -45,11 +45,13 @@
 
 
       <el-table
+        ref="multipleTable"
         v-loading="loading" 
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
-        ref="multipleTable" border :data="tableData" row-key="id"
+        
+         border :data="tableData" row-key="id"
         :default-sort="{prop: 'display'}" 
         :row-class-name="tableRowClassName"
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}" 
@@ -228,7 +230,7 @@
 <script>
 import { deepCopy } from '@/utils/zoneSettings';
 import dayjs from 'dayjs';
-import { findComponents, findServer, stopserver, serverselect, servercreate, serverUpdateToOne, serverallupdate,findServerByID, getpage } from '@/api/components.js';
+import { findComponents, findServer, stopserver, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {
   name: 'distric',
   data() {
@@ -346,9 +348,9 @@ export default {
       //筛选栏过滤
       filterForm: ['0', '', '', '', undefined, 1],
       //id查找区服
-      filterServerIdForm:{
-        key:'serverid',
-        value:''
+      filterServerIdForm: {
+        key: 'serverid',
+        value: ''
       },
       //区服搜索栏
       idoptions: [{
@@ -482,7 +484,7 @@ export default {
   },
 
   methods: { changes() {
-    console.log(this.formchange.display,this.formchange.index);
+    console.log(this.formchange.display, this.formchange.index);
   },
   // clientchanges(news) {
   //   if (news.includes('test')) {
@@ -557,22 +559,22 @@ export default {
     });
      
   },
-  async filterFormClick(){
+  async filterFormClick() {
     let req = this.filterServerIdForm;
-    console.log(req.value)
-    if(req.value =='' ){
-      console.log(req.value)
-        this.$message({
-          message: '警告哦，不可以搜索空哦',
-          type: 'warning'
-        });
-        return;
-    }
-    let res = await findServerByID(req)
+    // console.log(req.value);
+    // if (req.value == '') {
+    //   console.log(req.value);
+    //   this.$message({
+    //     message: '警告哦，不可以搜索空哦',
+    //     type: 'warning'
+    //   });
+    //   return;
+    // }
+    let res = await findServerByID(req);
     this.tableData = res.data;
     this.displayNum = '';
     this.total = res.data.length;
-    return
+    return;
   },
 
   tableRowClassName({ row, rowIndex }) {
@@ -723,14 +725,14 @@ export default {
 
   },
   //区服修改
-   async updateServerToOne() {
-    let a =await   this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
+  async updateServerToOne() {
+    let a = await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
       type: 'warning'
     }).then(() => {
       this.loading = true;
-      let a =  serverUpdateToOne({ ...this.formchange }).then(res => {
+      let a = serverUpdateToOne({ ...this.formchange }).then(res => {
         if (res.code === 200) {
           this.$message({
             type: 'success',
@@ -752,13 +754,13 @@ export default {
         message: '已取消'
       });
     });
-    console.log(a)
-    if(a){
-       let index = this.formchange.index;
-       console.log(this.tableData[index])
-        this.tableData[index].display = this.formchange.display;
-            this.loading = false;
-        this.dialogFormVisiblechange = false;
+    console.log(a);
+    if (a) {
+      let index = this.formchange.index;
+      console.log(this.tableData[index]);
+      this.tableData[index].display = this.formchange.display;
+      this.loading = false;
+      this.dialogFormVisiblechange = false;
     
     }
     // a.then(res => {
