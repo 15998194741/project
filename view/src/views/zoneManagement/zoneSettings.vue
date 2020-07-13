@@ -18,20 +18,20 @@
     <div class="search-container">
       <div class="server-container">ID：
         <el-select v-model="filterServerIdForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
-          <el-option v-for="item in idoptions"  :label="item.label" :value="item.value">
+          <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
           </el-option>
         </el-select>
         <el-input v-model="filterServerIdForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click='filterFormClick'>
         </el-button>
-                      <el-popover
+        <el-popover
     placement="top-start"
     title="测试机"
     width="200"
     trigger="hover"
     content="绿色按钮为搜索测试机，红色相反">
-     <el-switch v-model="filterForm[6]" active-color="#13ce66"   active-value='1' inactive-value='0' slot="reference" inactive-color="#ff4949"></el-switch>
+     <el-switch slot="reference" v-model="filterForm[6]" active-color="#13ce66"  active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
   </el-popover>
       </div>
      
@@ -55,11 +55,12 @@
 
 
       <el-table
+        ref="multipleTable"
         v-loading="loading" 
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
-        ref="multipleTable" border :data="tableData" row-key="id"
+        border :data="tableData" row-key="id"
         :default-sort="{prop: 'display'}" 
         :row-class-name="tableRowClassName"
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}" 
@@ -357,8 +358,8 @@ export default {
       filterForm: ['0', '', '', '', undefined, 1,1],
       //id查找区服
       filterServerIdForm:{
-        key:'serverid',
-        value:''
+        key: 'serverid',
+        value: ''
       },
       //区服搜索栏
       idoptions: [{
@@ -425,15 +426,15 @@ export default {
       return dayjs(val).format('YYYY-MM-DD HH:mm:ss');    
     },
     plaform(val) {
-      return val == 0 ? '安卓 苹果' : val == 1 ? '安卓' : '苹果';
+      return +val === 0 ? '安卓 苹果' : +val === 1 ? '安卓' : '苹果';
     },
     display(val) {
-      switch (val) {
-        case '1': return '空闲';
-        case '2': return '繁忙';
-        case '3': return '维护';
-        case '4': return '爆满';
-        case '5': return '停用';
+      switch (+val) {
+        case 1: return '空闲';
+        case 2: return '繁忙';
+        case 3: return '维护';
+        case 4: return '爆满';
+        case 5: return '停用';
       } 
     }
   },
@@ -524,14 +525,14 @@ export default {
               return Promise.resolve(true);
             } else {
               this.$message({
-                type: 'success',
+                type: 'warning',
                 message: '创建失败!'
               });
               return Promise.resolve(false);
             }
           }).catch((error) => {
           });
-          return Promise.resolve(serverCreateStatusa);
+          return Promise.resolve(serverCreateStatus);
         });
           //创建成功刷新页面
         doubleTrue.then(res => {
@@ -546,8 +547,8 @@ export default {
           }
         });
       } else {
-        console.log('error submit!!');
-         
+        // console.log('error submit!!');
+        this.$message.warning('创建失败!');
       }
     });
   },
@@ -567,10 +568,10 @@ export default {
     });
      
   },
-  async filterFormClick(){
+  async filterFormClick() {
     let req = this.filterServerIdForm;
     // console.log(req.value)
-    if(req.value =='' ){
+    if(String(req.value) === '' ){
       // console.log(req.value)
         this.$message({
           message: '警告哦，不可以搜索空哦',
@@ -582,7 +583,7 @@ export default {
     this.tableData = res.data;
     this.displayNum = '';
     this.total = res.data.length;
-    return
+    return;
   },
 
   tableRowClassName({ row, rowIndex }) {

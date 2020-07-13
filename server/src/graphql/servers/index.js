@@ -1,6 +1,7 @@
 class value{
-	hello(name, time){
-		return 'helloworld'+name+'4546'+time;
+	hello(ctx){
+		console.log(ctx.name,ctx.time)
+		return 'helloworld'+'4546';
 	}
 	super(){
 		return 'ojbk';
