@@ -3828,3 +3828,24 @@
 [2020-07-13T21:14:23.708] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='1' order by id limit 100 offset (100*0)
 [2020-07-13T21:14:23.717] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='1'
 [2020-07-13T21:14:23.723] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1'and test='1' GROUP BY display ORDER BY display
+[2020-07-13T21:16:47.154] [DEBUG] debugLogger - Executing (default): select values from gm_dict where code = 'areaclothing' and gameid='1'
+[2020-07-13T21:16:47.154] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' order by id limit 100 offset (100*0)
+[2020-07-13T21:16:47.162] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'
+[2020-07-13T21:16:47.167] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1' GROUP BY display ORDER BY display
+[2020-07-13T21:16:54.502] [DEBUG] debugLogger - Executing (default): select values from gm_dict where code = 'areaclothing' and gameid='1'
+[2020-07-13T21:16:54.601] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' order by id limit 100 offset (100*0)
+[2020-07-13T21:16:54.614] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'
+[2020-07-13T21:16:54.631] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1' GROUP BY display ORDER BY display
+[2020-07-13T21:17:26.452] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='1' order by id limit 100 offset (100*0)
+[2020-07-13T21:17:26.460] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='1'
+[2020-07-13T21:17:26.467] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1'and test='1' GROUP BY display ORDER BY display
+[2020-07-13T21:19:36.878] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-07-13T21:19:36.885] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-07-13T21:19:36.903] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-07-13T21:19:39.018] [DEBUG] debugLogger - Executing (default): select values from gm_dict where code = 'areaclothing' and gameid='1'
+[2020-07-13T21:19:39.025] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1' order by id limit 100 offset (100*0)
+[2020-07-13T21:19:39.055] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'
+[2020-07-13T21:19:39.065] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1' GROUP BY display ORDER BY display
+[2020-07-13T21:19:45.770] [DEBUG] debugLogger - Executing (default): select * from gm_server  where gameid='1'and test='1' order by id limit 100 offset (100*0)
+[2020-07-13T21:19:45.786] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_server where gameid='1'and test='1'
+[2020-07-13T21:19:45.796] [DEBUG] debugLogger - Executing (default): SELECT count(display) as num,display  from gm_server where gameid='1'and test='1' GROUP BY display ORDER BY display
