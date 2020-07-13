@@ -10,7 +10,7 @@ const value = require('../servers/index');
 let schemaone = buildSchema(`
 type Query {
     hello(name : String, time : String):String,
-    super:String
+    super:String,
 }
 `);
 

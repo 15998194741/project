@@ -55,7 +55,7 @@ export class UserController {
 
 
     @get('/selectserver/if')
-	async findserver(ctx) {
+	async findservers(ctx) {
     	let result = await Components.selectserver(ctx.query);
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
@@ -71,8 +71,8 @@ export class UserController {
 	@get('/selectComponent')
     async findComponent(ctx) {
     	ctx.log.resourceDesc = '根据游戏ID 组件名称搜索 区服组件';
-		let query = ctx.query;
-		console.log(query)
+    	let query = ctx.query;
+    	// console.log(query);
     	let result = await GmDictService.findcomponent(query);
     	ctx.body = statusCode.SUCCESS_200('查找成功', result);
     }

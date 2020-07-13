@@ -106,7 +106,7 @@ class components extends BaseService{
 	async updateserversnomerge(forms, gameid, display, merge){
 
 		for(let form  of  forms){
-			if(display === '不更改'){
+			if(display === '0'){
 				break;
 			}
 			await UserDao.findSqlByParamsToOne('update gm_server set display = :display where  gameid=:gameid and serverid=:serverid', {...form, gameid, display});

@@ -8,6 +8,9 @@
           <el-button v-if="grade" slot="reference" icon="el-icon-thumb" size='small' class="button-with-header"   :disabled='allselectchangeopen' @click="dialogFormchange = true">批量操作</el-button>
         </li>
         <li>
+          <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
+        </li>
+        <li>
           <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   @click='filterFormChange'>刷新</el-button>
         </li>
         <li>
@@ -18,17 +21,19 @@
     <div class="search-container">
       <div class="server-container">ID：
         <el-select v-model="filterServerIdForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
-          <el-option v-for="item in idoptions"  :label="item.label" :value="item.value">
+          <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
           </el-option>
         </el-select>
         <el-input v-model="filterServerIdForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
         </el-input>
         <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click='filterFormClick'>
         </el-button>
+     
       </div>
+     
       <div class="comprehensive-container">
-        <div v-for='(i,index) in selectForm' :key='index' :multiple='i.multiple' class="select-item"   > {{i.label}}:
-          <el-select v-model="filterForm[index]" placeholder="请选择" size='small' @change='filterFormChange'>
+        <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
+          <el-select v-model="filterForm[index]" :multiple="i['multiple']" placeholder="请选择" size='small' @change='filterFormChange'>
             <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
             </el-option>
           </el-select>
@@ -36,6 +41,9 @@
         <div class="select-item">开服时间：
           <el-date-picker   v-model="filterForm[4]"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
           </el-date-picker>
+        </div>
+        <div style="margin-left: 10px;">
+          <el-checkbox v-model="filterForm[6]" true-label='1' false-label='0' @change='filterFormChange'>测试机</el-checkbox>
         </div>
       </div>
     </div>
@@ -50,8 +58,7 @@
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
-        
-         border :data="tableData" row-key="id"
+        border :data="tableData" row-key="id"
         :default-sort="{prop: 'display'}" 
         :row-class-name="tableRowClassName"
         :tree-props="{children: 'children', hasChildren: 'hasChildren'}" 
@@ -97,7 +104,7 @@
         </el-table-column>
       </el-table>
       <div class="bottom-msg">
-        <div class="botton-msg-left"> 当前查询共{{total}}个区服,<span>其中显示状态:<span v-for='i of displayNum'>  {{i.display|display}}-{{i.num}}个 </span> </span></div>
+        <div class="botton-msg-left"> 当前查询共{{total}}个区服,<span>其中显示状态:<span v-for='(i,index) of displayNum' :key='index'>  {{i.display|display}}-{{i.num}}个 </span> </span></div>
 
         <div>
           <!-- current-page='4' -->
@@ -138,13 +145,13 @@
         </el-table>
       </div>
       <div slot="footer" class="dialog-footer">
-        <el-checkbox-button v-model="radio2" label="合服"></el-checkbox-button>
-        <el-select v-model="radio3" value='不更改' placeholder="请选择活动区域">
-          <el-option label="不更改" value="不更改"></el-option>
-          <el-option label="空闲" value="空闲"></el-option>
-          <el-option label="繁忙" value="繁忙"></el-option>
-          <el-option label="爆满" value="爆满"></el-option>
-          <el-option label="维护" value="维护"></el-option>
+        
+        <el-select v-model="radio3" value='0' placeholder="请选择活动区域">
+          <el-option label="不更改" value="0"></el-option>
+          <el-option label="空闲" value="1"></el-option>
+          <el-option label="繁忙" value="2"></el-option>
+          <el-option label="爆满" value="4"></el-option>
+          <el-option label="维护" value="3"></el-option>
         </el-select>
         <el-button @click="dialogFormchange = false">取 消</el-button>
         <el-button type="primary" @click="updateserver">确 定</el-button>
@@ -195,7 +202,7 @@
         <el-form-item size="large">
           <el-button @click="serverCreatedialogFormVisible = false">取 消</el-button>
           <el-button type="primary"   @click="createFormSubmitForm('createForm')">确 定</el-button>
-          <el-button type="danger" icon="el-icon-delete-solid" circle   @click="createFormResetForm('createForm')"></el-button>
+          <el-button type="danger" icon="el-icon-refresh-right" circle   @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -255,12 +262,9 @@ export default {
           }]
       }, {
         label: '客户端',
-        multiple: false,
+        multiple: true,
         value: '',
-        options: [{
-          label: '不限制',
-          value: ''
-        }]
+        options: []
       },
       {
         label: '显示状态',
@@ -346,7 +350,7 @@ export default {
         ]
       },
       //筛选栏过滤
-      filterForm: ['0', '', '', '', undefined, 1],
+      filterForm: ['0', '', '', '', undefined, 1, '0'],
       //id查找区服
       filterServerIdForm: {
         key: 'serverid',
@@ -408,7 +412,7 @@ export default {
       datevalue: ['', ''],
       allselectchange: '',
       radio2: false,
-      radio3: '不更改',
+      radio3: '0',
       flush: { gamename: this.$store.state.user.permissionInfo.gamename, ok: '1' }
     };
   },
@@ -417,23 +421,23 @@ export default {
       return dayjs(val).format('YYYY-MM-DD HH:mm:ss');    
     },
     plaform(val) {
-      return val == 0 ? '安卓 苹果' : val == 1 ? '安卓' : '苹果';
+      return +val === 0 ? '安卓 苹果' : +val === 1 ? '安卓' : '苹果';
     },
     display(val) {
-      switch (val) {
-        case '1': return '空闲';
-        case '2': return '繁忙';
-        case '3': return '维护';
-        case '4': return '爆满';
-        case '5': return '停用';
+      switch (+val) {
+        case 1: return '空闲';
+        case 2: return '繁忙';
+        case 3: return '维护';
+        case 4: return '爆满';
+        case 5: return '停用';
       } 
     }
   },
   watch: {
-    filterForm: {
-      handler: function() {this.filterFormChange();},
-      deep: true
-    }
+    // filterForm: {
+    //   handler: function() {this.filterFormChange();},
+    //   deep: true
+    // }
   },
   computed: {
 
@@ -486,6 +490,12 @@ export default {
   methods: { changes() {
     console.log(this.formchange.display, this.formchange.index);
   },
+  mergeServer() {
+    let [obj, ...arr] = this.allselectchange;
+    obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
+    let a = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
+    console.log(a);
+  },
   // clientchanges(news) {
   //   if (news.includes('test')) {
   //     this.form.client = ['test'];
@@ -516,14 +526,14 @@ export default {
               return Promise.resolve(true);
             } else {
               this.$message({
-                type: 'success',
+                type: 'warning',
                 message: '创建失败!'
               });
               return Promise.resolve(false);
             }
           }).catch((error) => {
           });
-          return Promise.resolve(serverCreateStatusa);
+          return Promise.resolve(serverCreateStatus);
         });
           //创建成功刷新页面
         doubleTrue.then(res => {
@@ -538,12 +548,13 @@ export default {
           }
         });
       } else {
-        console.log('error submit!!');
-         
+        // console.log('error submit!!');
+        this.$message.warning('创建失败!');
       }
     });
   },
   async filterFormChange() {
+    this.filterServerIdForm.value = '';
     let findForm = deepCopy(this.filterForm);
     if (findForm[4]) {
       findForm[4] = {
@@ -560,16 +571,19 @@ export default {
      
   },
   async filterFormClick() {
+    this.filterForm = this.filterForm.map(item=>{
+      return '';
+    });
     let req = this.filterServerIdForm;
     // console.log(req.value);
-    // if (req.value == '') {
-    //   console.log(req.value);
-    //   this.$message({
-    //     message: '警告哦，不可以搜索空哦',
-    //     type: 'warning'
-    //   });
-    //   return;
-    // }
+    if (req.value == '') {
+      console.log(req.value);
+      this.$message({
+        message: '警告哦，不可以搜索空哦',
+        type: 'warning'
+      });
+      return;
+    }
     let res = await findServerByID(req);
     this.tableData = res.data;
     this.displayNum = '';
@@ -710,9 +724,7 @@ export default {
             type: 'success',
             message: '成功!'
           });
-          getpage({ gameid: this.gameid }).then(res => {
-            this.tableData = res.data;
-          });
+          this.filterFormChange();
           return true;
         }
       });
