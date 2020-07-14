@@ -40,7 +40,7 @@ module.exports = {
       '/api': {
         // target: 'http://127.0.0.1:10010',
         // target: 'http://10.1.35.78:10010',
-        target: 'http://127.0.0.1:10010',
+        target: 'http://123.57.86.38:10010',
         changeOrigin: true
       }
     }

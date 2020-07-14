@@ -492,15 +492,24 @@ export default {
   },
   mergeServer() {
     let [obj, ...arr] = this.allselectchange;
+    let dispalys = obj.display !== '3'
+    if(dispalys){
+      this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
+      return
+    }
     obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
-    let a = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
-    console.log(a);
+    let mergeTrue = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
+   
+    if(!mergeTrue){
+      this.$message.warning('不同平台，不同客户端，不可以合服!');
+      return
+    }
+    this.$message.warning('合服成功!');
+
+
+     
   },
-  // clientchanges(news) {
-  //   if (news.includes('test')) {
-  //     this.form.client = ['test'];
-  //   }
-  // },
+
 
   //重置创建表单
   createFormResetForm(formName) {
