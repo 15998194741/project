@@ -149,7 +149,7 @@
         </div>
       </div>
     </div>
-    <el-dialog title="批量操作" :visible.sync="dialogFormchange">
+    <el-dialog title="批量操作" :visible.sync="dialogFormchange"  :close-on-click-modal="false">
 
       <div class="alertname">
         <el-table ref="multipleTable" :data="allselectchange">
@@ -188,7 +188,7 @@
 
 
     <!-- 区服创建表单弹窗 -->
-    <el-dialog title="区服创建" :visible.sync="serverCreatedialogFormVisible">
+    <el-dialog title="区服创建" :visible.sync="serverCreatedialogFormVisible"  :close-on-click-modal="false">
       <el-form ref="createForm" :rules="createFormRules" :model="createForm" label-width="100px"  class='createFormAlert'> 
         <el-form-item label="区服ID:" class="createFormAlertBody" >
           <el-input v-model="createForm.serverid" disabled class="alertcontant"></el-input>
@@ -236,7 +236,7 @@
     </el-dialog>
 
 
-    <el-dialog title="区服修改" :visible.sync="dialogFormVisiblechange">
+    <el-dialog title="区服修改" :visible.sync="dialogFormVisiblechange"  :close-on-click-modal="false">
       <div class="alertname">
         <div class="changeAlertBody">    <span class="alertspan">区服id</span>      <el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">    <span class="alertspan">区服名称</span>     <el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
