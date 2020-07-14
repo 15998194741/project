@@ -115,4 +115,12 @@ export class UserController {
 		ctx.body = statusCode.SUCCESS_200('查找', result);
 
 	}
+
+	@post('/mergeServer')
+	async mergeServer(ctx){
+		ctx.log.resourceDesc = '区服合并';
+		let serverIDS = ctx.request.body;
+		let result = await gmServerService.mergeServer(serverIDS);
+		ctx.body = statusCode.SUCCESS_200('成功', result);
+	}
 }

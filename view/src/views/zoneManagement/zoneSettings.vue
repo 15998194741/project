@@ -51,19 +51,47 @@
 
 
 
-
+      <!-- :tree-props="{children: 'children', hasChildren: 'hasChildren'}"  -->
       <el-table
         ref="multipleTable"
         v-loading="loading" 
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
-        border :data="tableData" row-key="id"
+        border :data="tableData" 
+        row-key="id"
         :default-sort="{prop: 'display'}" 
-        :row-class-name="tableRowClassName"
-        :tree-props="{children: 'children', hasChildren: 'hasChildren'}" 
-        @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55"></el-table-column>
+        :row-class-name="tableRowClassName" 
+        @selection-change="handleSelectionChange"
+        @size-change="handleSizeChange">
+        <el-table-column  type="selection" width="55"></el-table-column>
+        <el-table-column type="expand">
+          <template slot-scope="props">
+            <el-form label-position="left" inline class="demo-table-expand">
+              <el-form-item label="商品名称">
+                <span>{{ props.row.name }}</span>
+              </el-form-item>
+              <el-form-item label="所属店铺">
+                <span>{{ props.row.shop }}</span>
+              </el-form-item>
+              <el-form-item label="商品 ID">
+                <span>{{ props.row.id }}</span>
+              </el-form-item>
+              <el-form-item label="店铺 ID">
+                <span>{{ props.row.shopId }}</span>
+              </el-form-item>
+              <el-form-item label="商品分类">
+                <span>{{ props.row.category }}</span>
+              </el-form-item>
+              <el-form-item label="店铺地址">
+                <span>{{ props.row.address }}</span>
+              </el-form-item>
+              <el-form-item label="商品描述">
+                <span>{{ props.row.desc }}</span>
+              </el-form-item>
+            </el-form>
+          </template>
+        </el-table-column>
         <el-table-column prop='pid' label="合服ID" :width="widthtable">
         </el-table-column>
         <el-table-column prop='serverid' label="区服ID" :width="widthtable">
@@ -108,17 +136,16 @@
 
         <div>
           <!-- current-page='4' -->
-          <!-- <el-pagination
-            :page-size='100'
+          <el-pagination
+              :page-size.sync='page.pagesize'
+              :page-sizes="[10, 20, 30, 40]"
               background
-              layout="prev, pager, next,total"
+              layout="total, sizes, prev, pager, next, jumper"
               :pager-count='9'  
-              :page-count='1000' 
-              :hide-on-single-page="true"  
-              :total="page_number"
-              :current-page.sync='page'
-              @current-change='pagechange' >
-</el-pagination> -->
+              :hide-on-single-page="false"  
+              :total="total"
+              :current-page.sync='page.page'
+              @current-change='pagechange' ></el-pagination>
         </div>
       </div>
     </div>
@@ -195,6 +222,7 @@
         </el-form-item>
         <el-form-item label="测试机">
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
+          <el-button type="danger" icon="el-icon-refresh-right" circle   @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
         <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk required prop='address' >
           <el-input v-model="createForm.address"  class="alterbuttominput" placeholder="请输入资源地址"></el-input>
@@ -202,7 +230,7 @@
         <el-form-item size="large">
           <el-button @click="serverCreatedialogFormVisible = false">取 消</el-button>
           <el-button type="primary"   @click="createFormSubmitForm('createForm')">确 定</el-button>
-          <el-button type="danger" icon="el-icon-refresh-right" circle   @click="createFormResetForm('createForm')">清空</el-button>
+        
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -237,7 +265,7 @@
 <script>
 import { deepCopy } from '@/utils/zoneSettings';
 import dayjs from 'dayjs';
-import { findComponents, findServer, stopserver, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
+import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {
   name: 'distric',
   data() {
@@ -379,7 +407,7 @@ export default {
       //查找得条目总数
       total: '',
       loading: false,
-      page: 1,
+      page: { page: 1, pagesize: 10 },
       dialogFormchange: false,
       changemodel: '',
       dialogFormVisiblechange: false,
@@ -396,7 +424,7 @@ export default {
         address: ''
 
       },
-      widthtable: 180,
+      widthtable: 170,
 
       multipleTable: '',
     
@@ -490,24 +518,39 @@ export default {
   methods: { changes() {
     console.log(this.formchange.display, this.formchange.index);
   },
-  mergeServer() {
+  async loadpid(tree, treeNode, resolve) {
+    let res = await findServerByID({ key: 'pid', value: tree.pid });
+    
+    resolve(res.data.map(item=>{
+      return delete item.pid;
+    }));
+  },
+  //合服
+  async mergeServer() {
     let [obj, ...arr] = this.allselectchange;
-    let dispalys = obj.display !== '3'
-    if(dispalys){
-      this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
-      return
+    let dispalys = obj.display !== '3';
+    if (dispalys) {
+      await this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
+      
+      return;
     }
     obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
     let mergeTrue = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
    
-    if(!mergeTrue){
+    if (!mergeTrue) {
       this.$message.warning('不同平台，不同客户端，不可以合服!');
-      return
+      return;
     }
-    this.$message.warning('合服成功!');
-
-
-     
+    let mergetrue = await this.$confirm('是否确认合并区服?', '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning' })
+      .catch(err => false);
+    if (mergetrue) {
+      let res = await ServerMerge(this.allselectchange);
+      this.$message.warning('合服成功!'); 
+    }
+   
   },
 
 
@@ -515,52 +558,77 @@ export default {
   createFormResetForm(formName) {
     this.$refs[formName].resetFields();
   },
+  handleSizeChange(val) {
+    console.log(val);
+  },
   //提交创建表单
   createFormSubmitForm(formName) {
-    this.$refs[formName].validate((valid) => {
+    this.$refs[formName].validate(async(valid) => {
       if (valid) {
         //二次确定
-        let doubleTrue = this.$confirm('是否继续?', '提示', {
+        let doubleTrue = await this.$confirm('是否确认创建区服?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          let serverCreateStatus = servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid }).then(res => {
-            if (res.code === 200) {
-              this.$message({
-                type: 'success',
-                message: '创建成功!'
-              });
-              this.$refs[formName].resetFields();
-              return Promise.resolve(true);
-            } else {
-              this.$message({
-                type: 'warning',
-                message: '创建失败!'
-              });
-              return Promise.resolve(false);
-            }
-          }).catch((error) => {
-          });
-          return Promise.resolve(serverCreateStatus);
-        });
-          //创建成功刷新页面
-        doubleTrue.then(res => {
-          if (res) {
-            getpage({ gameid: this.gameid }).then(res => {
-              this.tableData = res.data;
+          type: 'warning' })
+          .catch(err => false);
+        if (doubleTrue) {
+          let res = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
+          if (res.code === 200) {
+            this.$message({
+              type: 'success',
+              message: '创建成功!'
             });
-            this.serverCreatedialogFormVisible = false;
-            for (let key in this.form) {
-              this.form[key] = '';
-            }
+            this.$refs[formName].resetFields();
+           
+          } else {
+            this.$message({
+              type: 'warning',
+              message: '创建失败!'
+            });
           }
-        });
-      } else {
-        // console.log('error submit!!');
-        this.$message.warning('创建失败!');
+        }
       }
     });
+    //     .then(() => {
+    //       let serverCreateStatus =  servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid }).then(res => {
+    //         if (res.code === 200) {
+    //           this.$message({
+    //             type: 'success',
+    //             message: '创建成功!'
+    //           });
+    //           this.$refs[formName].resetFields();
+    //           return Promise.resolve(true);
+    //         } else {
+    //           this.$message({
+    //             type: 'warning',
+    //             message: '创建失败!'
+    //           });
+    //           return Promise.resolve(false);
+    //         }
+    //       }
+          
+          
+    //       ).catch((error) => {
+    //       });
+    //       return Promise.resolve(serverCreateStatus);
+    //     });
+    //       //创建成功刷新页面
+    //     doubleTrue.then(res => {
+    //       if (res) {
+    //         getpage({ gameid: this.gameid }).then(res => {
+    //           this.tableData = res.data;
+    //         });
+    //         this.serverCreatedialogFormVisible = false;
+    //         for (let key in this.form) {
+    //           this.form[key] = '';
+    //         }
+    //       }
+    //     });
+    //   } else {
+    //     // console.log('error submit!!');
+    //     this.$message.warning('创建失败!');
+    //   }
+    // });
   },
   async filterFormChange() {
     this.filterServerIdForm.value = '';
@@ -571,11 +639,12 @@ export default {
         endTime: this.filterForm[4][1].toJSON()
       };
     }
+    findForm[7] = this.page.pagesize;
+    findForm[5] = this.page.page;
+    this.flush = findForm;
     await findServer(findForm).then(res=>{
-      let data = res.data;
-      this.tableData = data.table;
-      this.displayNum = data.displayNum;
-      this.total = data.total;
+      this.inserttable(res);
+     
     });
      
   },
@@ -595,6 +664,7 @@ export default {
     }
     let res = await findServerByID(req);
     this.tableData = res.data;
+    
     this.displayNum = '';
     this.total = res.data.length;
     return;
@@ -604,15 +674,14 @@ export default {
     // console.log(row);
     if (row.display === '5') {
       return 'success-row';
+    } else if (!row.pid) {
+      return 'pid-row';
     }
   },
   //按钮新建区服
   newCreateServer() {
     this.serverCreatedialogFormVisible = true;
-    if (this.createForm['serverid']) {
-      return true;
-    }
-    let serverid = new Date().getTime() + this.idRandom(10);
+    let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
     this.createForm['serverid'] = serverid;
   },
   idRandom(lengths) {
@@ -656,9 +725,9 @@ export default {
     });
   },
   pagechange() {
-    this.flush['page'] = this.page;
-    serverselect(this.flush).then(res => {
-      this.tableData = res.data;
+    this.flush[5] = this.page.page;
+    findServer(this.flush).then(res => {
+      this.inserttable(res);
     });
   },
   //区服创建
@@ -704,7 +773,7 @@ export default {
 
 
   },
-  handleSelectionChange(val) {
+  handleSelectionChange(val,) {
     let a = [];
     for (let i of val) {
       if (i.display === '5') {
@@ -728,12 +797,21 @@ export default {
     }).then(() => {
       serverallupdate(data).then(res => {
         if (res.code === 200) {
+          
+        
+          this.tableData.map(item=>{
+            if (this.allselectchange.find(_item=> _item.id === item.id)) {
+              item.display = this.radio3;
+              return item;
+            } 
+            return item;
+          });
+  
           this.dialogFormchange = false;
           this.$message({
             type: 'success',
             message: '成功!'
           });
-          this.filterFormChange();
           return true;
         }
       });
@@ -775,7 +853,7 @@ export default {
         message: '已取消'
       });
     });
-    console.log(a);
+
     if (a) {
       let index = this.formchange.index;
       console.log(this.tableData[index]);
@@ -848,6 +926,13 @@ export default {
   //   });
   //   this.flush = a;
   // },
+  inserttable(res) {
+    let data = res.data;
+    this.tableData = data.table;
+    this.page.page = Number(data.page);
+    this.displayNum = data.displayNum;
+    this.total = Number(data.total);
+  },
   selectservers() {
     serverselect(this.flush).then(res => {
       this.tableData = res;
@@ -863,11 +948,9 @@ export default {
       this.selectForm[1].options = this.selectForm[1].options.concat(components);
       this.clientOptions = components;
     });
-    findServer({}).then(res=>{
-      let data = res.data;
-      this.tableData = data.table;
-      this.displayNum = data.displayNum;
-      this.total = data.total;
+    this.flush = ['', '', '', '', '', '', '0', 10];
+    findServer(this.flush).then(res=>{
+      this.inserttable(res);
     });
     // getpage({ gameid: this.gameid }).then(res => {
     //   this.tableData = res.data;
@@ -941,6 +1024,10 @@ export default {
     }
 
     .el-table .success-row :first-child div {
+      visibility: hidden;
+    }
+  
+    .el-table .pid-row  td:nth-child(2) div {
       visibility: hidden;
     }
 

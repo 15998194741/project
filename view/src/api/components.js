@@ -107,3 +107,15 @@ export function findServerByID(params) {
     params 
   });
 }
+
+
+
+
+
+export function ServerMerge(data) {
+  return request({
+    url: 'server/mergeServer',
+    method: 'post',
+    data 
+  });
+}
