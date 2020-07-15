@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2221a4"],{ccd2:function(n,c,e){"use strict";e.r(c);var u=function(){var n=this,c=n.$createElement,e=n._self._c||c;return e("div",[n._v("rucksackQuery 背包查询")])},t=[],r={},a=r,l=e("2877"),s=Object(l["a"])(a,u,t,!1,null,null,null);c["default"]=s.exports}}]);
