@@ -14,17 +14,13 @@ class GmServerService extends BaseService{
   
 	//区服按需查找
 	async serverFindByParam(findForm) {
+	
 		let getType = data => Object.prototype.toString.call(data).split(' ')[1].slice(0, -1);
-		let channel = findForm['1[]'];
-		let page = findForm[5]?findForm[5]:1;
-		let pagesize = findForm[7]?findForm[7]:10;
-		let srttime = findForm[4]?JSON.parse(findForm[4]):undefined;
-		let test = findForm[6];
+		let srttime = findForm['srttime[]'];
+		let channel = findForm['channel[]'];
+		let { plaform, display, load, gameid, test, page, pagesize, mergeserver, key, value} = findForm;
 		findForm = {
-		  'plaform': findForm[0],
-		  'display': findForm[2],
-		  'load': findForm[3],
-		  gameid:findForm.gameid,
+			plaform, display, load, gameid, test
 		};
 		let  whereObj = {};
 		for (const key in this.gmServerDO) {
@@ -48,23 +44,33 @@ class GmServerService extends BaseService{
 		}
 		
 		// where += channel && channel.length > 0? ' and array[\''+channel.join(' ')+'\']::varchar[] <@  channel ':'';
-		where += srttime?` and srttime BETWEEN '${srttime.startTime}' and '${srttime.endTime}' `:'';
+		where += srttime?` and srttime BETWEEN '${srttime[0]}' and '${srttime[1]}' `:'';
 		where += test?`and test='${test}'`:'';
-		let selectSql = `select * from gm_server  ${where} order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
+		where += mergeserver?` and ${+mergeserver===1?'NOT':''}(childrens is null)`:'';
+		if(value){
+			where += key ==='serverid'?` and serverid = '${value}'`: ` and serverid='${value}' and not(childrens is null)   `;
+		}
+		
+		console.log(where);
+		let selectSql = `select * from gm_server  ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
+		
 		let arr =  await dbSequelize.query(selectSql);
-		let totalSql = `select count(*) as total from gm_server ${where}`;
-		let total = await dbSequelize.query(totalSql);
+		// let totalSql = `select count(*) as total from gm_server ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
+		// let total = await dbSequelize.query(totalSql);
+		
 		arr.map(value => value.dataValues);
-		let displayNumSql = `SELECT count(display) as num,display  from gm_server ${where} GROUP BY display ORDER BY display limit ${pagesize} offset (${pagesize}*${page-1})`;
+		let  total = arr[0].length;
+		
+		let displayNumSql = `SELECT count(display) as num,display  from gm_server ${where} and (pid is null or  trim(pid) ='') GROUP BY display ORDER BY display limit ${pagesize} offset (${pagesize}*${page-1}) `;
 		let displayNum = await dbSequelize.query(displayNumSql);
 		let pidarr = [];
 		if(arr[0].length > 0){
 			 pidarr = arr[0].map(item =>{
-				return item.pid?{...item, hasChildren: true}:item;
+				return item.childrens?{...item, hasChildren: true}:item;
 			});
 		}
 		let res = {
-			...total[0][0],
+			total,
 			table:pidarr,
 			displayNum:displayNum[0],
 			page
@@ -74,20 +80,23 @@ class GmServerService extends BaseService{
 
 
 	async findServerByID(query){
-		
-		let where = `where ${query.key}='${query.value}' and gameid='${query.gameid}'`;
-		if(query.value === ''){	
-			 where = `where gameid='${query.gameid}'`;
-		}
+
+		let where = `where pid='${query.id}' and gameid='${query.gameid}'`;
+		// if(query.value === ''){	
+		// 	 where = `where gameid='${query.gameid}'`;
+		// }
 		let idFindSql = `SELECT *   from gm_server ${where}`;
 		let res = await dbSequelize.query(idFindSql);
 		return res[0]; 
 	}
 	async mergeServer(data){
-		let a = data.map(item=> {return `'${item.serverid}'`;});
-		let where = `where gameid ='${data.gameid}' and serverid in (${a.join(',')})`;
+		let children = data.map(item=> {return `'${item.serverid}'`;});
 		let pid = dayjs(new Date()).format('YYMMDDHHmmss');
-		let querySql = `update gm_server set pid='${pid}'  ${where}`;
+		let channel = data[0].channel.map(item => {return `'${item}'`;});
+		let plaform =  data[0].plaform;
+		let test =data[0].test;
+		let querySql = `insert into gm_server (serverid ,childrens,gameid,channel,plaform,display,test)VALUES ('${pid}',array[${children.join(',')}],'${data.gameid}',array[${channel.join(',')}],'${plaform}','3','${test}')  `;
+		console.log(querySql);
 		let res = await dbSequelize.query(querySql);
 		return res;
 	

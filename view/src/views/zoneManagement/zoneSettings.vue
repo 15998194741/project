@@ -11,7 +11,7 @@
           <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   :disabled='allselectchangeopen'  @click='mergeServer'>合服</el-button>
         </li>
         <li>
-          <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   @click='filterFormChange'>刷新</el-button>
+          <el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"   @click="filterFormChange('flush')">刷新</el-button>
         </li>
         <li>
           <el-button  v-if="grade" slot="append" icon="el-icon-circle-plus-outline" size='small'  class="button-with-header" @click="newCreateServer">创建</el-button>
@@ -20,31 +20,28 @@
     </div>
     <div class="search-container">
       <div class="server-container">ID：
-        <el-select v-model="filterServerIdForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
+        <el-select v-model="filterForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
           <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
           </el-option>
         </el-select>
-        <el-input v-model="filterServerIdForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
+        <el-input v-model="filterForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
         </el-input>
-        <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click='filterFormClick'>
+        <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" @click="filterFormChange('click')">
         </el-button>
-     
+        开服时间：
+          <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
+          </el-date-picker>
+          <el-checkbox v-model="filterForm['test']" true-label='1' false-label='0' @change='filterFormChange'>测试机</el-checkbox>
       </div>
      
       <div class="comprehensive-container">
         <div v-for='(i,index) in selectForm' :key='index'  class="select-item"  > {{i.label}}:
-          <el-select v-model="filterForm[index]" :multiple="i['multiple']" placeholder="请选择" size='small' @change='filterFormChange'>
+          <el-select v-model="filterForm[i.key]" :multiple="i['multiple']" placeholder="请选择" size='small' @change='filterFormChange'>
             <el-option v-for="(item,index) in i.options" :key="index"  :label='item.label' :value="item.value" >
             </el-option>
           </el-select>
         </div>
-        <div class="select-item">开服时间：
-          <el-date-picker   v-model="filterForm[4]"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
-          </el-date-picker>
-        </div>
-        <div style="margin-left: 10px;">
-          <el-checkbox v-model="filterForm[6]" true-label='1' false-label='0' @change='filterFormChange'>测试机</el-checkbox>
-        </div>
+       
       </div>
     </div>
     <div class="table-container">
@@ -58,43 +55,23 @@
         element-loading-text="拼命加载中" 
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0.8)" 
-        border :data="tableData" 
+        border 
+        lazy
+        :load="loadpid"
+        :tree-props="{ hasChildren: 'hasChildren'}"
+        :data="tableData" 
         row-key="id"
         :default-sort="{prop: 'display'}" 
         :row-class-name="tableRowClassName" 
         @selection-change="handleSelectionChange"
         @size-change="handleSizeChange">
         <el-table-column  type="selection" width="55"></el-table-column>
-        <el-table-column type="expand">
-          <template slot-scope="props">
-            <el-form label-position="left" inline class="demo-table-expand">
-              <el-form-item label="商品名称">
-                <span>{{ props.row.name }}</span>
-              </el-form-item>
-              <el-form-item label="所属店铺">
-                <span>{{ props.row.shop }}</span>
-              </el-form-item>
-              <el-form-item label="商品 ID">
-                <span>{{ props.row.id }}</span>
-              </el-form-item>
-              <el-form-item label="店铺 ID">
-                <span>{{ props.row.shopId }}</span>
-              </el-form-item>
-              <el-form-item label="商品分类">
-                <span>{{ props.row.category }}</span>
-              </el-form-item>
-              <el-form-item label="店铺地址">
-                <span>{{ props.row.address }}</span>
-              </el-form-item>
-              <el-form-item label="商品描述">
-                <span>{{ props.row.desc }}</span>
-              </el-form-item>
-            </el-form>
-          </template>
+     
+        <el-table-column  label="合服ID" :width="widthtable">
+          <template slot-scope="scope">{{ scope.row.childrens?scope.row.serverid:'' }} </template>
         </el-table-column>
-        <el-table-column prop='pid' label="合服ID" :width="widthtable">
-        </el-table-column>
-        <el-table-column prop='serverid' label="区服ID" :width="widthtable">
+        <el-table-column label="区服ID" :width="widthtable">
+          <template slot-scope="scope">{{ scope.row.childrens?'':scope.row.serverid }} </template>
         </el-table-column>
         <el-table-column label="名称" :width="widthtable">
           <template slot-scope="scope">{{ scope.row.servername }} </template>
@@ -114,16 +91,16 @@
           <template slot-scope="scope">{{ scope.row.load|display }} </template>
         </el-table-column>
         <el-table-column label="开服时间" sortable :width="widthtable">
-          <template slot-scope="scope">{{scope.row.srttime | timeFormate }} </template>
+          <template slot-scope="scope">{{scope.row.srttime?scope.row.srttime:scope.row.create_time | timeFormate }} </template>
         </el-table-column>
         <el-table-column v-if="grade" prop='status' label="操作">
           <template slot-scope="scope">
             <el-button
-              v-if="scope.row.display==='5' ? false : true" v-show="scope.row.pid==null?true:false" size="mini"
+              v-if="scope.row.display==='5' ? false : true" v-show="scope.row.childertrue?false:true" size="mini"
               icon="el-icon-edit-outline"
               class="button-with-header" @click="changeHandleEdit(scope.$index,scope.row)">修改</el-button>
             <el-button
-              v-if="scope.row.display==='5' ?  false: true" v-show="scope.row.pid==null?true:false" size="mini" style="color: red;"
+              v-if="scope.row.display==='5' ?  false: true" v-show="scope.row.childertrue?false:true" size="mini" style="color: red;"
               icon="el-icon-video-pause" class="button-with-header" @click="handleStop(scope.$index,scope.row)">停用
             </el-button>
 
@@ -137,15 +114,16 @@
         <div>
           <!-- current-page='4' -->
           <el-pagination
-              :page-size.sync='page.pagesize'
+              :page-size.sync="filterForm['pagesize']"
               :page-sizes="[10, 20, 30, 40]"
               background
               layout="total, sizes, prev, pager, next, jumper"
               :pager-count='9'  
               :hide-on-single-page="false"  
               :total="total"
-              :current-page.sync='page.page'
-              @current-change='pagechange' ></el-pagination>
+              :current-page.sync='filterForm.page'
+              @size-change='filterFormChange'
+              @current-change='filterFormChange' ></el-pagination>
         </div>
       </div>
     </div>
@@ -173,8 +151,7 @@
       </div>
       <div slot="footer" class="dialog-footer">
         
-        <el-select v-model="radio3" value='0' placeholder="请选择活动区域">
-          <el-option label="不更改" value="0"></el-option>
+        <el-select v-model="radio3" value='1' placeholder="请选择活动区域">
           <el-option label="空闲" value="1"></el-option>
           <el-option label="繁忙" value="2"></el-option>
           <el-option label="爆满" value="4"></el-option>
@@ -198,7 +175,7 @@
         </el-form-item>
         <el-form-item label="平台" class="createFormAlertBody"  prop='plaform' hide-required-asterisk required>
           <el-select v-model="createForm.plaform" class="alertcontant"  placeholder="请选择平台">
-            <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value">
+            <el-option v-for="(item,index) in selectForm[0].options" :key="index"  :label='item.label' :value="item.value?item.value:0">
             </el-option>
           </el-select>
         </el-form-item>
@@ -222,7 +199,7 @@
         </el-form-item>
         <el-form-item label="测试机">
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
-          <el-button type="danger" icon="el-icon-refresh-right" circle   @click="createFormResetForm('createForm')">清空</el-button>
+          <el-button type="danger" icon="el-icon-refresh-right"    @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
         <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk required prop='address' >
           <el-input v-model="createForm.address"  class="alterbuttominput" placeholder="请输入资源地址"></el-input>
@@ -240,7 +217,7 @@
       <div class="alertname">
         <div class="changeAlertBody">    <span class="alertspan">区服id</span>      <el-input v-model="formchange.serverid" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">    <span class="alertspan">区服名称</span>     <el-input v-model="formchange.servername" disabled class="alertcontant"></el-input>    </div>
-        <div class="changeAlertBody">    <span class="alertspan">平台</span>   <el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
+        <div class="changeAlertBody">    <span class="alertspan">平台</span>        <el-select v-model="formchange.plaform" disabled class="alertcontant" placeholder="请选择活动区域"> </el-select>     </div>
         <div class="changeAlertBody">    <span class="alertspan">客户端</span>       <el-select v-model="formchange.channel" disabled class="alertcontant"  placeholder="请选择活动区域">        </el-select>       </div>
         <div class="changeAlertBody">    <span class="alertspan">IP/PORT</span>        <el-input v-model="formchange.ip" disabled class="alertcontant"></el-input>     </div>
         <div class="changeAlertBody">   
@@ -275,11 +252,12 @@ export default {
       selectForm: [{
         label: '平台',
         multiple: false,
+        key: 'plaform',
         value: '',
         options: [
           {
             label: '不限制',
-            value: '0'
+            value: ''
           }, {
             label: 'Android',
             value: '1'
@@ -290,12 +268,14 @@ export default {
           }]
       }, {
         label: '客户端',
+        key: 'channel',
         multiple: true,
         value: '',
         options: []
       },
       {
         label: '显示状态',
+        key: 'display',
         multiple: false,
         value: '',
         options: [{
@@ -320,6 +300,7 @@ export default {
         }]
       }, {
         label: '负载状态',
+        key: 'load',
         multiple: false,
         value: '',
         options: [{
@@ -339,6 +320,22 @@ export default {
           label: '爆满',
           value: '4'
         }]
+      }, {
+        label: '合服',
+        key: 'mergeserver',
+        multiple: false,
+        value: '',
+        options: [{
+          label: '不限制',
+          value: ''
+        }, {
+          label: '已合服',
+          value: '1'
+
+        }, {
+          label: '未合服',
+          value: '2'
+        }]
       }
       ],
       createForm: { //区服创建表单值
@@ -350,8 +347,9 @@ export default {
         display: '',
         srttime: '',
         address: '',
-        test: '0'
-
+        test: '0',
+        page: 1,
+        pagesize: 10
       },
       createFormRules: {
         servername: [
@@ -378,7 +376,20 @@ export default {
         ]
       },
       //筛选栏过滤
-      filterForm: ['0', '', '', '', undefined, 1, '0'],
+      // filterForm: ['0', '', '', '', undefined, 1, '0', 10],
+      filterForm: {
+        plaform: '',
+        display: '',
+        load: '',
+        channel: '',
+        srttime: '',
+        key: 'serverid',
+        value: '',
+        test: '',
+        mergeserver: '',
+        page: 1,
+        pagesize: 10
+      },
       //id查找区服
       filterServerIdForm: {
         key: 'serverid',
@@ -401,13 +412,26 @@ export default {
 
       },
       //表格
-      tableData: '',
+      tableData: [{
+        plaform: '',
+        display: '',
+        load: '',
+        channel: '',
+        srttime: '',
+        key: '',
+        value: '',
+        test: '',
+        mergeserver: '',
+        page: '',
+        pagesize: '',
+        gameid: ''
+      }],
       //左下角显示数量
       displayNum: '',
       //查找得条目总数
-      total: '',
+      total: 0,
       loading: false,
-      page: { page: 1, pagesize: 10 },
+      // page: { page: 1, pagesize: 10 },
       dialogFormchange: false,
       changemodel: '',
       dialogFormVisiblechange: false,
@@ -440,7 +464,7 @@ export default {
       datevalue: ['', ''],
       allselectchange: '',
       radio2: false,
-      radio3: '0',
+      radio3: '1',
       flush: { gamename: this.$store.state.user.permissionInfo.gamename, ok: '1' }
     };
   },
@@ -462,10 +486,6 @@ export default {
     }
   },
   watch: {
-    // filterForm: {
-    //   handler: function() {this.filterFormChange();},
-    //   deep: true
-    // }
   },
   computed: {
 
@@ -519,10 +539,11 @@ export default {
     console.log(this.formchange.display, this.formchange.index);
   },
   async loadpid(tree, treeNode, resolve) {
-    let res = await findServerByID({ key: 'pid', value: tree.pid });
-    
+    let res = await findServerByID(tree);
     resolve(res.data.map(item=>{
-      return delete item.pid;
+      delete item.pid;
+      item['childertrue'] = true;
+      return item;
     }));
   },
   //合服
@@ -577,9 +598,10 @@ export default {
             this.$message({
               type: 'success',
               message: '创建成功!'
+              
             });
+            this.newCreateServer();
             this.$refs[formName].resetFields();
-           
           } else {
             this.$message({
               type: 'warning',
@@ -589,65 +611,58 @@ export default {
         }
       }
     });
-    //     .then(() => {
-    //       let serverCreateStatus =  servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid }).then(res => {
-    //         if (res.code === 200) {
-    //           this.$message({
-    //             type: 'success',
-    //             message: '创建成功!'
-    //           });
-    //           this.$refs[formName].resetFields();
-    //           return Promise.resolve(true);
-    //         } else {
-    //           this.$message({
-    //             type: 'warning',
-    //             message: '创建失败!'
-    //           });
-    //           return Promise.resolve(false);
-    //         }
-    //       }
-          
-          
-    //       ).catch((error) => {
-    //       });
-    //       return Promise.resolve(serverCreateStatus);
-    //     });
-    //       //创建成功刷新页面
-    //     doubleTrue.then(res => {
-    //       if (res) {
-    //         getpage({ gameid: this.gameid }).then(res => {
-    //           this.tableData = res.data;
-    //         });
-    //         this.serverCreatedialogFormVisible = false;
-    //         for (let key in this.form) {
-    //           this.form[key] = '';
-    //         }
-    //       }
-    //     });
-    //   } else {
-    //     // console.log('error submit!!');
-    //     this.$message.warning('创建失败!');
-    //   }
-    // });
+
   },
-  async filterFormChange() {
-    this.filterServerIdForm.value = '';
-    let findForm = deepCopy(this.filterForm);
-    if (findForm[4]) {
-      findForm[4] = {
-        startTime: this.filterForm[4][0].toJSON(),
-        endTime: this.filterForm[4][1].toJSON()
-      };
+  async filterFormChange(val) {
+
+    switch (val) {
+      case 'click':this.filterFormChangeClick(); break;
+      case 'flush':this.filterFormChangeFlush(); break;
+      default:this.filterForm.value = ''; findServer(this.filterForm).then(res=>{this.inserttable(res);});
     }
-    findForm[7] = this.page.pagesize;
-    findForm[5] = this.page.page;
-    this.flush = findForm;
-    await findServer(findForm).then(res=>{
-      this.inserttable(res);
-     
-    });
+    
      
   },
+  async finservers(findForm) {
+    let res = await findServer(findForm);
+    this.inserttable(res); 
+  },
+  async filterFormChangeClick() {
+    for (let [key, value] of Object.entries(this.filterForm)) {
+      if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
+        continue;
+      }
+      this.filterForm[key] = '';
+    }
+    this.finservers(this.filterForm);
+  },
+
+  async filterFormChangeFlush() {
+    this.filterForm = {
+      plaform: '',
+      display: '',
+      load: '',
+      channel: '',
+      srttime: '',
+      key: 'serverid',
+      value: '',
+      test: '',
+      mergeserver: '',
+      page: 1,
+      pagesize: 10
+    };
+    findServer(this.filterForm).then(res=>{this.inserttable(res);});
+    
+  },
+
+
+
+
+
+
+
+
+
   async filterFormClick() {
     this.filterForm = this.filterForm.map(item=>{
       return '';
@@ -671,12 +686,17 @@ export default {
   },
 
   tableRowClassName({ row, rowIndex }) {
-    // console.log(row);
+  
     if (row.display === '5') {
       return 'success-row';
-    } else if (!row.pid) {
-      return 'pid-row';
+    } 
+    if (row.childertrue) {
+      return 'childer-row';
     }
+    if (!row.pid) {
+      return 'pid-row';
+    } 
+   
   },
   //按钮新建区服
   newCreateServer() {
@@ -715,21 +735,14 @@ export default {
     //row为数据 
   },
   //停用传参
-  handleStop(index, row) {
+  async handleStop(index, row) {
     // console.log(index,);
-    stopserver({ ...row, gameid: this.gameid }).then(res => {
-      getpage({ gameid: this.gameid }).then(res => {
-        this.tableData = res.data;
-      });
+    let res = await stopserver({ ...row, gameid: this.gameid });
+    if (res.code === 200) {
+      findServer(this.filterForm).then(res=>{this.inserttable(res);});
+    }
+  },
 
-    });
-  },
-  pagechange() {
-    this.flush[5] = this.page.page;
-    findServer(this.flush).then(res => {
-      this.inserttable(res);
-    });
-  },
   //区服创建
   createserver() {
 
@@ -776,7 +789,7 @@ export default {
   handleSelectionChange(val,) {
     let a = [];
     for (let i of val) {
-      if (i.display === '5') {
+      if (i.display === '5' || i.childertrue) {
         continue;
       } else {
         a.push(i);
@@ -862,74 +875,11 @@ export default {
       this.dialogFormVisiblechange = false;
     
     }
-    // a.then(res => {
-    //   if (res) {
-    //     this.dialogFormVisiblechange = false;
-    //     let index = this.formchange.index;
-    //     this.tableData[index]['display'] = this.formchange.display;
-    //     this.loading = false;
-    //   }
-    // });
   },
-  // selectserver() {
-  //   let a = {};
-  //   a['id'] = 111;
-  //   if (this.select !== '') {
-  //     if (this.idinput === 1) {
-  //       a['serverid'] = this.select;
-  //       a['id'] = 'serverid';
-  //     } else {
-  //       a['pid'] = this.select;
-  //       a['id'] = 'pid';
-  //     }
-  //   }
-  //   if (this.platformoptionsinput !== '不限制') {
-  //     a['plaform'] = `'${this.platformoptionsinput}'`;
-  //   } else {
-  //     a['plaform'] = 'plaform';
-  //   }
-  //   if (this.clientinput !== '不限制') {
-  //     a['client'] = `'${this.clientinput}'=ANY(client)`;
-
-  //   } else {
-  //     a['client'] = `id=id`;
-  //   }
-  //   if (this.statusinput !== '不限制') {
-  //     a['showstatus'] = `'${this.statusinput}'`;
-  //   } else {
-  //     a['showstatus'] = 'showstatus';
-  //   }
-  //   if (this.loadinput !== '不限制') {
-  //     a['load'] = `'${this.loadinput}'`;
-  //   } else {
-  //     a['load'] = 'load';
-  //   }
-  //   try {
-  //     if (this.datevalue[0] !== this.datevalue[1]) {
-  //       let date = this.datevalue[0];
-  //       let dateone = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  //       date = this.datevalue[1];
-  //       let datetwo = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-
-  //       a['data'] = `srttime between '${dateone}' and '${datetwo}'`;
-  //     } else {
-  //       a['data'] = `1=1`; 
-  //     }
-  //   } catch {
-  //     a['data'] = `1=1`;
-  //   }
-
-  //   a['gamename'] = this.gamename;
-  //   a['gameid'] = `'${this.gameid}'`;
-  //   serverselect(a).then(res => {
-  //     this.tableData = res.data;
-  //   });
-  //   this.flush = a;
-  // },
   inserttable(res) {
     let data = res.data;
     this.tableData = data.table;
-    this.page.page = Number(data.page);
+    this.formchange.page = Number(data.page);
     this.displayNum = data.displayNum;
     this.total = Number(data.total);
   },
@@ -948,13 +898,9 @@ export default {
       this.selectForm[1].options = this.selectForm[1].options.concat(components);
       this.clientOptions = components;
     });
-    this.flush = ['', '', '', '', '', '', '0', 10];
-    findServer(this.flush).then(res=>{
-      this.inserttable(res);
-    });
-    // getpage({ gameid: this.gameid }).then(res => {
-    //   this.tableData = res.data;
-    // });
+ 
+    findServer(this.filterForm).then(res=>{this.inserttable(res);});
+
   },
 
   created() {
@@ -1019,16 +965,21 @@ export default {
     }
 
     .el-table .success-row {
-      background: #dbaec2;
+      background: yellow;
       pointer-events: none;
     }
-
+    .childer-row td:first-child  div{
+      visibility: hidden;
+    }
+    .childer-row{
+      background-color: whitesmoke;
+    }
     .el-table .success-row :first-child div {
       visibility: hidden;
     }
   
     .el-table .pid-row  td:nth-child(2) div {
-      visibility: hidden;
+      /* visibility: hidden; */
     }
 
     .bottom-msg {
@@ -1149,9 +1100,13 @@ export default {
       width: auto;
       border-radius: 0 30px 30px 0;
       margin-left: -5px;
+      margin-right: 10px;
       height: 32px;
 
 
+    }
+    .el-checkbox:last-of-type{
+      margin-left: 10px;
     }
 
     .button-with-header {
@@ -1160,11 +1115,13 @@ export default {
 
     .comprehensive-container .select-item {
       margin-left: 10px;
+      width: 20%;
     }
 
     .comprehensive-container {
       .select-item:first-child {
         margin-left: -5px;
+        width: 19%;
       }
 
       input {
