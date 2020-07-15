@@ -15,7 +15,7 @@ require('./middleware')(app);
 let prod = 10010;
 if (process.env.NODE_ENV === 'production') {
 	prod = process.env.PORT;
-	// prod = 8080;
+	prod = 8080;
 	console.log('服务端部署，端口号为：', process.env.PORT);
 }
 console.log(prod);
