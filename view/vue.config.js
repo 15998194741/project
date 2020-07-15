@@ -9,7 +9,7 @@ const name = '青果灵动';
 // 如果你的端口设置为80，
 // 使用管理员特权执行命令行。
 // 例如，Mac: sudo npm run
-const port = 5001; // dev port
+const port = 80; // dev port
 
 // 所有配置项解释都可以在 https://cli.vuejs.org/config/ 中找到
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
         // target: 'http://10.1.35.78:10010',
         // target: 'http://123.57.86.38:10010',
         // target: 'http://127.0.0.1:10010',
-        target: 'http:106.75.7.83',
+        target: 'http:106.75.7.83:8080',
         changeOrigin: true
       }
     }
