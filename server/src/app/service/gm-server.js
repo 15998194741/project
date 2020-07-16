@@ -51,12 +51,12 @@ class GmServerService extends BaseService{
 			where += key ==='serverid'?` and serverid = '${value}'`: ` and serverid='${value}' and not(childrens is null)   `;
 		}
 		
-		console.log(where);
+		// console.log(where);
 		let selectSql = `select * from gm_server  ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
 		
 		let arr =  await dbSequelize.query(selectSql);
 		let totalSql = `select count(*) as total from gm_server ${where} and (pid is null or  trim(pid) ='')  `;
-		console.log(totalSql);
+		// console.log(totalSql);
 		let totals = await dbSequelize.query(totalSql);
 	
 		let {total} = totals[0][0];
@@ -74,7 +74,7 @@ class GmServerService extends BaseService{
 				return item.childrens?{...item, hasChildren: true}:item;
 			});
 		}
-		console.log(pidarr);
+		// console.log(pidarr);
 		let res = {
 			total,
 			table:pidarr,
