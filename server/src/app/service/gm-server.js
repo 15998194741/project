@@ -55,20 +55,26 @@ class GmServerService extends BaseService{
 		let selectSql = `select * from gm_server  ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
 		
 		let arr =  await dbSequelize.query(selectSql);
-		// let totalSql = `select count(*) as total from gm_server ${where} and (pid is null or  trim(pid) ='') order by id limit ${pagesize} offset (${pagesize}*${page-1})`;
-		// let total = await dbSequelize.query(totalSql);
-		
+		let totalSql = `select count(*) as total from gm_server ${where} and (pid is null or  trim(pid) ='')  `;
+		console.log(totalSql);
+		let totals = await dbSequelize.query(totalSql);
+	
+		let {total} = totals[0][0];
+	
 		arr.map(value => value.dataValues);
-		let  total = arr[0].length;
-		
-		let displayNumSql = `SELECT count(display) as num,display  from gm_server ${where} and (pid is null or  trim(pid) ='') GROUP BY display ORDER BY display limit ${pagesize} offset (${pagesize}*${page-1}) `;
+		// let  total = arr[0].length;
+		let displayNumSql = `SELECT count(display) as num,display  from gm_server where id in ( SELECT id from gm_server ${where} and (pid is null or  trim(pid) ='')  ORDER BY id limit ${pagesize} offset (${pagesize}*${page-1}) ) GROUP BY display `;
 		let displayNum = await dbSequelize.query(displayNumSql);
+		// console.log(displayNumSql);
+		// console.log(123456);
+		// console.log(displayNum);
 		let pidarr = [];
 		if(arr[0].length > 0){
 			 pidarr = arr[0].map(item =>{
 				return item.childrens?{...item, hasChildren: true}:item;
 			});
 		}
+		console.log(pidarr);
 		let res = {
 			total,
 			table:pidarr,
@@ -96,7 +102,7 @@ class GmServerService extends BaseService{
 		let plaform =  data[0].plaform;
 		let test =data[0].test;
 		let querySql = `insert into gm_server (serverid ,childrens,gameid,channel,plaform,display,test)VALUES ('${pid}',array[${children.join(',')}],'${data.gameid}',array[${channel.join(',')}],'${plaform}','3','${test}')  `;
-		console.log(querySql);
+		// console.log(querySql);
 		let res = await dbSequelize.query(querySql);
 		return res;
 	

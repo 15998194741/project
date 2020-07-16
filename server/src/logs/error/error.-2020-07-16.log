@@ -1,0 +1,144 @@
+[2020-07-16T14:18:10.833] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594880290832
+err name: SequelizeDatabaseError
+err message: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-16T14:20:42.679] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594880442679
+err name: SequelizeDatabaseError
+err message: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-16T14:43:29.596] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594881809596
+err name: SequelizeDatabaseError
+err message: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-16T14:45:16.475] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594881916475
+err name: SequelizeDatabaseError
+err message: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-16T14:56:18.651] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594882578651
+err name: SequelizeDatabaseError
+err message: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+err stack: SequelizeDatabaseError: column "gm_server.id" must appear in the GROUP BY clause or be used in an aggregate function
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-16T14:57:04.171] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/server/findServer?plaform=&display=&load=&srttime=&key=serverid&value=&test=&mergeserver=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"plaform":"","display":"","load":"","srttime":"","key":"serverid","value":"","test":"","mergeserver":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1594882624170
+err name: SequelizeDatabaseError
+err message: syntax error at or near "GROUP"
+err stack: SequelizeDatabaseError: syntax error at or near "GROUP"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
