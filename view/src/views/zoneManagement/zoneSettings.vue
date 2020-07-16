@@ -199,7 +199,7 @@
         </el-form-item>
         <el-form-item label="测试机">
           <el-switch v-model="createForm.test" active-color="#13ce66"   active-value='1' inactive-value='0' inactive-color="#ff4949"></el-switch>
-          <el-button type="danger" icon="el-icon-refresh-right"    @click="createFormResetForm('createForm')">清空</el-button>
+          <el-button type="danger" icon="el-icon-refresh-right" style="position: absolute;left: 500%;"    @click="createFormResetForm('createForm')">清空</el-button>
         </el-form-item>
         <el-form-item label="资源地址" class="createFormAlertButtom" hide-required-asterisk required prop='address' >
           <el-input v-model="createForm.address"  class="alterbuttominput" placeholder="请输入资源地址"></el-input>
@@ -539,6 +539,7 @@ export default {
     console.log(this.formchange.display, this.formchange.index);
   },
   async loadpid(tree, treeNode, resolve) {
+   
     let res = await findServerByID(tree);
     resolve(res.data.map(item=>{
       delete item.pid;
@@ -569,7 +570,8 @@ export default {
       .catch(err => false);
     if (mergetrue) {
       let res = await ServerMerge(this.allselectchange);
-      this.$message.warning('合服成功!'); 
+      this.$message.success('合服成功!'); 
+      this.filterFormChange('flush');
     }
    
   },
@@ -592,22 +594,19 @@ export default {
           cancelButtonText: '取消',
           type: 'warning' })
           .catch(err => false);
-        if (doubleTrue) {
-          let res = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
-          if (res.code === 200) {
-            this.$message({
-              type: 'success',
-              message: '创建成功!'
-              
-            });
-            this.newCreateServer();
-            this.$refs[formName].resetFields();
-          } else {
-            this.$message({
-              type: 'warning',
-              message: '创建失败!'
-            });
-          }
+        if (!doubleTrue) {
+          return;
+        }
+        this.filterFormChange('flush');
+        let { code, message } = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
+        this.$message({
+          type: code === 200 ? 'success' : 'warning',
+          message: message
+        });
+        if (code === 200) {
+          this.newCreateServer();
+          this.$refs[formName].resetFields();
+          this.filterFormChange('flush');
         }
       }
     });
@@ -651,6 +650,20 @@ export default {
       page: 1,
       pagesize: 10
     };
+    this.tableData = [{
+      plaform: '',
+      display: '',
+      load: '',
+      channel: '',
+      srttime: '',
+      key: '',
+      value: '',
+      test: '',
+      mergeserver: '',
+      page: '',
+      pagesize: '',
+      gameid: ''
+    }];
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
     
   },
@@ -679,7 +692,6 @@ export default {
     }
     let res = await findServerByID(req);
     this.tableData = res.data;
-    
     this.displayNum = '';
     this.total = res.data.length;
     return;
@@ -737,8 +749,15 @@ export default {
   //停用传参
   async handleStop(index, row) {
     // console.log(index,);
+    let mergetrue = await this.$confirm('是否确认停用区服?', '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning' })
+      .catch(err => false);
+    if (!mergetrue) {return;}
     let res = await stopserver({ ...row, gameid: this.gameid });
     if (res.code === 200) {
+      this.filterFormChange('flush');
       findServer(this.filterForm).then(res=>{this.inserttable(res);});
     }
   },
@@ -761,7 +780,7 @@ export default {
           return Promise.resolve(true);
         } else {
           this.$message({
-            type: 'success',
+            type: 'info',
             message: '创建失败!'
           });
           return Promise.resolve(false);
@@ -810,8 +829,6 @@ export default {
     }).then(() => {
       serverallupdate(data).then(res => {
         if (res.code === 200) {
-          
-        
           this.tableData.map(item=>{
             if (this.allselectchange.find(_item=> _item.id === item.id)) {
               item.display = this.radio3;
@@ -838,42 +855,47 @@ export default {
   },
   //区服修改
   async updateServerToOne() {
-    let a = await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning'
-    }).then(() => {
+    try {
+      await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      });
       this.loading = true;
-      let a = serverUpdateToOne({ ...this.formchange }).then(res => {
-        if (res.code === 200) {
-          this.$message({
-            type: 'success',
-            message: '修改成功!'
-          });
-          return Promise.resolve(true);
-        } else {
-          this.$message({
-            type: 'success',
-            message: '修改失败!'
-          });
-          return Promise.resolve(false);
-        }
-      });
-      return Promise.resolve(a);
-    }).catch(() => {
+      let { code } = await serverUpdateToOne({ ...this.formchange });
+      if (code !== 200) { return;}
       this.$message({
-        type: 'info',
-        message: '已取消'
+        type: 'success',
+        message: '成功'
       });
-    });
-
-    if (a) {
+      // 获取最新任务列表
       let index = this.formchange.index;
-      console.log(this.tableData[index]);
+      // console.log(this.tableData[index]);
       this.tableData[index].display = this.formchange.display;
+      this.tableData = [{
+        plaform: '',
+        display: '',
+        load: '',
+        channel: '',
+        srttime: '',
+        key: '',
+        value: '',
+        test: '',
+        mergeserver: '',
+        page: '',
+        pagesize: '',
+        gameid: ''
+      }];
+      this.filterFormChange('flush');
       this.loading = false;
       this.dialogFormVisiblechange = false;
-    
+    } catch (error) {
+      console.log(error);
+      this.loading = false;
+      this.$message({
+        type: 'info',
+        message: '修改失败'
+      });
     }
   },
   inserttable(res) {
@@ -965,8 +987,8 @@ export default {
     }
 
     .el-table .success-row {
-      background: yellow;
-      pointer-events: none;
+      background: darkgray;
+      /* pointer-events: none; */
     }
     .childer-row td:first-child  div{
       visibility: hidden;
@@ -974,7 +996,7 @@ export default {
     .childer-row{
       background-color: whitesmoke;
     }
-    .el-table .success-row :first-child div {
+    .el-table .success-row td:first-child div {
       visibility: hidden;
     }
   
