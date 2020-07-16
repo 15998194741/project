@@ -13,7 +13,7 @@ require('./middleware')(app);
 // app.use(graphql);
 
 // let prod = 10010;
-let prod = 30000;
+let prod = 8080;
 if (process.env.NODE_ENV === 'production') {
 	prod = process.env.PORT;
 	prod = 8080;
