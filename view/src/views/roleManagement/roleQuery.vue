@@ -10,7 +10,7 @@
   </div>
   <div class="role-container-search">
     <div class="server-container">ID：
-      <el-select v-model="filterForm.key" value='serverid'  placeholder="请选择" name='idselect' size='small'>
+      <el-select v-model="filterForm.key"   placeholder="请选择" name='idselect' size='small'>
         <el-option v-for="(item, index) in idoptions" :key="index" :label="item.label" :value="item.value">
         </el-option>
       </el-select>
@@ -36,40 +36,44 @@
     </div>
   </div>
 
-  <div class="role-container-body">
+  <div id='body' class="role-container-body">
     <el-table
     ref="multipleTable"
-
-    element-loading-text="拼命加载中" 
-    element-loading-spinner="el-icon-loading"
-    element-loading-background="rgba(0, 0, 0, 0.8)" 
-    
+    border
     :data="tableData" 
     >
-    <el-table-column  type="selection" width="55"></el-table-column>
- 
-    <el-table-column v-for='column in tablecolumn' :label="column.label"  >
+    <el-table-column  type="selection" width="40"></el-table-column>
+    <el-table-column type="expand">
+      <template slot-scope="props">
+        <el-form label-position="left" inline class="demo-table-expand">
+          <el-form-item v-for="(item,index) in tablecolumns" :key='index' :label="item.label">
+            <span>{{ props.row[item.prop] }}</span>
+          </el-form-item>      
+        </el-form>
+      </template>
+    </el-table-column>
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
    
   </el-table>
   </div>
   <div class="role-container-bottom">
-页码
+页码{{screenWidth}}--{{screenHeight}}
   </div>
 </div>
 </template>
 
 <script>
-  import { findComponents } from '@/api/components.js';
-
+import { findComponents } from '@/api/components.js';
+import elementResizeDetectorMaker from 'element-resize-detector';
 export default {
 
   name: 'rolequery',
   data() {
     return {
-      multipleTable:'',
-  filterForm: {
+      multipleTable: '',
+      filterForm: {
         plaform: '',
         display: '',
         load: '',
@@ -82,7 +86,7 @@ export default {
         page: 1,
         pagesize: 10
       },
-  selectForm: [{
+      selectForm: [{
         label: '平台',
         multiple: false,
         key: 'plaform',
@@ -146,7 +150,7 @@ export default {
         }, {
           label: '禁言',
           value: '2'
-        },]
+        }]
       }, {
         label: '封禁范围',
         key: 'mergeserver',
@@ -165,48 +169,78 @@ export default {
         }, {
           label: 'IP',
           value: '3'
+        }, {
+          value: '',
+          label: '关键字'
         }]
       }
-      ], 
-      tableData: [{
-        plaform: '123',
-        display: '456',
-        load: '789',
-        channel: '123',
-        srttime: '123',
-        key: '123',
+      ],
+      idoptions: [{
+        label: '角色ID',
+        value: 'serverid'
+
+      }, {
+        label: '账户ID',
+        value: '2'
+      }, {
+        label: 'IP',
+        value: '3'
+      }, {
         value: '',
-        test: '',
-        mergeserver: '',
-        page: '',
-        pagesize: '',
-        gameid: ''
+        label: '关键字'
+      }
+
+      ],
+      tableData: [{
+        roleid: '123',
+        account_id: '456',
+        role_name: '789',
+        palform: '123',
+        channel: '123',
+        distinct_id: '123',
+        machine: '123',
+        serverid: '123',
+        level: '123',
+        vip_level: '123',
+        sum_recharge: '123',
+        ip: '123',
+        regtime: '123',
+        update_time: '123',
+        banned_type: '123',
+        banned_area: '123',
+        banned_reason: '123',
+        banned_time: '123',
+        stime_etime: '123'
       }],
-      tablecolumn:[
-          {label:'角色ID',prop:'plaform'},
-          {label:'账户ID',prop:'display'},
-          {label:'昵称',prop:'display'},
-          {label:'平台',prop:'display'},
-          {label:'客户端',prop:'display'},
-          {label:'设备ID',prop:'display'},
-          {label:'设备类型',prop:'display'},
-          {label:'区服ID',prop:'display'},
-          {label:'等级',prop:'display'},
-          {label:'VIP等级',prop:'display'},
-          {label:'付费总额',prop:'display'},
-          {label:'IP',prop:'display'},
-          {label:'注册时间',prop:'display'},
-          {label:'最后登录时间',prop:'display'},
-          {label:'封禁类型',prop:'display'},
-          {label:'封禁原因',prop:'display'},
-          {label:'封禁范围',prop:'display'},
-          {label:'封禁范围',prop:'display'},
-          {label:'封禁时长',prop:'display'},
-          {label:'封禁时间-解封时间',prop:'display'},
-        ]
-    }},
-    mounted() {
-      findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
+      tablecolumn: [
+        { label: '角色ID', prop: 'roleid' },
+        { label: '账户ID', prop: 'account_id' },
+        { label: '昵称', prop: 'role_name' },
+        { label: '平台', prop: 'palform' },
+        { label: '客户端', prop: 'channel' },
+        { label: '设备ID', prop: 'distinct_id' },
+        { label: '设备类型', prop: 'machine' },
+        { label: '区服ID', prop: 'serverid' },
+        { label: '等级', prop: 'level' },
+        { label: 'VIP等级', prop: 'vip_level' }
+      ],
+      tablecolumns: [
+        { label: '付费总额', prop: 'sum_recharge' },
+        { label: 'IP', prop: 'ip' },
+        { label: '注册时间', prop: 'regtime' },
+        { label: '最后登录时间', prop: 'update_time' },
+        { label: '封禁类型', prop: 'banned_type' },
+        { label: '封禁范围', prop: 'banned_area' },
+        { label: '封禁原因', prop: 'banned_reason' },
+        { label: '封禁时长', prop: 'banned_time' },
+        { label: '封禁时间-解封时间', prop: 'stime_etime' }
+      ],
+      screenWidth: 160,
+      screenHeight: ''
+    };
+  },
+  mounted() {
+    findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
       let components = res.data.values.map(item=>({
         label: item,
         value: item
@@ -214,18 +248,70 @@ export default {
       this.selectForm[1].options = this.selectForm[1].options.concat(components);
       this.clientOptions = components;
     });
+    // this.screenWidth = document.body.clientWidth;
+    // this.screenHeight = document.body.clientHeight;
+    // window.onresize = () =>{
+    //   return (()=>{
+    //     this.screenWidth = document.body.clientWidth;
+    //     this.screenHeight = document.body.clientHeight;
+    //   })();
+    // };
+    const _this = this;
+    
+    const erd = elementResizeDetectorMaker();
+    erd.listenTo(document.getElementById('body'), element =>{
+      console.log(element.offsetWidth);
+      switch (element.offsetWidth) {
+        case 1840: this.screenWidth = 174; break;
+        // case 1830: this.screenWidth = 173; break;
+        // case 1820: this.screenWidth = 172; break;
+        // case 1810: this.screenWidth = 171; break;
+        // case 1800: this.screenWidth = 170; break;
+        case 1700: this.screenWidth = 160; break;
+        // case 1710: this.screenWidth = 161; break;
+        // case 1720: this.screenWidth = 162; break;
+        // case 1730: this.screenWidth = 163; break;
+        // case 1740: this.screenWidth = 164; break;
+        // case 1750: this.screenWidth = 165; break;
+        // case 1760: this.screenWidth = 166; break;
+        // case 1770: this.screenWidth = 167; break;
+        // case 1780: this.screenWidth = 168; break;
+        // case 1790: this.screenWidth = 169; break;
 
+      }
+      // if (element.offsetWidth === 1840) {
+      //   this.screenWidth = 174;
+      // } else if (element.offsetWidth === 1700) {
+      //   this.screenWidth = 160;
+      // }
+      // _this.$nextTick(()=>{
+      //   this.screenHeight = '11123123';
+      // });
+    });
 
-    },
-    created(){
+  },
+  created() {
   
-    }
+  }
 };
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
 .role-container{
-
+    .demo-table-expand{display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-size: 18px;
+    label{
+      width: 140px;
+    color: #99a9bf;
+    }
+    .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+    text-align: center;
+  }
+    }
   .role-container-body{
     margin: 10px;
     background-color: white;

@@ -314,11 +314,11 @@ export default {
           label: '繁忙',
           value: '2'
         }, {
-          label: '维护',
-          value: '3'
-        }, {
           label: '爆满',
           value: '4'
+        }, {
+          label: '维护',
+          value: '3'
         }]
       }, {
         label: '合服',
@@ -553,7 +553,6 @@ export default {
     let dispalys = obj.display !== '3';
     if (dispalys) {
       await this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
-      
       return;
     }
     obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });

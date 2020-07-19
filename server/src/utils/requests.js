@@ -20,21 +20,21 @@ class Ta{
 		this.method = 'POST';
 		this.res='';
 	}
-	async tasql(sql){
-		let res ={
+	async tasql(sql, token){
+
+		let req ={
 			url:this.url,
 			method:this.method,
 			headers:this.headers,
 			form:{
 				sql,
-				'token':'YErNGkQ0L94iVtuWV8MusVmckw1C3k3cS08yTw5U02BilgzNKF71AtiGeMUenMDn',
-				// 'format':'csv'
+				token,
+				
 			}};
-		return new Promise((resolve, reject)=>{
-			request(res, (error, response, body)=>{
+		let res = await new Promise((resolve, reject)=>{
+			request(req, (error, response, body)=>{
 				if(!error && response.statusCode == 200){
 					let talist = body.split('\r\n');
-					// console.log(talist);
 					talist[0] = JSON.parse(talist[0]).data.headers;
 					for(let i = 1 ;i<talist.length-1;i++){
 						talist[i]= eval(talist[i]);
@@ -45,6 +45,20 @@ class Ta{
 				}
 			});
 		}); 
+	
+		let resu = [];
+		for(let i=0;i<res[0].length;i++){
+			res[0][i]= res[0][i].replace(/^#(.*)$/, '$1');
+		}
+		for(let i=1;i<res.length;i++){
+			var a = {};
+			for(let j=0;j<res[0].length;j++){
+			
+				a[res[0][j]]=res[i][j];
+			}
+			resu.push(a);
+		}
+		return resu;
 		
 	}
 	//根据表名字，token查找区服数据

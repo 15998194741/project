@@ -1,0 +1,123 @@
+[2020-07-19T14:15:30.935] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595139330935
+err name: ReferenceError
+err message: gameid is not defined
+err stack: ReferenceError: gameid is not defined
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:72:16)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.queryByParms (E:\third\project\server\src\app\service\Character.js:77:30)
+    at _callee$ (E:\third\project\server\src\app\controllers\/Character.js:17:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\project\server\src\app\controllers\Character.js:82:30)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+*************** error log end ***************
+
+[2020-07-19T14:54:31.871] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595141671871
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byData (E:\third\project\server\src\app\service\/Character.js:10:28)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:74:33)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.queryByParms (E:\third\project\server\src\app\service\Character.js:78:30)
+    at _callee$ (E:\third\project\server\src\app\controllers\/Character.js:17:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\project\server\src\app\controllers\Character.js:82:30)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+*************** error log end ***************
+
+[2020-07-19T14:55:08.218] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"plaform":123}
+response time: 1595141708218
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byData (E:\third\project\server\src\app\service\/Character.js:10:28)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:74:33)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.queryByParms (E:\third\project\server\src\app\service\Character.js:78:30)
+    at _callee$ (E:\third\project\server\src\app\controllers\/Character.js:17:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\project\server\src\app\controllers\Character.js:82:30)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+*************** error log end ***************
+
