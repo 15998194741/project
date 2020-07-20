@@ -80,10 +80,9 @@ class CharacterService{
 			mergeserver,
 			page,
 			pagesize,
-			
+			gameid
 		  } = data;
-		let gameid= 1
-		let token = CharacterService.byOne(`select * from gm_game_token where gameid = '${gameid}' and type='character'`);
+		dbSequelize.query(`select * from gm_game_token where gameid = '${gameid}' and type='character'`);
 		let wheres = CharacterService.byData({plaform, display, load, test});
 		wheres += CharacterService.byBetween(srttime);
 		wheres += CharacterService.byInArray({});
