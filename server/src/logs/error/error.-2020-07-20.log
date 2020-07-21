@@ -1,0 +1,241 @@
+[2020-07-20T10:52:05.809] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595213525808
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byBetween (E:\third\project\server\src\app\service\/Character.js:27:27)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:89:30)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.queryByParms (E:\third\project\server\src\app\service\Character.js:81:30)
+    at _callee$ (E:\third\project\server\src\app\controllers\/Character.js:17:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\project\server\src\app\controllers\Character.js:82:30)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+*************** error log end ***************
+
+[2020-07-20T10:52:50.366] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595213570366
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byBetween (E:\third\project\server\src\app\service\/Character.js:27:27)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:89:30)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.queryByParms (E:\third\project\server\src\app\service\Character.js:81:30)
+    at _callee$ (E:\third\project\server\src\app\controllers\/Character.js:17:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at createserver (E:\third\project\server\src\app\controllers\Character.js:82:30)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+*************** error log end ***************
+
+[2020-07-20T10:53:19.829] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595213599828
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byBetween (E:\third\project\server\src\app\service\/Character.js:27:27)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:89:31)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-20T10:53:59.490] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"plaform":123}
+response time: 1595213639490
+err name: TypeError
+err message: Cannot convert undefined or null to object
+err stack: TypeError: Cannot convert undefined or null to object
+    at Function.keys (<anonymous>)
+    at Function.byBetween (E:\third\project\server\src\app\service\/Character.js:27:27)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:90:31)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-20T11:18:08.686] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215088686
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-20T11:18:38.211] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215118210
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-20T11:18:56.433] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215136433
+err name: ReferenceError
+err message: test is not defined
+err stack: ReferenceError: test is not defined
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:89:66)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-20T11:18:58.519] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215138519
+err name: ReferenceError
+err message: test is not defined
+err stack: ReferenceError: test is not defined
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:89:66)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-20T11:19:08.282] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215148281
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-20T11:19:32.265] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215172264
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-20T11:19:44.611] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215184610
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-20T11:19:45.736] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/query
+request client ip:  ::1
+request body: 
+{"gameid":11231231231,"plaform":123,"test":111}
+response time: 1595215185736
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+

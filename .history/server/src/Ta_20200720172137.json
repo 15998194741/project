@@ -1,0 +1,28 @@
+{
+"#distinct_id": "distinct_id",                               
+"#account_id": "account_id", 
+"#type":"user_setOnce",                              
+"#ip": "10.1.1.224",
+"#time":"2020-07-20 14:00:00.000",
+"properties":{
+    "regtime": "regtime",                                               
+    "palform": "palform",                                              
+    "update_time": "update_time",                                  
+    "serverid": "serverid",                               
+    "channel": "channel",                                
+    "machine": "machine",                               
+    "level": "level",                             
+    "vip_level": "vip_level",                                
+    "role_name": "role_name",                               
+    "sum_recharge": "sum_recharge",                               
+    "servername":"servername",                                             
+    "roleid": "roleid",  
+}                                 
+                                           
+}
+
+
+
+
+
+

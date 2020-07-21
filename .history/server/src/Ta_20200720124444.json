@@ -1,0 +1,21 @@
+{
+"roleid": "123",                                                //角色ID
+"account_id": "456",                                                //用户id
+"role_name": "789",                                                //角色昵称
+"channel": "123",                                                //渠道客户端
+"distinct_id": "123",                                                //设备iD
+"machine": "123",                                                //设备类型
+"palform": "123",                                                //平台                     新增 Android  IOS
+"serverid": "123",                                                //区服ID                   新增
+"update_time": "123",                                                //最后登录时间           新增 
+"level": "123",                                                //等级
+"vip_level": "123",                                                //vip等级
+"sum_recharge": "123",                                                //付费总额
+"ip": "123",                                                //用户Ip地址
+"regtime": "123",                                                //注册时间
+"banned_type": "123",                                                //封禁类型   pgsql
+"banned_area": "123",                                                //封禁范围    pgsql
+"banned_reason": "123",                                                //封禁原因   pgsql
+"banned_time": "123",                                                //封禁时长
+"servername":"123"                                                        //区服名称
+  }
