@@ -1,0 +1,2387 @@
+[2020-07-22T10:59:10.819] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query
+request client ip:  ::ffff:127.0.0.1
+request query:  {"gameid":"1"}
+response time: 1595386750819
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T10:59:58.868] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query
+request client ip:  ::ffff:127.0.0.1
+request query:  {"gameid":"1"}
+response time: 1595386798868
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T11:00:20.923] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query
+request client ip:  ::ffff:127.0.0.1
+request query:  {"gameid":"1"}
+response time: 1595386820923
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T11:01:00.231] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=&regtime=&stime=&plaform=1&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"","regtime":"","stime":"","plaform":"1","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595386860231
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T11:01:02.411] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=&regtime=&stime=&plaform=2&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"","regtime":"","stime":"","plaform":"2","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595386862411
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T11:01:56.704] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=&regtime=&stime=&plaform=1&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"","regtime":"","stime":"","plaform":"1","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595386916704
+err name: undefined
+err message: undefined
+err stack: undefined
+*************** error log end ***************
+
+[2020-07-22T11:02:57.418] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=&regtime=&stime=&plaform=1&channel[]=%E5%B0%8F%E7%B1%B3&channel[]=%E4%B9%85%E6%B8%B8&servername=%E6%B5%8B%E8%AF%95%E6%9C%8D3&banned_type=&banned_area=1&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"","regtime":"","stime":"","plaform":"1","channel[]":["小米","久游"],"servername":"测试服3","banned_type":"","banned_area":"1","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595386977418
+err name: SequelizeDatabaseError
+err message: column "plaform" does not exist
+err stack: SequelizeDatabaseError: column "plaform" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T11:14:01.259] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595387641258
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:55:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:14:42.243] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595387682243
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:55:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:34:06.324] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595388846323
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:55:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:37:59.890] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389079890
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:56:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:38:40.004] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389120003
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:56:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:39:07.239] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389147239
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:56:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:39:31.930] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389171930
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:57:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:40:18.991] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389218991
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:57:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:41:14.501] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389274501
+err name: TypeError
+err message: Cannot read property 'length' of undefined
+err stack: TypeError: Cannot read property 'length' of undefined
+    at Ta._callee$ (E:\third\project\server\src\utils\/requests.js:56:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T11:43:29.140] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=ip&value=10.1.1.124&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"ip","value":"10.1.1.124","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595389409139
+err name: TypeError
+err message: Cannot read property 'headers' of undefined
+err stack: TypeError: Cannot read property 'headers' of undefined
+    at Request._callback (E:\third\project\server\src\utils\/requests.js:40:19)
+    at Request.self.callback (E:\third\project\server\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.<anonymous> (E:\third\project\server\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at IncomingMessage.<anonymous> (E:\third\project\server\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+*************** error log end ***************
+
+[2020-07-22T11:56:50.816] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=1123&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"1123","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595390210816
+err name: SequelizeDatabaseError
+err message: syntax error at or near ")"
+err stack: SequelizeDatabaseError: syntax error at or near ")"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T11:57:34.728] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=1123&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"1123","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595390254728
+err name: SequelizeDatabaseError
+err message: syntax error at or near ")"
+err stack: SequelizeDatabaseError: syntax error at or near ")"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T14:05:09.585] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=roleid&value=1&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"roleid","value":"1","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595397909584
+err name: TypeError
+err message: children.find is not a function
+err stack: TypeError: children.find is not a function
+    at map (E:\third\project\server\src\app\service\/Character.js:190:23)
+    at Array.map (<anonymous>)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:189:15)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T14:05:10.772] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/query?key=account_id&value=1&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"key":"account_id","value":"1","regtime":"","stime":"","plaform":"","channel":"","servername":"","banned_type":"","banned_area":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1595397910772
+err name: TypeError
+err message: children.find is not a function
+err stack: TypeError: children.find is not a function
+    at map (E:\third\project\server\src\app\service\/Character.js:190:23)
+    at Array.map (<anonymous>)
+    at _callee$ (E:\third\project\server\src\app\service\/Character.js:189:15)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T17:14:44.945] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409284945
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:14:53.717] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409293717
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:15:00.274] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409300274
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:15:03.495] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409303495
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:15:27.522] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409327522
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:15:42.263] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409342263
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:16:09.492] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409369492
+err name: TypeError
+err message: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+err stack: TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method.
+    at _createForOfIteratorHelper (E:\third\project\server\src\app\service\Character.js:45:375)
+    at _callee3$ (E:\third\project\server\src\app\service\Character.js:242:29)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:271:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+*************** error log end ***************
+
+[2020-07-22T17:21:04.795] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409664794
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:227:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:255:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:21:24.002] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409684001
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:24:29.874] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409869873
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:24:57.249] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409897248
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:25:30.304] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{}
+response time: 1595409930303
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:34:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:146:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:25:55.909] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409955909
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:34:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:146:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:26:05.337] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595409965337
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of Object
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:34:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:146:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:29:16.455] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595410156455
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:227:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:255:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:29:59.540] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595410199540
+err name: TypeError
+err message: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of Buffer or URL. Received an instance of File
+    at Object.open (fs.js:424:10)
+    at ReadStream.open (internal/fs/streams.js:146:13)
+    at new ReadStream (internal/fs/streams.js:134:10)
+    at Object.createReadStream (fs.js:1888:10)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T17:33:08.121] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595410388121
+err name: TypeError
+err message: Cannot read property 'path' of undefined
+err stack: TypeError: Cannot read property 'path' of undefined
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:227:43)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:255:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+*************** error log end ***************
+
+[2020-07-22T17:35:43.290] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595410543289
+err name: TypeError
+err message: Cannot read property 'path' of undefined
+err stack: TypeError: Cannot read property 'path' of undefined
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:229:43)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:257:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+*************** error log end ***************
+
+[2020-07-22T17:40:17.107] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595410817107
+err name: TypeError
+err message: Cannot read property 'path' of undefined
+err stack: TypeError: Cannot read property 'path' of undefined
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:228:43)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:256:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+*************** error log end ***************
+
+[2020-07-22T17:45:10.362] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595411110362
+err name: ReferenceError
+err message: fileType is not defined
+err stack: ReferenceError: fileType is not defined
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:227:11)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:265:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+*************** error log end ***************
+
+[2020-07-22T17:57:51.341] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595411871340
+err name: TypeError
+err message: this.findServername is not a function
+err stack: TypeError: this.findServername is not a function
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:35:8)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T20:04:20.774] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595419460774
+err name: Error
+err message: Cannot find module 'node-xlsx'
+Require stack:
+- E:\third\project\server\src\app\service\Character.js
+- E:\third\project\server\src\app\controllers\Character.js
+- E:\third\project\server\src\lib\router-permission\router.js
+- E:\third\project\server\src\lib\router-permission\index.js
+- E:\third\project\server\src\middleware\router.js
+- E:\third\project\server\src\middleware\index.js
+- E:\third\project\server\src\index.js
+- E:\third\project\server\start.js
+err stack: Error: Cannot find module 'node-xlsx'
+Require stack:
+- E:\third\project\server\src\app\service\Character.js
+- E:\third\project\server\src\app\controllers\Character.js
+- E:\third\project\server\src\lib\router-permission\router.js
+- E:\third\project\server\src\lib\router-permission\index.js
+- E:\third\project\server\src\middleware\router.js
+- E:\third\project\server\src\middleware\index.js
+- E:\third\project\server\src\index.js
+- E:\third\project\server\start.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:966:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:842:27)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:235:14)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:269:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T20:11:51.934] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595419911934
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419911891埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419911891埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFileSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at Object.parse (E:\third\project\server\node_modules\node-xlsx\src\index.js:8:21)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:269:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+*************** error log end ***************
+
+[2020-07-22T20:11:54.124] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595419914124
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419914069埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419914069埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFileSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at Object.parse (E:\third\project\server\node_modules\node-xlsx\src\index.js:8:21)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:269:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+*************** error log end ***************
+
+[2020-07-22T20:11:55.361] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595419915361
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419915303埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel/1595419915303埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFileSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at Object.parse (E:\third\project\server\node_modules\node-xlsx\src\index.js:8:21)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:269:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+*************** error log end ***************
+
+[2020-07-22T20:21:08.659] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595420468658
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420468596埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420468596埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFile [as readFileSync] (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:273:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+*************** error log end ***************
+
+[2020-07-22T20:21:24.614] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595420484614
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420484422埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420484422埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFile [as readFileSync] (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:273:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+*************** error log end ***************
+
+[2020-07-22T20:21:53.472] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595420513471
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420513319埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420513319埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFile [as readFileSync] (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T20:21:55.144] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595420515144
+err name: Error
+err message: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420515099埋点.xlsx'
+err stack: Error: ENOENT: no such file or directory, open 'E:\third\project\server\src\excel\1595420515099埋点.xlsx'
+    at Object.openSync (fs.js:458:3)
+    at Object.readFileSync (fs.js:360:35)
+    at read_binary (E:\third\project\server\node_modules\xlsx\xlsx.js:2628:44)
+    at readSync (E:\third\project\server\node_modules\xlsx\xlsx.js:20381:69)
+    at Object.readFile [as readFileSync] (E:\third\project\server\node_modules\xlsx\xlsx.js:20409:9)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:236:18)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T20:22:28.418] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595420548418
+err name: TypeError
+err message: js.forEach is not a function
+err stack: TypeError: js.forEach is not a function
+    at sheet_add_json (E:\third\project\server\node_modules\xlsx\xlsx.js:20756:5)
+    at Object.json_to_sheet (E:\third\project\server\node_modules\xlsx\xlsx.js:20784:43)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:240:24)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-07-22T20:32:42.328] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595421162327
+err name: Error
+err message: Cannot find module 'exceljs'
+Require stack:
+- E:\third\project\server\src\app\service\Character.js
+- E:\third\project\server\src\app\controllers\Character.js
+- E:\third\project\server\src\lib\router-permission\router.js
+- E:\third\project\server\src\lib\router-permission\index.js
+- E:\third\project\server\src\middleware\router.js
+- E:\third\project\server\src\middleware\index.js
+- E:\third\project\server\src\index.js
+- E:\third\project\server\start.js
+err stack: Error: Cannot find module 'exceljs'
+Require stack:
+- E:\third\project\server\src\app\service\Character.js
+- E:\third\project\server\src\app\controllers\Character.js
+- E:\third\project\server\src\lib\router-permission\router.js
+- E:\third\project\server\src\lib\router-permission\index.js
+- E:\third\project\server\src\middleware\router.js
+- E:\third\project\server\src\middleware\index.js
+- E:\third\project\server\src\index.js
+- E:\third\project\server\start.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:966:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:842:27)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at _callee3$ (E:\third\project\server\src\app\service\/Character.js:239:17)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at CharacterService.<anonymous> (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12)
+    at CharacterService.uploadFile (E:\third\project\server\src\app\service\Character.js:274:28)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/Character.js:33:39)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:274:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:97:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at uploadFile (E:\third\project\server\src\app\controllers\Character.js:145:28)
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+*************** error log end ***************
+
+[2020-07-22T20:57:27.054] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{}
+response time: 1595422647054
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type integer: "undefined"
+err stack: SequelizeDatabaseError: invalid input syntax for type integer: "undefined"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T20:57:40.367] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422660367
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T20:57:50.981] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422670980
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T20:59:14.909] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"gameid":"1"}
+response time: 1595422754909
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T20:59:33.101] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422773101
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:00:27.796] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422827796
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:01:04.272] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422864271
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:27.341] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422947340
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:02:44.695] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422964695
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:47.162] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422967162
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:47.830] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422967830
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:48.166] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422968166
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:48.362] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422968362
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:48.778] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422968778
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:49.883] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422969883
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:02:49.980] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422969980
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:02:50.073] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422970073
+err name: Error
+err message: File not found: E:\third\project\server\src\excel\1595422970020test.xlsx
+err stack: Error: File not found: E:\third\project\server\src\excel\1595422970020test.xlsx
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:50:13)
+*************** error log end ***************
+
+[2020-07-22T21:02:50.176] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422970175
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:50.382] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422970382
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:50.595] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422970595
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:02:51.706] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422971706
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:02:51.802] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422971802
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:02:52.199] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422972199
+err name: SequelizeDatabaseError
+err message: column "releid" does not exist
+err stack: SequelizeDatabaseError: column "releid" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-07-22T21:03:19.835] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595422999835
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:03:23.749] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595423003749
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:03:44.007] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/character/uploadFile
+request client ip:  ::1
+request body: 
+{"gameid":"1"}
+response time: 1595423024007
+err name: Error
+err message: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+err stack: Error: End of data reached (data length = 0, asked index = 4). Corrupted zip ?
+    at NodeBufferReader.checkIndex (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:26:19)
+    at NodeBufferReader.checkOffset (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:17:14)
+    at NodeBufferReader.readData (E:\third\project\server\node_modules\jszip\lib\reader\NodeBufferReader.js:14:10)
+    at NodeBufferReader.readString (E:\third\project\server\node_modules\jszip\lib\reader\DataReader.js:75:49)
+    at ZipEntries.isSignature (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:40:37)
+    at ZipEntries.readEndOfCentral (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:165:35)
+    at ZipEntries.load (E:\third\project\server\node_modules\jszip\lib\zipEntries.js:256:14)
+    at E:\third\project\server\node_modules\jszip\lib\load.js:49:20
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at XLSX.load (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:278:17)
+    at XLSX.readFile (E:\third\project\server\node_modules\exceljs\lib\xlsx\xlsx.js:54:24)
+*************** error log end ***************
+
+[2020-07-22T21:17:37.451] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595423857451
+err name: TypeError
+err message: The "path" argument must be of type string. Received function f2
+err stack: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received function f2
+    at validateString (internal/validators.js:120:11)
+    at parse (path.js:818:5)
+    at send (E:\third\project\server\node_modules\koa-send\index.js:58:22)
+    at _callee4$ (E:\third\project\server\src\app\controllers\/Character.js:46:9)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at downloads (E:\third\project\server\src\app\controllers\Character.js:180:27)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:23:9)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-22T21:18:18.896] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595423898896
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel'
+*************** error log end ***************
+
+[2020-07-22T21:18:48.380] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595423928379
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:18:50.914] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595423930914
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:20:21.039] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1595424021038
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:24:53.339] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595424293339
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:25:58.412] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595424358411
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:27:06.868] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595424426867
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
+[2020-07-22T21:27:30.675] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/character/downloads
+request client ip:  ::1
+request query:  {}
+response time: 1595424450675
+err name: Error
+err message: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+err stack: Error: ENOENT: no such file or directory, stat 'E:\third\project\server\third\project\server\src\excel\1595423023791test.xlsx'
+*************** error log end ***************
+
