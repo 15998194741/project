@@ -1,0 +1,20 @@
+[2020-07-27T11:20:45.409] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?game=%E5%88%BA%E5%AE%A2%E5%A5%91%E7%BA%A6&username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"game":"刺客契约","username":"admin"}
+response time: 1595820045409
+err name: TypeError
+err message: Cannot read property 'sort' of undefined
+err stack: TypeError: Cannot read property 'sort' of undefined
+    at map (E:\third\project\server\src\app\service\/user.js:71:18)
+    at Array.map (<anonymous>)
+    at _callee$ (E:\third\project\server\src\app\service\/user.js:70:10)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
