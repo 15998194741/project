@@ -1,0 +1,250 @@
+[2020-07-30T12:25:21.195] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:21.231] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:21.481] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:21.499] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:26.524] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["久游","小米","腾讯"]}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:26.527] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"123","value":"123"},{"label":"测试服3","value":"测试服3"},{"label":"测试服1","value":"测试服1"},{"label":"11","value":"11"},{"label":null,"value":null},{"label":"123","value":"123"},{"label":"123","value":"123"},{"label":"123","value":"123"},{"label":"1111","value":"1111"},{"label":"长澜？","value":"长澜？"},{"label":"111","value":"111"},{"label":"1","value":"1"},{"label":null,"value":null},{"label":"111","value":"111"},{"label":"11111","value":"11111"},{"label":"1111111","value":"1111111"},{"label":null,"value":null},{"label":"测试服2","value":"测试服2"},{"label":null,"value":null},{"label":"111","value":"111"},{"label":"123123","value":"123123"},{"label":"212","value":"212"},{"label":"12","value":"12"},{"label":"1111","value":"1111"}]},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T12:25:31.313] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/query?key=roleid&value=1&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10","resourceDesc":"角色查询","requestType":"GET","requestParams":"{\"key\":\"roleid\",\"value\":\"1\",\"regtime\":\"\",\"stime\":\"\",\"plaform\":\"\",\"channel\":\"\",\"servername\":\"\",\"banned_type\":\"\",\"banned_area\":\"\",\"page\":\"1\",\"pagesize\":\"10\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"修改成功","data":{"res":[{"user_id":735092683419160600,"account_id":"1","distinct_id":"1","active_time":"2020-07-21 11:15:54.654","reg_time":"2020-07-21 11:15:54.654","user_operation":"user_setOnce","server_time":"2020-07-21 11:15:53.054","update_time":"2020-02-02 12:00:00","kafka_offset":13498268,"event_date":20200722,"regtime":"2020-02-02 12:00:00","role_name":"牛逼克拉斯","sum_recharge":"10000","level":"180","roleid":"1","machine":"IOS","channel":"久游","servername":"黑暗森林","vip_level":"15","serverid":"2007161142507735","palform":"1","ip":"10.1.1.124"}],"total":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 12:25:30 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:48:42.243] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/outputConsume?roleid=4&object_id=&object_method=&object_name=&object_type=&object_number=&object_class=&page=1&pagesize=500","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"4\",\"object_id\":\"\",\"object_method\":\"\",\"object_name\":\"\",\"object_type\":\"\",\"object_number\":\"\",\"object_class\":\"\",\"page\":\"1\",\"pagesize\":\"500\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":{"res":[],"total":0}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:48:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:48:52.012] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/outputConsume?roleid=4&object_id=&object_method=&object_name=&object_type=&object_number=&object_class=&page=1&pagesize=500","resourceDesc":"","requestType":"GET","requestParams":"{\"roleid\":\"4\",\"object_id\":\"\",\"object_method\":\"\",\"object_name\":\"\",\"object_type\":\"\",\"object_number\":\"\",\"object_class\":\"\",\"page\":\"1\",\"pagesize\":\"500\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":{"res":[],"total":0}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:48:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:19.555] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:19.593] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E5%88%BA%E5%AE%A2%E5%A5%91%E7%BA%A6&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"刺客契约\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"刺客契约","gameid":2}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:21.129] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:21.146] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E6%97%A0%E7%BA%BF%E8%8B%B1%E9%9B%84&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"无线英雄\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"meta":null,"name":null,"url":null,"urlid":null,"pid":null}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"无线英雄","gameid":3}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:21 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:22.549] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:22 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:22.567] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"空翼冒险团\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:22 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:23.890] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:23 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:23.922] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E5%88%BA%E5%AE%A2%E5%A5%91%E7%BA%A6&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"刺客契约\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"刺客契约","gameid":2}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:23 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:25.483] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:25.501] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E6%97%A0%E7%BA%BF%E8%8B%B1%E9%9B%84&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"无线英雄\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"meta":null,"name":null,"url":null,"urlid":null,"pid":null}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"无线英雄","gameid":3}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:25 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:26.811] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:26.829] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"空翼冒险团\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:26 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:29.984] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:30.017] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E5%88%BA%E5%AE%A2%E5%A5%91%E7%BA%A6&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"刺客契约\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"刺客契约","gameid":2}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:31.621] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T13:49:31.642] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?game=%E7%A9%BA%E7%BF%BC%E5%86%92%E9%99%A9%E5%9B%A2&username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"game\":\"空翼冒险团\",\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 1:49:31 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T15:58:05.069] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 3:58:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T15:58:05.074] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 3:58:05 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T15:58:09.327] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 3:58:09 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T15:58:09.368] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 3:58:09 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:00:53.921] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:00:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:00:53.952] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:00:53 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:00:57.785] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/server/selectComponent?code=areaclothing","resourceDesc":"根据游戏ID 组件名称搜索 区服组件","requestType":"GET","requestParams":"{\"code\":\"areaclothing\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"values":["久游","小米","腾讯"]}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:00:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:00:57.788] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/findServername","resourceDesc":"区服名称获取","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查询成功","data":[{"label":"123","value":"123"},{"label":"测试服3","value":"测试服3"},{"label":"测试服1","value":"测试服1"},{"label":"11","value":"11"},{"label":null,"value":null},{"label":"123","value":"123"},{"label":"123","value":"123"},{"label":"123","value":"123"},{"label":"1111","value":"1111"},{"label":"长澜？","value":"长澜？"},{"label":"111","value":"111"},{"label":"1","value":"1"},{"label":null,"value":null},{"label":"111","value":"111"},{"label":"11111","value":"11111"},{"label":"1111111","value":"1111111"},{"label":null,"value":null},{"label":"测试服2","value":"测试服2"},{"label":null,"value":null},{"label":"111","value":"111"},{"label":"123123","value":"123123"},{"label":"212","value":"212"},{"label":"12","value":"12"},{"label":"1111","value":"1111"}]},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:00:57 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:01:14.273] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/query?key=roleid&value=1&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10","resourceDesc":"角色查询","requestType":"GET","requestParams":"{\"key\":\"roleid\",\"value\":\"1\",\"regtime\":\"\",\"stime\":\"\",\"plaform\":\"\",\"channel\":\"\",\"servername\":\"\",\"banned_type\":\"\",\"banned_area\":\"\",\"page\":\"1\",\"pagesize\":\"10\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"修改成功","data":{"res":[{"user_id":735092683419160600,"account_id":"1","distinct_id":"1","active_time":"2020-07-21 11:15:54.654","reg_time":"2020-07-21 11:15:54.654","user_operation":"user_setOnce","server_time":"2020-07-21 11:15:53.054","update_time":"2020-02-02 12:00:00","kafka_offset":13498268,"event_date":20200722,"regtime":"2020-02-02 12:00:00","role_name":"牛逼克拉斯","sum_recharge":"10000","level":"180","roleid":"1","machine":"IOS","channel":"久游","servername":"黑暗森林","vip_level":"15","serverid":"2007161142507735","palform":"1","ip":"10.1.1.124"}],"total":1}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:01:13 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:01:29.396] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/prohibitedMute","resourceDesc":"","requestType":"PUT","requestParams":"{\"type\":\"1\",\"area\":\"1\",\"time\":\"1\",\"beacuse\":\"788\",\"long\":\"78888\",\"value\":[{\"user_id\":735092683419160600,\"account_id\":\"1\",\"distinct_id\":\"1\",\"active_time\":\"2020-07-21 11:15:54.654\",\"reg_time\":\"2020-07-21 11:15:54.654\",\"user_operation\":\"user_setOnce\",\"server_time\":\"2020-07-21 11:15:53.054\",\"update_time\":\"2020-02-02 12:00:00\",\"kafka_offset\":13498268,\"event_date\":20200722,\"regtime\":\"2020-02-02 12:00:00\",\"role_name\":\"牛逼克拉斯\",\"sum_recharge\":\"10000\",\"level\":\"180\",\"roleid\":\"1\",\"machine\":\"IOS\",\"channel\":\"久游\",\"servername\":\"黑暗森林\",\"vip_level\":\"15\",\"serverid\":\"2007161142507735\",\"palform\":\"1\",\"ip\":\"10.1.1.124\",\"stime_etime\":\"2020-07-30 16:01:14----Invalid Date\",\"plaform\":\"\",\"banned_time\":\"undefined小时\",\"banned_type\":\"\",\"banned_area\":\"\"}]}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"操作成功","data":"ok"},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:01:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T16:01:30.511] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/character/query?key=&value=&regtime=&stime=&plaform=&channel=&servername=&banned_type=&banned_area=&page=1&pagesize=10","resourceDesc":"角色查询","requestType":"GET","requestParams":"{\"key\":\"\",\"value\":\"\",\"regtime\":\"\",\"stime\":\"\",\"plaform\":\"\",\"channel\":\"\",\"servername\":\"\",\"banned_type\":\"\",\"banned_area\":\"\",\"page\":\"1\",\"pagesize\":\"10\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"修改成功","data":{"res":[{"user_id":735092683419160600,"account_id":"1","distinct_id":"1","active_time":"2020-07-21 11:15:54.654","reg_time":"2020-07-21 11:15:54.654","user_operation":"user_setOnce","server_time":"2020-07-21 11:15:53.054","update_time":"2020-02-02T04:00:00.000Z","kafka_offset":13498268,"event_date":20200722,"regtime":"2020-02-02T04:00:00.000Z","role_name":"牛逼克拉斯","sum_recharge":"10000","level":"180","roleid":"1","machine":"IOS","channel":"久游","servername":"黑暗森林","vip_level":"15","serverid":"2007161142507735","palform":"1","ip":"10.1.1.124","id":56,"status":1,"create_user_id":null,"update_user_id":null,"create_time":"2020-07-29T16:00:00.000Z","gameid":1,"plaform":"","banned_type":"1","banned_area":"1","banned_reason":"788","banned_time":"78888","stime":"2020-07-30T16:01:30.000Z"}],"total":1}},"serverIp":"当前服务器id","userIp":"10.1.35.107","userId":null,"createTime":"2020-7-30 4:01:29 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:36.866] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:36 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:36.872] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:36 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:39.223] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:39.224] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:39 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:41.094] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:41.116] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:41 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:47.356] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:47 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:47.365] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:47 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:49.292] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:49.293] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:49 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:50.988] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:50 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T19:52:51.009] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 7:52:51 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T20:53:19.492] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/token","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"username":"admin","avatar":"http://wework.qpic.cn/bizmail/tBzSXZ7noicaWNIO15XKp1pU9m0ibZvPFbTHrjahY6Sp5iaEJdgq6h6ww/100","nickname":"管理员"}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 8:53:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
+[2020-07-30T20:53:19.534] [INFO] resLogger - 
+*************** log start ***************
+日志记录：{"resourceUrl":"/api/user/permission?username=admin","resourceDesc":"根据id查找数据","requestType":"GET","requestParams":"{\"username\":\"admin\"}","responseCode":200,"responseMessage":"","responseDate":{"code":200,"message":"查找成功","data":{"routes":[{"name":"区服管理","urlid":1,"children":[{"meta":1,"name":"区服设置","url":"/zoneManagement/zoneSettings","urlid":2,"pid":1}]},{"name":"角色管理","urlid":3,"children":[{"meta":1,"name":"角色查询","url":"/roleManagement/roleQuery","urlid":4,"pid":3},{"meta":1,"name":"聊天查询","url":"/roleManagement/chatQuery","urlid":5,"pid":3},{"meta":1,"name":"背包查询","url":"/roleManagement/rucksackQuery","urlid":6,"pid":3},{"meta":1,"name":"产消查询","url":"/roleManagement/prosumingQuery","urlid":7,"pid":3}]},{"name":"充值管理","urlid":8,"children":[{"meta":1,"name":"充值明细","url":"/rechargeManagement/rechargeDetails","urlid":9,"pid":8}]},{"name":"公告管理","urlid":10,"children":[{"meta":1,"name":"公告管理","url":"/announcedManagement/index","urlid":11,"pid":10}]},{"name":"邮件管理","urlid":12,"children":[{"meta":1,"name":"邮件管理","url":"/mailManagement/index","urlid":13,"pid":12}]},{"name":"活动管理","urlid":14,"children":[{"meta":1,"name":"活动管理","url":"/activityManagement/index","urlid":15,"pid":14}]},{"name":"CDK管理","urlid":16,"children":[{"meta":1,"name":"CDK管理","url":"/CDKManagement/index","urlid":17,"pid":16}]},{"name":"白名单管理","urlid":18,"children":[{"meta":1,"name":"白名单管理","url":"/whiteListManagement/index","urlid":19,"pid":18},{"meta":1,"name":"白名单邮件","url":"/whiteListManagement/whiteListMail","urlid":20,"pid":18}]},{"name":"GM管理","urlid":21,"children":[{"meta":1,"name":"GM管理","url":"/GMManagement","urlid":22,"pid":21}]}],"games":["空翼冒险团","刺客契约","无线英雄"],"gamename":"空翼冒险团","gameid":1}},"serverIp":"当前服务器id","userIp":"127.0.0.1","userId":null,"createTime":"2020-7-30 8:53:19 ├F10: PM┤","executionTime":0}
+*************** log end ***************
+
