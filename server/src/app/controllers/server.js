@@ -94,7 +94,7 @@ export class UserController {
 	async createServer(ctx){
 		
 		let user = ctx.user;
-		let  result = await gmServerService.create({...ctx.request.body, createUserId:user.id});
+		let result = await gmServerService.create({...ctx.request.body, createUserId:user.id});
 		ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 	/**
@@ -120,6 +120,7 @@ export class UserController {
 	async mergeServer(ctx){
 		ctx.log.resourceDesc = '区服合并';
 		let serverIDS = ctx.request.body;
+		// console.log(serverIDS);
 		let result = await gmServerService.mergeServer(serverIDS);
 		ctx.body = statusCode.SUCCESS_200('成功', result);
 	}

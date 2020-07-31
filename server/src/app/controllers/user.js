@@ -20,20 +20,14 @@ export class UserController {
 		let user = ctx.user;
 		let result = await UserServer.findUser(user.id, ctx.query.game);
 		// const result = await compon();
-
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
-
-
-
-
 	@get('/qf')
 	async qf(ctx) {
 		ctx.log.resourceDesc = '根据id查找数据';
 		let result = await Ta.tasql('select  sid,roleid,level,channel,force,role_gender,onlinesum,machine  from v_event_49   limit 100');
 		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
-	
 	@get('/token')
 	async toekn(ctx) {
 		ctx.log.resourceDesc = '根据id查找数据';

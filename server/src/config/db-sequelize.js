@@ -1,21 +1,10 @@
 const Sequelize = require('sequelize');
 import config from './db-config';
-
-
-
-
-
-
 const log4js = require('log4js');
 const logsConfig = require('../lib/logs.js');
 //加载配置文件
 log4js.configure(logsConfig);
 const debugLogger = log4js.getLogger('debugLogger');
-
-
-
-
-
 export const dbSequelize = new Sequelize(config.database, config.user, config.password, {
 	host: config.host,
 	dialect: config.dialect,

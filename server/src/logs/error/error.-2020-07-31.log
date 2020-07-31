@@ -1,0 +1,318 @@
+[2020-07-31T12:44:14.959] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1596170654959
+err name: ReferenceError
+err message: token is not defined
+err stack: ReferenceError: token is not defined
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:6:16)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\auth.js:85:17
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee4$ (E:\third\project\server\src\middleware\/permission.js:91:17)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\/permission.js:78:2
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/interceptor.js:77:10)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-31T12:44:15.057] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1596170655056
+err name: ReferenceError
+err message: token is not defined
+err stack: ReferenceError: token is not defined
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:6:16)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\auth.js:85:17
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee4$ (E:\third\project\server\src\middleware\/permission.js:91:17)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\/permission.js:78:2
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/interceptor.js:77:10)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-31T12:44:17.437] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1596170657437
+err name: ReferenceError
+err message: token is not defined
+err stack: ReferenceError: token is not defined
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:6:16)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\auth.js:85:17
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee4$ (E:\third\project\server\src\middleware\/permission.js:91:17)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\/permission.js:78:2
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/interceptor.js:77:10)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-31T12:44:17.592] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/permission?username=admin
+request client ip:  ::ffff:127.0.0.1
+request query:  {"username":"admin"}
+response time: 1596170657592
+err name: ReferenceError
+err message: token is not defined
+err stack: ReferenceError: token is not defined
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:6:16)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\auth.js:85:17
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee4$ (E:\third\project\server\src\middleware\/permission.js:91:17)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at E:\third\project\server\src\middleware\/permission.js:78:2
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/interceptor.js:77:10)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+*************** error log end ***************
+
+[2020-07-31T12:45:06.166] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1596170706166
+err name: JsonWebTokenError
+err message: jwt must be provided
+err stack: JsonWebTokenError: jwt must be provided
+    at module.exports (E:\third\project\server\node_modules\jsonwebtoken\verify.js:53:17)
+    at internal/util.js:297:30
+    at new Promise (<anonymous>)
+    at verify (internal/util.js:296:12)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/user.js:35:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at toekn (E:\third\project\server\src\app\controllers\user.js:160:23)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:31:9)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+*************** error log end ***************
+
+[2020-07-31T12:48:07.008] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1596170887008
+err name: JsonWebTokenError
+err message: jwt must be provided
+err stack: JsonWebTokenError: jwt must be provided
+    at module.exports (E:\third\project\server\node_modules\jsonwebtoken\verify.js:53:17)
+    at internal/util.js:297:30
+    at new Promise (<anonymous>)
+    at verify (internal/util.js:296:12)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/user.js:35:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at toekn (E:\third\project\server\src\app\controllers\user.js:160:23)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:23:8)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+*************** error log end ***************
+
+[2020-07-31T12:50:02.959] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/user/token
+request client ip:  ::ffff:127.0.0.1
+request query:  {}
+response time: 1596171002959
+err name: JsonWebTokenError
+err message: jwt must be provided
+err stack: JsonWebTokenError: jwt must be provided
+    at module.exports (E:\third\project\server\node_modules\jsonwebtoken\verify.js:53:17)
+    at internal/util.js:297:30
+    at new Promise (<anonymous>)
+    at verify (internal/util.js:296:12)
+    at _callee3$ (E:\third\project\server\src\app\controllers\/user.js:35:21)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at toekn (E:\third\project\server\src\app\controllers\user.js:160:23)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:23:8)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+*************** error log end ***************
+
+[2020-07-31T16:36:13.160] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/recharge/query?roleid=&stime=&plaform=&channel=&servername=&page=1&pagesize=10
+request client ip:  ::ffff:127.0.0.1
+request query:  {"roleid":"","stime":"","plaform":"","channel":"","servername":"","page":"1","pagesize":"10","gameid":"1"}
+response time: 1596184573159
+err name: TypeError
+err message: _recharge2.default.query is not a function
+err stack: TypeError: _recharge2.default.query is not a function
+    at _callee$ (E:\third\project\server\src\app\controllers\/recharge.js:13:38)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:32:7
+    at new Promise (<anonymous>)
+    at E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:21:12
+    at queryCharacter (E:\third\project\server\src\app\controllers\recharge.js:76:32)
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at next (E:\third\project\server\node_modules\koa-compose\index.js:45:18)
+    at E:\third\project\server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (E:\third\project\server\node_modules\koa-compose\index.js:44:32)
+    at E:\third\project\server\node_modules\koa-compose\index.js:36:12
+    at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at E:\third\project\server\node_modules\koa-mount\index.js:52:32
+    at next (E:\third\project\server\node_modules\koa\node_modules\koa-compose\index.js:42:32)
+    at _callee$ (E:\third\project\server\src\middleware\/auth.js:24:9)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
