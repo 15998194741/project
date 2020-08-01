@@ -10,8 +10,8 @@ class GmDictService extends BaseService{
 	}
 	async findcomponent(parms) {
 		let {gameid} = parms ;
-		let coms = await dbSequelize.query(`select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='${gameid}'`);
-		coms = coms[0][0];
+		dbSequelize.query(`select channel  as  values from gm_gam_token where type='areaclothing'  gameid='${gameid}'`);
+		let coms = await gmDictDao.findSqlByParamsToOne('', parms);
 		return coms;
 	}
 }

@@ -43,16 +43,12 @@ class rechargeService{
         users AS b 
         ON a.uid=b.uid 
        ${where}
-       limit ${pagesize}
-       offset ${pagesize*(page-1)} 
-        `;
-		let totalsql = `SELECT 
-        count(*) as total
-        FROM  pay AS a 
-        LEFT JOIN  
-        users AS b 
-        ON a.uid=b.uid 
-       ${where}`;
+       `;
+		let querysql = sql + `
+        limit ${pagesize}
+       offset ${pagesize*(page-1)} `;
+      
+      
 		let res = await new Promise((resolve, reject)=>{
 			connection.query(sql, async(err, result)=>{
 				if(err){
@@ -63,23 +59,8 @@ class rechargeService{
             
 			});
 		});
-		let total = await new Promise((resolve, reject)=>{
-			connection.query(totalsql, async(err, result)=>{
-				if(err){
-					console.log(err);
-					return;
-				}
-				return resolve(result);
-            
-			});
-		});
 		res = JSON.parse(JSON.stringify(res));
-		total = total[0].total;
-		return {res, total};
-	}
-	async replenishment(data){
-		let { gameid }= data;
-		return await Cp.post(gameid, 'Replenishment', data);
+		return res;
 	}
 
 

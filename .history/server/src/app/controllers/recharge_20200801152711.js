@@ -15,7 +15,7 @@ export class rechargeController {
 	}
     @post('/replenishment')
     async replenishment(ctx) {
-    	ctx.log.resourceDesc = '充值订单补单';
+    	ctx.log.resourceDesc = '充值订单查询';
     	let data = ctx.request.body;
     	let result = await rechargeService.replenishment(data);
     	ctx.body = statusCode.SUCCESS_200('修改成功', result);

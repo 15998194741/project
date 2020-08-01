@@ -7,8 +7,7 @@ class Cp{
 		this.url= 'http://localhost:30000/api/';
 	}
 	async post(gameid, url, data){
-		let urls =await dbSequelize.query('select url from gm_game_token');
-		urls = urls[0].url;
+		dbSequelize.query('select token from gm');
 		let res = {
 			url:this.url+url,
 			method:'GET',

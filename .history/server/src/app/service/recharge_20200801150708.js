@@ -36,6 +36,7 @@ class rechargeService{
 		where += !srttime?'':` and a.createdAt between '${srttime[0]}' and '${srttime[1]}'`;
 		where += !plaform ?  '' :plaform === '2'?' and type = \'apple\' ':plaform==='1'?' and type in (\'union\',\'alipay\',\'wechat\') ' :'';
 		where += !serverid?'':` and serverId = '${serverid}'`;
+		console.log(where);
 		var sql = `SELECT 
         roleId,roleName,platform,a.uid,pid,channel,deviceid,isOK,isSend,serverId,price,tid,a.createdAt,a.updatedAt ,type
         FROM  pay AS a 
@@ -46,13 +47,6 @@ class rechargeService{
        limit ${pagesize}
        offset ${pagesize*(page-1)} 
         `;
-		let totalsql = `SELECT 
-        count(*) as total
-        FROM  pay AS a 
-        LEFT JOIN  
-        users AS b 
-        ON a.uid=b.uid 
-       ${where}`;
 		let res = await new Promise((resolve, reject)=>{
 			connection.query(sql, async(err, result)=>{
 				if(err){
@@ -63,23 +57,8 @@ class rechargeService{
             
 			});
 		});
-		let total = await new Promise((resolve, reject)=>{
-			connection.query(totalsql, async(err, result)=>{
-				if(err){
-					console.log(err);
-					return;
-				}
-				return resolve(result);
-            
-			});
-		});
 		res = JSON.parse(JSON.stringify(res));
-		total = total[0].total;
-		return {res, total};
-	}
-	async replenishment(data){
-		let { gameid }= data;
-		return await Cp.post(gameid, 'Replenishment', data);
+		return res;
 	}
 
 

@@ -980,7 +980,7 @@ export default {
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
     let { data } = await findServername();
     this.servernames = data.map(item=>{
-      return item.value; 
+      item.value; 
     });
   },
 

@@ -157,7 +157,6 @@ export default {
   methods: {
     async Replenishmentclick() {
       let res = replenishmentpost(this.tableTrue);
-      console.log(res);
     },
     async filterFormChange(methods) {
       switch (methods) {

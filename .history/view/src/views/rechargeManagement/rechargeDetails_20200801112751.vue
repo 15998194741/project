@@ -4,7 +4,7 @@
     <ul>
  
       <li><el-button slot="reference" style="margin: 5px 5px -3px 0 ;" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
-      <li> <el-button  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
+      <li> <el-button  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' >补单</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -25,7 +25,7 @@
         </el-select>
        
       </div>
-     下单时间：
+      开服时间：
       <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change="filterFormChange('change')">
       </el-date-picker>
     </div>
@@ -66,7 +66,7 @@
 // import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
-import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
+import { rechargeQuery } from '@/api/rechargeDetails.js';
 import dayjs from 'dayjs';
 
 export default {
@@ -155,10 +155,6 @@ export default {
     }
   },
   methods: {
-    async Replenishmentclick() {
-      let res = replenishmentpost(this.tableTrue);
-      console.log(res);
-    },
     async filterFormChange(methods) {
       switch (methods) {
         case 'click':this.filterFormChangeClick(); break;
@@ -184,7 +180,6 @@ export default {
         if (['page', 'pagesize'].indexOf(i) >= 0) {continue;}
         this.filterForm[i] = '';
       }
-      this.tableData = [];
     
     },
     async filterFormChangepage() {
@@ -193,15 +188,13 @@ export default {
     async rechargeDetails() {
      
       let res = await rechargeQuery(this.filterForm);
-      console.log(this.filterForm);
-      this.tableData = res.data.res;
-      this.total = res.data.total;
+      this.tableData = res.data;
       this.tableData.map(item =>{
         item.isOK = item.isOK === 'success' ? '成功' : item.isOK === '0' ? '未支付' : item.isOK === 'sending' ? '补单' : item.isOK === 'failure' ? '支付失败' : '';
         item.isSend = item.isSend === 'success' ? '成功' : item.isSend === 'failure' ? '失败' : '';
         item.createdAt = dayjs(item.createdAt).format('YYYY年MM月DD日HH时mm分ss秒');
         item.updatedAt = dayjs(item.updatedAt).format('YYYY年MM月DD日HH时mm分ss秒');
-        item.type = item.type === 'apple' ? '苹果' : '安卓';
+
         return { ...item };
       });
      

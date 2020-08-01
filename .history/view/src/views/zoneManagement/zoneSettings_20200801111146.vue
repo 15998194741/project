@@ -245,7 +245,7 @@ import { findServername } from '@/api/character.js';
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {
-  name: 'zoneset',
+  name: 'distric',
   data() {
     var ipcheck = (rule, value, callback) =>{
       if (!value) {
@@ -258,16 +258,6 @@ export default {
       if (!(/^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/.test(ip))) {
         return callback(new Error('请输入正确的IP地址'));
       }
-      callback();
-    };
-    var servernameRepeat = (rule, value, callback) =>{
-      if (!value) {
-        return callback(new Error('区服名称不可为空'));
-      }
-      if (this.servernames.find(item=>item === value)) {
-        return callback(new Error('区服名称不可重复'));
-      }
-      
       callback();
     };
     return {
@@ -389,7 +379,7 @@ export default {
     
       createFormRules: {
         servername: [
-          { validator: servernameRepeat, trigger: ['blur', 'change'] }
+          { required: true, message: '请输入区服名称', trigger: ['blur', 'change'] }
          
         ],
         plaform: [
@@ -980,7 +970,7 @@ export default {
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
     let { data } = await findServername();
     this.servernames = data.map(item=>{
-      return item.value; 
+      item.value; 
     });
   },
 

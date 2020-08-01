@@ -78,8 +78,7 @@ class rechargeService{
 		return {res, total};
 	}
 	async replenishment(data){
-		let { gameid }= data;
-		return await Cp.post(gameid, 'Replenishment', data);
+		console.log(data);
 	}
 
 

@@ -245,7 +245,7 @@ import { findServername } from '@/api/character.js';
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {
-  name: 'zoneset',
+  name: 'distric',
   data() {
     var ipcheck = (rule, value, callback) =>{
       if (!value) {
@@ -264,8 +264,9 @@ export default {
       if (!value) {
         return callback(new Error('区服名称不可为空'));
       }
-      if (this.servernames.find(item=>item === value)) {
+      if (value in this.servernames) {
         return callback(new Error('区服名称不可重复'));
+
       }
       
       callback();
@@ -389,7 +390,7 @@ export default {
     
       createFormRules: {
         servername: [
-          { validator: servernameRepeat, trigger: ['blur', 'change'] }
+          { validator：servernameRepeat, trigger: ['blur', 'change'] }
          
         ],
         plaform: [
@@ -980,7 +981,7 @@ export default {
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
     let { data } = await findServername();
     this.servernames = data.map(item=>{
-      return item.value; 
+      item.value; 
     });
   },
 

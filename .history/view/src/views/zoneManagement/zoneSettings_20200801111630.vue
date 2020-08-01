@@ -264,7 +264,8 @@ export default {
       if (!value) {
         return callback(new Error('区服名称不可为空'));
       }
-      if (this.servernames.find(item=>item === value)) {
+      if (this.servernames.indexOf(value) >= 0) {
+        console.log(this.servernames);
         return callback(new Error('区服名称不可重复'));
       }
       
@@ -980,7 +981,7 @@ export default {
     findServer(this.filterForm).then(res=>{this.inserttable(res);});
     let { data } = await findServername();
     this.servernames = data.map(item=>{
-      return item.value; 
+      item.value; 
     });
   },
 

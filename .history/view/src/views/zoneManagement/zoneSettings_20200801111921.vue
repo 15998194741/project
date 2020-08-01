@@ -982,6 +982,7 @@ export default {
     this.servernames = data.map(item=>{
       return item.value; 
     });
+    console.log(data);
   },
 
   created() {

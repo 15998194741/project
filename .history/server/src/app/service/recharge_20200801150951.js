@@ -47,7 +47,7 @@ class rechargeService{
        offset ${pagesize*(page-1)} 
         `;
 		let totalsql = `SELECT 
-        count(*) as total
+        count(*)
         FROM  pay AS a 
         LEFT JOIN  
         users AS b 
@@ -74,12 +74,7 @@ class rechargeService{
 			});
 		});
 		res = JSON.parse(JSON.stringify(res));
-		total = total[0].total;
 		return {res, total};
-	}
-	async replenishment(data){
-		let { gameid }= data;
-		return await Cp.post(gameid, 'Replenishment', data);
 	}
 
 

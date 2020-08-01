@@ -66,7 +66,7 @@
 // import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
-import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
+import { rechargeQuery } from '@/api/rechargeDetails.js';
 import dayjs from 'dayjs';
 
 export default {
@@ -156,8 +156,7 @@ export default {
   },
   methods: {
     async Replenishmentclick() {
-      let res = replenishmentpost(this.tableTrue);
-      console.log(res);
+      console.log(this.tableTrue);
     },
     async filterFormChange(methods) {
       switch (methods) {

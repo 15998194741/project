@@ -4,7 +4,7 @@
     <ul>
  
       <li><el-button slot="reference" style="margin: 5px 5px -3px 0 ;" icon="el-icon-refresh" size='small' class="button-with-header"  @click="filterFormChange('flush')">刷新</el-button></li>
-      <li> <el-button  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' @click='Replenishmentclick'  >补单</el-button></li>
+      <li> <el-button  slot="append" style="margin: 5px 5px -3px 0 ;" icon="el-icon-thumb" size='small' class="button-with-header"  :disabled='Replenishment' >补单</el-button></li>
     </ul>
   </div>
   <div class="role-container-search">
@@ -66,7 +66,7 @@
 // import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
 import { findServername } from '@/api/character.js';
-import { rechargeQuery, replenishmentpost } from '@/api/rechargeDetails.js';
+import { rechargeQuery } from '@/api/rechargeDetails.js';
 import dayjs from 'dayjs';
 
 export default {
@@ -155,10 +155,6 @@ export default {
     }
   },
   methods: {
-    async Replenishmentclick() {
-      let res = replenishmentpost(this.tableTrue);
-      console.log(res);
-    },
     async filterFormChange(methods) {
       switch (methods) {
         case 'click':this.filterFormChangeClick(); break;

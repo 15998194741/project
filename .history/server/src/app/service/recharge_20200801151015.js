@@ -74,12 +74,7 @@ class rechargeService{
 			});
 		});
 		res = JSON.parse(JSON.stringify(res));
-		total = total[0].total;
 		return {res, total};
-	}
-	async replenishment(data){
-		let { gameid }= data;
-		return await Cp.post(gameid, 'Replenishment', data);
 	}
 
 
