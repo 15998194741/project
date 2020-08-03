@@ -241,7 +241,6 @@
 <script>
 import { deepCopy } from '@/utils/zoneSettings';
 import { findServername } from '@/api/character.js';
-
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
 export default {

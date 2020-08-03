@@ -247,8 +247,6 @@ class CharacterService{
 				resolve(filePath);
 			});
 		});
-
-		// return
 		return await this.readfilesData(filePath, gameid);
 		
 		
@@ -306,7 +304,8 @@ class CharacterService{
 			(${Object.keys(columns).map(item=>`"${item}"`)})values(${Object.values(columns).map(item=>`'${item}'`)})`);
 				   
 		}
-		return 'ok';
+		let res = await Cp.put(gameid, 'BannedAsk', data);
+		return res ;
 	}
 	async outputConsume(data){
 		if(!data.roleid){return false;}

@@ -1,19 +1,17 @@
 <template>
   <div class="anno-container">
     <div class="role-container-header" >
-    <ul>
-      <!-- <li><el-button  slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
-      <li><el-button  slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li> -->
-      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
-      <li><el-button slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='filterFormChange'>新建公告</el-button></li>
+    <ul style="margin-top: 10px;">
+     
+      <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
 
   
     </ul>
   </div>
   <div class="role-container-search">
     <div class="server-container">ID：
-   
-      <el-input v-model="filterForm.value" placeholder="请输入内容" size='small' class="input-with-select" >
+      <el-input v-model="filterForm.value" placeholder="请输入公告ID" size='small' class="input-with-select" >
       </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
       </el-button>
@@ -37,12 +35,18 @@
     ref="multipleTable"
     border
     :data="tableData" 
-    :row-class-name="tableRowClassName" 
     @selection-change="handleSelectionChange"
     >
     <el-table-column  type="selection" width="40"></el-table-column>
     <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
+    </el-table-column>
+    <el-table-column  prop='status' label="操作">
+      <template slot-scope="scope">
+        <el-button>发布</el-button>
+        <el-button>修改</el-button>
+        <el-button>停用 </el-button>
+      </template>
     </el-table-column>
   </el-table>
   </div>
@@ -61,25 +65,129 @@
     @current-change="filterFormChange('change')" ></el-pagination>
   </div>
 
+  <el-dialog title="新建公告" :visible.sync="dialogFormVisiblechange" class="announceddialog"  :close-on-click-modal="false">
+   <div class="headradio"> <el-radio v-model="radio"  :label="true">跑马灯</el-radio>
+    <el-radio v-model="radio" :label="false">公告板</el-radio></div>
+   <div class="container">
+      <div >  
+        <el-form ref="form"  label-width="80px">
+          <el-form-item label="公告ID:">
+            <el-input v-model="createForm['bulletinid']" disabled style="width: 80%;" placeholder="请输入内容"></el-input>
+          </el-form-item>
+          <el-form-item label="公告正文:">
+            <el-input
+            v-model="createForm['text']"
+            type="textarea"
+            style="width: 80%;"
+            :rows="8"
+            placeholder="请输入内容">
+</el-input>
+          </el-form-item>
+          </el-form>
+      </div>
+      <div>
+        <el-form v-if='!radio' ref="form" label-width="80px" >
+          <el-form-item label="公告标题:" hide-required-asterisk>
+            <el-input         v-model="createForm['title']"           placeholder="请输入内容">  </el-input>
+          </el-form-item>
+        <el-form-item label="公告图片:" hide-required-asterisk>
+          <a href="javascript:;" class="a-upload">
+          <input  id='uploadimage'    type='file'  @change='fileupload'> 点击上传文件
+        </a>{{fileName}}
+        </el-form-item>
+        <el-form-item label="公告链接:">
+          <el-input         v-model="createForm['a']"          placeholder="请输入内容"></el-input>
+        </el-form-item>
+        <el-form-item label="平台:">
+          <el-select v-model="createForm['plaform']" placeholder="请选择" size='small' style="border-radius: 10px;" >
+            <el-option   label='不限制' value="" ></el-option>
+            <el-option   label='安卓' value="1" ></el-option>
+              <el-option   label='苹果' value="2" ></el-option>
+          </el-select>
+         
+        </el-form-item>
+        <el-form-item label="客户端:">
+          <el-select v-model="createForm['channel']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
+            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
+            </el-option>
+          </el-select>
+    
+        </el-form-item>
+        </el-form>
+        <el-form v-if='radio' ref="form" label-width="80px" >
+          <el-form-item label="开始时间:" hide-required-asterisk>
+            <el-date-picker
+            v-model="createForm['stime']"
+            type="datetime"
+            placeholder="选择日期时间">
+          </el-date-picker>
+          </el-form-item>
+        <el-form-item label="结束时间:" hide-required-asterisk>
+          <el-date-picker
+          v-model="createForm['etime']"
+          type="datetime"
+          placeholder="选择日期时间">
+        </el-date-picker>
+        </el-form-item>
+        <el-form-item label="平台:">
+          <el-select v-model="createForm['plaform']" placeholder="请选择" size='small' style="border-radius: 10px;" >
+            <el-option   label='不限制' value="" ></el-option>
+            <el-option   label='安卓' value="1" ></el-option>
+              <el-option   label='苹果' value="2" ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="客户端:">
+          <el-select v-model="createForm['channel']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
+            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
+            </el-option></el-select>
+        </el-form-item>
+        <el-form-item label="服务器:">
+          <el-select v-model="createForm['servername']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
+            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
+            </el-option></el-select>
+        </el-form-item>
+        <el-form-item label="时间间隔:">
+          <el-input
+          v-model="createForm['interval']"
+          placeholder="请输入内容">
+</el-input>
+        </el-form-item>
+        <el-form-item label="权重:">
+          <el-input
+          v-model="createForm['weights']"
+          placeholder="请输入内容">
+</el-input>
+        </el-form-item>
+        </el-form>
+      </div>
+  
+  
+  </div>
+    <div slot="footer" class="dialog-footer">
+      <el-button @click="dialogFormVisiblechange = false">取 消</el-button>
+      <el-button type="primary" @click='postannounced'>确 定</el-button>
+    </div>
+  </el-dialog>
   </div>
 </template>
 
 <script>
 import elementResizeDetectorMaker from 'element-resize-detector';
+import { findComponents } from '@/api/components.js';
+import { postcreateAnnouncement } from '@/api/announcedManagement';
+import { findServername } from '@/api/character.js';
 
 export default {
 
   name: 'rolequery',
   data() {
     return {
+      radio: true,
+      AnnouncementBody: '',
       serverCreatedialogFormVisible: false,
+      dialogFormVisiblechange: false,
       dialogFormchange: false,
-      file: '',
-      headers: {
-        'fancy-guo-login-token': this.$store.getters.user.token,
-        gameid: 1
-      
-      },
+      file: [],
       filelist: [],
       multipleTable: '',
       total: 0,
@@ -95,6 +203,21 @@ export default {
         banned_area: '',
         page: 1,
         pagesize: 10
+      },
+      createForm: {
+        bulletinid: '',
+        stime: '',
+        etime: '',
+        plaform: '',
+        channel: '',
+        servername: '',
+        interval: '',
+        weights: '',
+        title: '',
+        images: '',
+        a: '',
+        text: ''
+
       },
       createFormRules: {
         type: [
@@ -165,61 +288,41 @@ export default {
           label: '不限制',
           value: ''
         }, {
-          label: '封号',
+          label: '跑马灯',
           value: '1'
 
         }, {
-          label: '禁言',
+          label: '公告板',
           value: '2'
         }]
-      }, {
-        label: '公告性质',
-        key: 'banned_area',
-        multiple: false,
-        value: '',
-        options: [{
-          label: '不限制',
-          value: ''
-        }, {
-          label: '角色',
-          value: '1'
+      } 
+        // {
+        //   label: '公告性质',
+        //   key: 'banned_area',
+        //   multiple: false,
+        //   value: '',
+        //   options: [{
+        //     label: '不限制',
+        //     value: ''
+        //   }, {
+        //     label: '角色',
+        //     value: '1'
 
-        }, {
-          label: '账户',
-          value: '2'
-        }, {
-          label: 'IP',
-          value: '3'
-        }]
-      }
+      //   }, {
+      //     label: '账户',
+      //     value: '2'
+      //   }, {
+      //     label: 'IP',
+      //     value: '3'
+      //   }]
+      // }
       ],
       idoptions: [{
         label: '角色ID',
         value: 'roleid'
       }
       ],
-      tableData: [{
-        roleid: '', //角色ID
-        account_id: '', //用户id
-        role_name: '', //角色昵称
-        channel: '', //渠道客户端
-        distinct_id: '', //设备iD
-        machine: '', //设备类型
-        plaform: '', //平台                     新增 Android  IOS
-        serverid: '', //区服ID                   新增
-        update_time: '', //最后登录时间           新增 
-        level: '', //等级
-        vip_level: '', //vip等级
-        sum_recharge: '', //付费总额
-        ip: '', //用户Ip地址
-        regtime: '', //注册时间
-        banned_type: '', //封禁类型   pgsql
-        banned_area: '', //封禁范围    pgsql
-        banned_reason: '', //封禁原因   pgsql
-        banned_time: '', //封禁时长
-        stime_etime: ''
-
-      }],
+      tableData: [],
       tablecolumn: [
         { label: '公告ID', prop: 'roleid', width: 50 },
         { label: '公告类型', prop: 'account_id', width: 50 },
@@ -231,29 +334,73 @@ export default {
         { label: '公告状态', prop: 'plaform', width: -50 },
         { label: '开始时间', prop: 'plaform', width: -50 },
         { label: '结束时间', prop: 'plaform', width: -50 }
-        
-
       ],
-
+      fileName: '',
       screenWidth: 145,
       screenHeight: '',
       tableTrue: []
     };
     
   },
-  mounted() {
+
+  methods: {
+    dialogFormVisiblechangealter() {
+      this.dialogFormVisiblechange = true;
+      this.createForm['bulletinid'] = this.$store.getters.gameid + '' + new Date().getTime();
+      console.log();
+    },
+
     
+    fileupload(e) {
+      this.createForm['images'] = e.target.files[0];
+      this.fileName = this.createForm['images'].name;
+    },
+    async postannounced() {
+      let a = new FormData();
+      for (let [key, value] of Object.entries(this.createForm)) {
+        a.append(key, value);
+      }
+      if (this.radio) {a.append('type', 1);} else {a.append('type', 2);}
+      let res = await postcreateAnnouncement(a);
+      console.log(res);
+    },
+    uploadimages(file) {
+      console.log(file);
+    },
+    handleSelectionChange(val) {
+      this.tableTrue = val;
+    },
+    async filterFormChange(val) {
+
+      switch (val) {
+        case 'click':this.filterFormChangeClick(); break;
+        case 'flush':this.filterFormChangeFlush(); break;
+        case 'page':this.filterFormChangePage(); break;
+      }
+
+ 
+    }
+  },
+
+  async mounted() {
     const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
-      this.screenWidth = element.offsetWidth * 0.095;
-    //   switch (element.offsetWidth) {
-    //     case 1840: break;
-    //     case 1700: this.screenWidth = '30%'; break;
-    //   }
+      this.screenWidth = element.offsetWidth * 0.09;
     });
-
-
+    findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {
+      let components = res.data.values.map(item=>({
+        label: item,
+        value: item
+      }));
+      this.selectForm[1].options = this.selectForm[1].options.concat(components);
+      this.clientOptions = components;
+    });
+    let { data } = await findServername();
+    data.map(item =>{
+      this.selectForm[2].options.find(ele => ele.label === item.label) || !item.label
+        ? item : this.selectForm[2].options.push(item);
+    });
 
 
 
@@ -267,7 +414,87 @@ export default {
 <style lang="scss" rel="stylesheet/scss">
 .anno-container{
 
+.announceddialog{
+        .headradio{
+          margin-left: 3%;
+           margin-top: -2%;
+        }
+      .container{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        margin-top: 2%;
+      }
+      #file-upload-button{
+        display: none;
+      }
+      .a-upload {
+    position: relative;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    margin-right: 10px;
+}
+.a-upload input {
+    position: absolute;
+    /* font-size: 100px; */
+    bottom: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.a-upload:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+      /* #uploadimage{
+        border: 0;
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+    line-height: 200%;
 
+    -webkit-appearance: none;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #DCDFE6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    outline: 0;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+    
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+
+        :hover{
+          background: #AADFFD;
+          border-color: #78C3F3;
+          color: #004974;
+          text-decoration: none;
+        } */
+        
+      /* } */
+}
 
 
 
@@ -376,7 +603,8 @@ export default {
       button[name='truesearch']{
             border-radius: 0 30px 30px 0;
             margin-left: -5px;
-            height: 32px
+            height: 32px;
+            margin-right: 20px;
       }
       input[name='idselect'] {
       border-radius: 30px 0 0 30px;

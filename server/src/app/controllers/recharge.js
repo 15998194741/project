@@ -11,14 +11,14 @@ export class rechargeController {
 		ctx.log.resourceDesc = '充值订单查询';
 		let data = ctx.query;
 		let result = await rechargeService.query(data);
-		ctx.body = statusCode.SUCCESS_200('修改成功', result);
+		ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	}
     @post('/replenishment')
     async replenishment(ctx) {
     	ctx.log.resourceDesc = '充值订单补单';
     	let data = ctx.request.body;
     	let result = await rechargeService.replenishment(data);
-    	ctx.body = statusCode.SUCCESS_200('修改成功', result);
+    	ctx.body = JSON.parse(result);
     }
 
 

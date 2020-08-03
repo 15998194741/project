@@ -61,9 +61,9 @@ export class CharacterController {
 
 	@put('/prohibitedMute')
 	async prohibitedMute(ctx){
-		console.log(ctx.request.body);
+		// console.log(ctx.request.body);
 		let result = await CharacterService.prohibitedMute(ctx.request.body);
-		ctx.body = statusCode.SUCCESS_200('操作成功', result);
+		ctx.body = JSON.parse(result);
 	}
 
 	@get('/outputConsume')

@@ -186,7 +186,7 @@ export default {
       file: '',
       headers: {
         'fancy-guo-login-token': this.$store.getters.user.token,
-        gameid: 1
+        gameid: this.$store.getters.gameid
       
       },
       filelist: [],
@@ -440,7 +440,12 @@ export default {
           if (!doubleTrue) {return;}
     
           let res = await prohibitedMute({ ...this.insertForm, value: this.tableTrue });
-          if (res.code === 200) {this.dialogFormchange = false; this.filterFormChange('flush'); return this.$message.success(res.message); }
+          if (res.code === 200) {
+            this.dialogFormchange = false; this.filterFormChange('flush'); this.$message({
+              type: 'success',
+              message: '操作成功'
+            }); return; 
+          }
         }
       });
 

@@ -97,7 +97,7 @@ export default {
       file: '',
       headers: {
         'fancy-guo-login-token': this.$store.getters.user.token,
-        gameid: 1
+        gameid: this.$store.getters.gameid
       
       },
       filelist: [],

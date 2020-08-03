@@ -16,6 +16,16 @@ connection.connect();
 
 class rechargeService{
 	constructor() {
+		var mysql  = require('mysql');  
+ 
+		var connection = mysql.createConnection({     
+			host     : '117.50.10.34',       
+			user     : 'gmfancyguo',              
+			password : 'gmfancyguo!',       
+			port: '3306',                   
+			database: 'sdk' 
+		}); 
+		connection.connect();
 	}
 
 	async query(data){

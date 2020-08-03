@@ -156,8 +156,23 @@ export default {
   },
   methods: {
     async Replenishmentclick() {
-      let res = replenishmentpost(this.tableTrue);
-      console.log(res);
+      let replentrue = await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch((err)=>false);
+      if (!replentrue) {return;}
+      let res = await replenishmentpost(this.tableTrue);
+      if (res.code === 200) {
+        this.$message({
+          type: 'success',
+          message: '补单成功'
+        }); return;
+      }
+      this.$message({
+        type: 'info',
+        message: res.msg
+      });
     },
     async filterFormChange(methods) {
       switch (methods) {

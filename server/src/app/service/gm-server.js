@@ -100,7 +100,6 @@ class GmServerService extends BaseService{
 		let plaform =  data[0].plaform;
 		let test =data[0].test;
 		let querySql = `insert into gm_server (serverid ,childrens,gameid,channel,plaform,display,test)VALUES ('${pid}',array[${children.join(',')}],'${data.gameid}',array[${channel.join(',')}],'${plaform}','3','${test}')  `;
-		// console.log(querySql);
 		let res = await dbSequelize.query(querySql);
 		return res;
 	
