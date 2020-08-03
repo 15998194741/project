@@ -351,3 +351,533 @@ err stack: ReferenceError: path is not defined
     at dispatch (E:\third\project\server\node_modules\koa-router\lib\router.js:351:31)
 *************** error log end ***************
 
+[2020-08-03T19:28:59.213] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"小米,久游","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596454139212
+err name: SequelizeDatabaseError
+err message: malformed array literal: "小米,久游"
+err stack: SequelizeDatabaseError: malformed array literal: "小米,久游"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T19:34:12.912] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"小米,久游,腾讯","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596454452912
+err name: SequelizeDatabaseError
+err message: malformed array literal: "小米,久游,腾讯"
+err stack: SequelizeDatabaseError: malformed array literal: "小米,久游,腾讯"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T19:50:44.689] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"腾讯","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596455444689
+err name: SequelizeDatabaseError
+err message: malformed array literal: "腾讯"
+err stack: SequelizeDatabaseError: malformed array literal: "腾讯"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T19:51:11.283] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"腾讯","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596455471282
+err name: SequelizeDatabaseError
+err message: syntax error at or near "腾讯"
+err stack: SequelizeDatabaseError: syntax error at or near "腾讯"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T19:56:39.432] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"腾讯,小米,久游","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596455799431
+err name: ReferenceError
+err message: 腾讯 is not defined
+err stack: ReferenceError: 腾讯 is not defined
+    at eval (eval at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35), <anonymous>:1:1)
+    at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-08-03T19:57:14.697] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"腾讯,小米,久游","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596455834697
+err name: ReferenceError
+err message: 腾讯 is not defined
+err stack: ReferenceError: 腾讯 is not defined
+    at eval (eval at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35), <anonymous>:1:1)
+    at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-08-03T19:57:38.277] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596444715293","stime":"","etime":"","plaform":"","channel":"腾讯,小米,久游","servername":"","interval":"","weights":"","title":"11111","a":"33333","text":"222221111","type":"2","gameid":"1"}
+response time: 1596455858277
+err name: ReferenceError
+err message: 腾讯 is not defined
+err stack: ReferenceError: 腾讯 is not defined
+    at eval (eval at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35), <anonymous>:1:1)
+    at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-08-03T19:57:50.866] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596455861424","stime":"","etime":"","plaform":"1","channel":"小米,腾讯","servername":"","interval":"","weights":"","title":"111","a":"111","text":"","type":"2","gameid":"1"}
+response time: 1596455870866
+err name: ReferenceError
+err message: 小米 is not defined
+err stack: ReferenceError: 小米 is not defined
+    at eval (eval at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35), <anonymous>:1:1)
+    at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-08-03T19:57:58.875] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596455861424","stime":"","etime":"","plaform":"1","channel":"小米,腾讯,久游","servername":"","interval":"","weights":"","title":"111","a":"111","text":"","type":"2","gameid":"1"}
+response time: 1596455878875
+err name: ReferenceError
+err message: 小米 is not defined
+err stack: ReferenceError: 小米 is not defined
+    at eval (eval at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35), <anonymous>:1:1)
+    at _callee2$ (E:\third\project\server\src\app\service\/gm-announcement.js:30:35)
+    at tryCatch (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:45:40)
+    at Generator.invoke [as _invoke] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:281:22)
+    at Generator.prototype.<computed> [as next] (E:\third\project\server\node_modules\regenerator-runtime\runtime.js:106:21)
+    at asyncGeneratorStep (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:3:24)
+    at _next (E:\third\project\server\node_modules\@babel\runtime\helpers\asyncToGenerator.js:25:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+*************** error log end ***************
+
+[2020-08-03T20:55:15.858] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596459221826","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":"","channel":"久游","servername":"11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,","interval":"","weights":"","title":"","images":"","a":"","text":"","type":"1","gameid":"1"}
+response time: 1596459315857
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T20:58:26.996] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596459221826","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":null,"channel":"久游","servername":"11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"1","gameid":"1"}
+response time: 1596459506996
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T20:58:27.858] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"11596459221826","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":null,"channel":"久游","servername":"11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"1","gameid":"1"}
+response time: 1596459507858
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T20:59:37.908] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459577908
+err name: SequelizeDatabaseError
+err message: syntax error at or near ")"
+err stack: SequelizeDatabaseError: syntax error at or near ")"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:01:08.221] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459668220
+err name: SequelizeDatabaseError
+err message: syntax error at or near ")"
+err stack: SequelizeDatabaseError: syntax error at or near ")"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:01:48.070] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459708070
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:03:28.526] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459808526
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:03:34.361] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459814361
+err name: SequelizeDatabaseError
+err message: column "time_interval" of relation "gm_announcement" does not exist
+err stack: SequelizeDatabaseError: column "time_interval" of relation "gm_announcement" does not exist
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:04:22.342] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"'Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)'","etime":"'Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)'","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459862342
+err name: SequelizeDatabaseError
+err message: invalid input syntax for type timestamp: "Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)"
+err stack: SequelizeDatabaseError: invalid input syntax for type timestamp: "Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:06:16.748] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596459976747
+err name: SequelizeDatabaseError
+err message: syntax error at or near "Jul"
+err stack: SequelizeDatabaseError: syntax error at or near "Jul"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:07:04.867] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596460024866
+err name: SequelizeDatabaseError
+err message: syntax error at or near "Jul"
+err stack: SequelizeDatabaseError: syntax error at or near "Jul"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:07:31.214] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"Thu Jul 09 2020 00:00:00 GMT+0800 (中国标准时间)","etime":"Wed Aug 05 2020 00:00:00 GMT+0800 (中国标准时间)","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596460051214
+err name: SequelizeDatabaseError
+err message: syntax error at or near "Jul"
+err stack: SequelizeDatabaseError: syntax error at or near "Jul"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-03T21:08:23.724] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: POST
+request originalUrl:  /api/announcement/create
+request client ip:  ::ffff:127.0.0.1
+request body: 
+{"bulletinid":"'11596459221826'","stime":"2020-07-09 00:00:00","etime":"2020-08-05 00:00:00","plaform":null,"channel":"'久游'","servername":"'11111,1111,测试服3,测试服2,12,长澜？,1111111,123123,212,1,11,111,测试服1,123,'","interval":null,"weights":null,"title":null,"images":null,"a":null,"text":null,"type":"'1'","gameid":"'1'"}
+response time: 1596460103724
+err name: SequelizeDatabaseError
+err message: syntax error at or near "00"
+err stack: SequelizeDatabaseError: syntax error at or near "00"
+    at Query.formatError (E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at E:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (E:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (E:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (E:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (E:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (E:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (E:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (E:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (E:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (E:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+

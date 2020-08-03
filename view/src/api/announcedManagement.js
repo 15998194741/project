@@ -11,3 +11,13 @@ export function postcreateAnnouncement(data) {
     headers
   });
 }
+
+
+export function getqueryAnnouncement(data) { 
+  return request({
+    url: `announcement/query`,
+    method: 'GET',
+    data,
+    headers
+  });
+}

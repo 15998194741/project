@@ -11,12 +11,12 @@
   </div>
   <div class="role-container-search">
     <div class="server-container">ID：
-      <el-input v-model="filterForm.value" placeholder="请输入公告ID" size='small' class="input-with-select" >
+      <el-input v-model="filterForm['bulletinid']" placeholder="请输入公告ID" size='small' class="input-with-select" >
       </el-input>
       <el-button slot="append" icon="el-icon-search" size='small' class="button-with-select" name='truesearch' @click="filterFormChange('click')">
       </el-button>
       时间：
-      <el-date-picker   v-model="filterForm['srttime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change='filterFormChange'>
+      <el-date-picker   v-model="filterForm['setime']"  size='small' type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"   @change="filterFormChange('change')">
       </el-date-picker>
     </div>
    
@@ -143,7 +143,7 @@
         </el-form-item>
         <el-form-item label="服务器:">
           <el-select v-model="createForm['servername']" multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
-            <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
+            <el-option v-for="(item,index) in selectForm[2].options"   :key="index"  :label='item.label' :value="item.value" >
             </el-option></el-select>
         </el-form-item>
         <el-form-item label="时间间隔:">
@@ -174,7 +174,7 @@
 <script>
 import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
-import { postcreateAnnouncement } from '@/api/announcedManagement';
+import { postcreateAnnouncement, getqueryAnnouncement } from '@/api/announcedManagement';
 import { findServername } from '@/api/character.js';
 
 export default {
@@ -192,15 +192,13 @@ export default {
       multipleTable: '',
       total: 0,
       filterForm: {
-        key: 'roleid',
-        value: '',
-        regtime: '',
-        stime: '',
+      
+        bulletinid: '',
+        setime: '',
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        type: '',
         page: 1,
         pagesize: 10
       },
@@ -281,7 +279,7 @@ export default {
         }]
       }, {
         label: '公告类型',
-        key: 'banned_type',
+        key: 'type',
         multiple: false,
         value: '',
         options: [{
@@ -295,28 +293,7 @@ export default {
           label: '公告板',
           value: '2'
         }]
-      } 
-        // {
-        //   label: '公告性质',
-        //   key: 'banned_area',
-        //   multiple: false,
-        //   value: '',
-        //   options: [{
-        //     label: '不限制',
-        //     value: ''
-        //   }, {
-        //     label: '角色',
-        //     value: '1'
-
-      //   }, {
-      //     label: '账户',
-      //     value: '2'
-      //   }, {
-      //     label: 'IP',
-      //     value: '3'
-      //   }]
-      // }
-      ],
+      }],
       idoptions: [{
         label: '角色ID',
         value: 'roleid'
@@ -362,7 +339,15 @@ export default {
       }
       if (this.radio) {a.append('type', 1);} else {a.append('type', 2);}
       let res = await postcreateAnnouncement(a);
-      console.log(res);
+      if (res.code === 200) {
+        for (let [key, value] of Object.entries(this.createForm)) {
+          this.createForm[key] = '';
+        }
+        this.file = '';
+        this.fileName = '';
+        this.dialogFormVisiblechange = false;
+        this.$message.success('创建成功!'); 
+      }
     },
     uploadimages(file) {
       console.log(file);
@@ -377,9 +362,20 @@ export default {
         case 'flush':this.filterFormChangeFlush(); break;
         case 'page':this.filterFormChangePage(); break;
       }
-
- 
     }
+  },
+  async filterFormChangeClick() {
+    for (let [key, value] of Object.entries(this.filterForm)) {
+      if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
+        continue;
+      }
+      this.filterForm[key] = '';
+    }
+    this.finservers(this.filterForm);
+  },
+  async filterFormGET() {
+    let res = await getqueryAnnouncement(this.filterForm);
+    console.log(res);
   },
 
   async mounted() {
