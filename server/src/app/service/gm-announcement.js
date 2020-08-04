@@ -11,8 +11,24 @@ class GmAnnouncementService extends BaseService{
 		super(gmAnnouncementDao);
 	}
 	async queryBulletin(data){
-		console.log(data);
-		return 1;
+		let {bulletinid, plaform, servername, type, page, pagesize, gameid} =data;
+		let setime = data['setime[]']; 
+		let channel = data['channel[]'];
+		let where = `where  game_id=${gameid} `;
+		 data = {bulletinid, plaform, servername, type};
+		for(let [key, value] of  Object.entries(data)){
+			where += value?`and ${key} = '${value}'`:'';
+		}
+		where += setime?` and create_time  between '${dayjs(setime[0]).format('YYYY-MM-DD HH:mm:ss')}' and '${dayjs(setime[1]).format('YYYY-MM-DD HH:mm:ss')}'`:'';
+		switch(typeof channel){
+			case 'string':where += ` and '${channel}' = any(client)`;break;
+			case 'object':where += ` and array[${channel.map(item => `'${item}'`)}]::varchar[] <@ client`;break;
+		}
+		let res = await dbSequelize.query(`select * from gm_announcement  ${where} offset ${pagesize*(page-1)} limit ${pagesize}`);
+		let total = await dbSequelize.query(`select count(*) as total  from gm_announcement  ${where} `);
+		res = res[0];
+		total = total[0][0].total;
+		return {res, total};
 	}
 	async createBulletin(data, files, id){
 		const path = require('path');
@@ -39,7 +55,7 @@ class GmAnnouncementService extends BaseService{
 			default :channel = null;
 		}
 		let sql = ` insert into gm_announcement 
-		  (title,text,game_id,img_url,platform,client,link,bulletinid,create_user_id,type) 
+		  (title,text,game_id,img_url,plaform,client,link,bulletinid,create_user_id,type) 
 		  VALUES
 		  ('${data.title}','${data.text}','${data.gameid}','${filePath}',${data.plaform?`'${data.plaform}'` :null},${channel},'${data.a}','${data.bulletinid}','${id}',2) `;
 		let res = await dbSequelize.query(sql);
@@ -71,11 +87,15 @@ class GmAnnouncementService extends BaseService{
 			default :servername = null;
 		}
 		let sql = ` insert into gm_announcement 
-		  (start_time,end_time,game_id, platform,client,bulletinid,create_user_id,type,weights,time_interval,servername) 
+		  (start_time,end_time,game_id, plaform,client,bulletinid,create_user_id,type,weights,time_interval,servername) 
 		  VALUES
 		  (${data.stime},${data.etime},${data.gameid},${data.plaform?`${data.plaform}` :null},${channel},${data.bulletinid},${id},1,${data.weights} ,${data.interval},${servername}  ) `;
 		let res = await dbSequelize.query(sql);
 		return res[1];
+	}
+	async updateBulletin(data){
+		let res = await dbSequelize.query(`update gm_announcement set anno_status=1 where id='${data.id}'`);
+		return res[0][0];
 	}
 }
 export default new GmAnnouncementService();

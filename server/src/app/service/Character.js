@@ -322,20 +322,7 @@ class CharacterService{
 			page,
 			pagesize
 		  } = data;
-		//   data =  {
-		// 	roleid, 
-		// 	object_id, 
-		// 	object_method, 
-		// 	object_name, 
-		// 	object_type, 
-		// 	object_number 
-		//   };
-		// let sqls = CharacterService.tosql({
-		// 	data,		
-		// });
-
 		let sql = `select roleid,object_id,object_method,object_name,object_type,object_number,timestamp from ${tablename} where roleid='${roleid}'  order by roleid   offset ${pagesize*(page-1)} limit ${pagesize}`;
-
 		let res =   await Ta.tasql(sql, token);
 		let sqls = `select count(object_id) from ${tablename} where roleid='${roleid}'    `;
 

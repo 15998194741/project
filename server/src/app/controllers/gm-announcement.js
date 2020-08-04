@@ -21,8 +21,14 @@ export class GmAnnouncementController {
 
 	  @get('/query')
 	  async query(ctx) {
-		  let data = ctx.query;
+		let data = ctx.query;
 		let result = await gmAnnouncementService.queryBulletin(data);
+	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+	  }
+	  @put('/update')
+	  async update(ctx) {
+	  	let data = ctx.query;
+	  	let result = await gmAnnouncementService.updateBulletin(data);
 	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
 	  }
 

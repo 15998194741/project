@@ -13,11 +13,19 @@ export function postcreateAnnouncement(data) {
 }
 
 
-export function getqueryAnnouncement(data) { 
+export function getqueryAnnouncement(params) { 
   return request({
     url: `announcement/query`,
     method: 'GET',
-    data,
-    headers
+    params
+    
+  });
+}
+export function putupdateAnnouncement(params) { 
+  return request({
+    url: `announcement/update`,
+    method: 'PUT',
+    params
+    
   });
 }

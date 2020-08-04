@@ -5,6 +5,7 @@
      
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
       <li><el-button slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
+      <li><el-button slot="reference" icon="el-icon-mouse" :disabled='send' size='small' class="button-with-header"  @click='dialogFormVisiblesend = true' >发布</el-button></li>
 
   
     </ul>
@@ -43,9 +44,17 @@
     </el-table-column>
     <el-table-column  prop='status' label="操作">
       <template slot-scope="scope">
-        <el-button>发布</el-button>
-        <el-button>修改</el-button>
-        <el-button>停用 </el-button>
+        <el-button @click="placardmodify(scope.$index,scope.row)">修改</el-button>
+        <el-popconfirm
+  confirmButtonText='好的'
+  cancelButtonText='不用了'
+  icon="el-icon-info"
+  iconColor="red"
+  title="确定停用此公告吗？"
+  @onConfirm="placarddeactivate(scope.$index,scope.row)"
+        >
+  <el-button slot="reference">停用</el-button>
+</el-popconfirm>
       </template>
     </el-table-column>
   </el-table>
@@ -160,29 +169,65 @@
         </el-form-item>
         </el-form>
       </div>
-  
-  
+
   </div>
     <div slot="footer" class="dialog-footer">
       <el-button @click="dialogFormVisiblechange = false">取 消</el-button>
       <el-button type="primary" @click='postannounced'>确 定</el-button>
     </div>
   </el-dialog>
+  <el-dialog title="公告发布" :visible.sync="dialogFormVisiblesend" class="announceddialog"  :close-on-click-modal="false">
+  
+    <el-switch
+    v-model="sendtime"
+    active-text="及时发送"
+    inactive-text="定时发送"
+    :active-value="false"
+    :inactive-value="true"> </el-switch>
+    <el-date-picker
+      v-show='sendtime'
+      v-model="sendtimes"
+      type="datetime"
+      placeholder="选择日期时间">
+    </el-date-picker>
+ 
+
+    <!-- <div class="">
+      <el-table
+      ref="multipleTable"
+      border
+      class="tablesendclass"
+      :data="tableTrue" 
+      >
+      <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
+        <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
+      </el-table-column>
+    </el-table>
+ 
+   </div> -->
+     <div slot="footer" class="dialog-footer">
+       <el-button @click="dialogFormVisiblesend = false">取 消</el-button>
+       <el-button type="primary" @click='postannounced'>确 定</el-button>
+     </div>
+   </el-dialog>
   </div>
 </template>
 
 <script>
 import elementResizeDetectorMaker from 'element-resize-detector';
 import { findComponents } from '@/api/components.js';
-import { postcreateAnnouncement, getqueryAnnouncement } from '@/api/announcedManagement';
+import { postcreateAnnouncement, getqueryAnnouncement, putupdateAnnouncement } from '@/api/announcedManagement';
 import { findServername } from '@/api/character.js';
-
+import dayjs from 'dayjs';
 export default {
 
   name: 'rolequery',
   data() {
     return {
       radio: true,
+      sendtime: '',
+      sendtimes: '',
+      dialogFormVisiblesend: true,
       AnnouncementBody: '',
       serverCreatedialogFormVisible: false,
       dialogFormVisiblechange: false,
@@ -192,7 +237,6 @@ export default {
       multipleTable: '',
       total: 0,
       filterForm: {
-      
         bulletinid: '',
         setime: '',
         plaform: '',
@@ -301,16 +345,15 @@ export default {
       ],
       tableData: [],
       tablecolumn: [
-        { label: '公告ID', prop: 'roleid', width: 50 },
-        { label: '公告类型', prop: 'account_id', width: 50 },
-        { label: '平台', prop: 'role_name', width: 25 },
-        { label: '客户端', prop: 'plaform', width: -50 },
-        { label: '区服ID', prop: 'plaform', width: -50 },
-        { label: '公告性质', prop: 'plaform', width: -50 },
-        { label: '公告标题', prop: 'plaform', width: -50 },
-        { label: '公告状态', prop: 'plaform', width: -50 },
-        { label: '开始时间', prop: 'plaform', width: -50 },
-        { label: '结束时间', prop: 'plaform', width: -50 }
+        { label: '公告ID', prop: 'bulletinid', width: 50 },
+        { label: '公告类型', prop: 'type', width: 50 },
+        { label: '平台', prop: 'plaform', width: 25 },
+        { label: '客户端', prop: 'client', width: -50 },
+        { label: '区服名称', prop: 'servername', width: -50 },
+        { label: '公告标题', prop: 'title', width: -50 },
+        { label: '公告状态', prop: 'anno_status', width: -50 },
+        { label: '开始时间', prop: 'start_time', width: -50 },
+        { label: '结束时间', prop: 'end_time', width: -50 }
       ],
       fileName: '',
       screenWidth: 145,
@@ -318,13 +361,35 @@ export default {
       tableTrue: []
     };
     
+  }, computed: {
+    send() {
+      return this.tableTrue.length > 0 ? false : true;
+    }
+  
   },
 
+
   methods: {
+    placardrelease(index, row) {
+      console.log(index, row);
+    },
+    placardmodify(index, row) {
+      console.log(index, row);
+    },
+    async placarddeactivate(index, row) {
+      let res = await putupdateAnnouncement(row);
+      if (+res.code === 200) {
+        this.$message.success('停用成功');
+        this.tableData[index].anno_status = '停用';
+        return;
+      }
+      this.$message.warning('停用失败');
+
+    },
+    
     dialogFormVisiblechangealter() {
       this.dialogFormVisiblechange = true;
       this.createForm['bulletinid'] = this.$store.getters.gameid + '' + new Date().getTime();
-      console.log();
     },
 
     
@@ -355,27 +420,50 @@ export default {
     handleSelectionChange(val) {
       this.tableTrue = val;
     },
-    async filterFormChange(val) {
-
+    filterFormChange(val) {
       switch (val) {
         case 'click':this.filterFormChangeClick(); break;
+        case 'change':this.filterFormChangeget(); break;
         case 'flush':this.filterFormChangeFlush(); break;
         case 'page':this.filterFormChangePage(); break;
       }
-    }
-  },
-  async filterFormChangeClick() {
-    for (let [key, value] of Object.entries(this.filterForm)) {
-      if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
-        continue;
+    },
+    filterFormChangeClick() {
+      for (let [key, value] of Object.entries(this.filterForm)) {
+        if (key === 'bulletinid' || key === 'page' || key === 'pagesize') {
+          continue;
+        }
+        this.filterForm[key] = '';
       }
-      this.filterForm[key] = '';
+      this.filterFormGET(this.filterForm);
+    },
+    filterFormChangeget() {
+      this.filterForm['bulletinid'] = '';
+      this.filterFormGET(this.filterForm);
+    },
+ 
+    async filterFormGET(value) {
+      let res = await getqueryAnnouncement(this.filterForm);
+      if (res.code != 200) {this.tableData = []; return;} 
+      this.tableData = res.data.res;
+      this.total = +res.data.total;
+      this.tableData.map(item =>{
+        item.type = +item.type === 1 ? '跑马灯' : '公告板'; 
+        item.plaform = item.plaform === 1 ? '安卓' : item.plaform === 2 ? '苹果' : '不限制';
+        try {
+          item.start_time = item.start_time ? dayjs(item.start_time).format('YYYY-MM-DD HH:mm:ss') : '';   
+          item.end_time = item.end_time ? dayjs(item.end_time).format('YYYY-MM-DD HH:mm:ss') : '';    
+        } catch (err) {}
+        switch (+item.anno_status) {
+          case 1:item.anno_status = '停用'; break;
+          case 2:''; break;
+          case 3:''; break;
+          case 4:''; break;
+          default:'';
+        }
+        return item;
+      });
     }
-    this.finservers(this.filterForm);
-  },
-  async filterFormGET() {
-    let res = await getqueryAnnouncement(this.filterForm);
-    console.log(res);
   },
 
   async mounted() {
@@ -409,7 +497,9 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .anno-container{
-
+  .tablesendclass{
+    max-height: 100px;
+  }
 .announceddialog{
         .headradio{
           margin-left: 3%;
