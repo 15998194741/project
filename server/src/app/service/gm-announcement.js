@@ -97,5 +97,10 @@ class GmAnnouncementService extends BaseService{
 		let res = await dbSequelize.query(`update gm_announcement set anno_status=1 where id='${data.id}'`);
 		return res[0][0];
 	}
+	async sendBulletin(datas){
+		let { data, sendtime, gameid } = datas;
+		let res = await dbSequelize.query(`update gm_announcement set sendtime='${sendtime}',anno_status =2 where id in (${data.map(item => item.id)}) `);
+		return res;
+	}
 }
 export default new GmAnnouncementService();

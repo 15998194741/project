@@ -32,6 +32,13 @@ export class GmAnnouncementController {
 	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
 	  }
 
+	  @post('/send')
+	  async send(ctx) {
+	  	let data = ctx.request.body;
+	  	let result = await gmAnnouncementService.sendBulletin(data);
+	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+	  }
+
 
 
 

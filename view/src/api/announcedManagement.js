@@ -29,3 +29,11 @@ export function putupdateAnnouncement(params) {
     
   });
 }
+
+export function postsendAnnouncement(data) { 
+  return request({
+    url: `announcement/send`,
+    method: 'POST',
+    data
+  });
+}
