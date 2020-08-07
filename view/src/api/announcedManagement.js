@@ -37,3 +37,37 @@ export function postsendAnnouncement(data) {
     data
   });
 }
+
+
+
+export function getqueryMarqueeweights(params) { 
+  return request({
+    url: `announcement/weights`,
+    method: 'GET',
+    params
+    
+  });
+}
+
+
+
+
+export function getqueryservernames(params) { 
+  return request({
+    url: `announcement/queryservernames`,
+    method: 'GET',
+    params
+    
+  });
+}
+
+
+
+export function putchangeoneannouncedreq(data) { 
+  return request({
+    url: `announcement/putchangeoneannounced`,
+    method: 'PUT',
+    data
+    
+  });
+}

@@ -47,9 +47,23 @@ class Cp{
 		return new Promise((resolve, reject)=>{
 			request(res, (error, response, body)=>{
 				return resolve(body);
-				
 			});
-
+		}); 
+	}
+	async sendBulletin(gameid, arr){
+		let urls =await dbSequelize.query(`select url from gm_game_token where gameid=${gameid} and type = 'cp'`);
+		urls = urls[0][0].url;
+		let data = await dbSequelize.query(`select * from gm_announcement where id in ( ${arr})`);
+		let url = 'announcement';
+		let res = {
+			url:urls+'/api/'+url,
+			method:'POST',
+			data
+		};
+		return new Promise((resolve, reject)=>{
+			request(res, (error, response, body)=>{
+				return resolve(body);
+			});
 		}); 
 	}
 

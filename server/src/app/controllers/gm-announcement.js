@@ -17,33 +17,46 @@ export class GmAnnouncementController {
 		  }
 	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
 	  }
-	  
-
 	  @get('/query')
 	  async query(ctx) {
 		let data = ctx.query;
 		let result = await gmAnnouncementService.queryBulletin(data);
-	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+	  	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	  }
 	  @put('/update')
 	  async update(ctx) {
 	  	let data = ctx.query;
 	  	let result = await gmAnnouncementService.updateBulletin(data);
-	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+	  	ctx.body = statusCode.SUCCESS_200('修改成功', result);
 	  }
 
 	  @post('/send')
 	  async send(ctx) {
 	  	let data = ctx.request.body;
 	  	let result = await gmAnnouncementService.sendBulletin(data);
-	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+	  	ctx.body = statusCode.SUCCESS_200('发送成功', result);
+	  }
+	  @get('/weights')
+	  async weights(ctx) {
+	  	let data = ctx.query;
+	  	let result = await gmAnnouncementService.queryweights(data);
+	  	ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	  }
+	  @get('/queryservernames')
+	  async queryservernames(ctx) {
+	  	let data = ctx.query;
+	  	let result = await gmAnnouncementService.queryservernames(data);
+	  	ctx.body = statusCode.SUCCESS_200('查找成功', result);
 	  }
 
+	  
 
-
-
-
-
+	  @put('/putchangeoneannounced')
+	  async putchangeoneannounced(ctx) {
+	  	let data = ctx.request.body;
+	  	let result = await gmAnnouncementService.putchangeoneannounced(data);
+	  	ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	  }
 
 
 

@@ -3,9 +3,11 @@ import { gmAnnouncementDO } from '../models/gm-announcement';
 import BaseService from '../../lib/base-service';
 import statusCode from '../../utils/status-code';
 const beanUtils = require('../../utils/bean-utils');
+import Cp from '../../utils/Cp';
 import fs from 'fs';
 import { dbSequelize } from '../../config';
 import dayjs from 'dayjs';
+import { title } from 'process';
 class GmAnnouncementService extends BaseService{
 	constructor() {
 		super(gmAnnouncementDao);
@@ -15,10 +17,11 @@ class GmAnnouncementService extends BaseService{
 		let setime = data['setime[]']; 
 		let channel = data['channel[]'];
 		let where = `where  game_id=${gameid} `;
-		 data = {bulletinid, plaform, servername, type};
+		 data = {bulletinid, plaform,  type};
 		for(let [key, value] of  Object.entries(data)){
 			where += value?`and ${key} = '${value}'`:'';
 		}
+		where += servername? `and '${servername}' = any(servername)`:'';
 		where += setime?` and create_time  between '${dayjs(setime[0]).format('YYYY-MM-DD HH:mm:ss')}' and '${dayjs(setime[1]).format('YYYY-MM-DD HH:mm:ss')}'`:'';
 		switch(typeof channel){
 			case 'string':where += ` and '${channel}' = any(client)`;break;
@@ -100,7 +103,77 @@ class GmAnnouncementService extends BaseService{
 	async sendBulletin(datas){
 		let { data, sendtime, gameid } = datas;
 		let res = await dbSequelize.query(`update gm_announcement set sendtime='${sendtime}',anno_status =2 where id in (${data.map(item => item.id)}) `);
+		// Cp.sendBulletin(gameid, data.map(item => item.id));
 		return res;
+	}
+	async queryweights(parmas){
+		let whereObj = {};
+		for(let [key, value] of Object.entries(parmas)){
+			if(!value || key.slice(-2) === '[]' ){continue;}
+			whereObj[key] = value;
+		}
+		let { stime, etime, gameid, channel, plaform, servername } = whereObj;
+		if(typeof servername === 'string'){servername = [servername];}
+		servername = servername?` and servername = array[${servername.map(a=>`'${a}'`)}]::varchar[]` :'';
+		if(typeof channel ==='string'){channel = [channel];}
+		// if(plaform && channel){
+		// 	servernames  = await dbSequelize.query(`
+		// 	select servername as label,servername as value  from gm_server 
+		// 	where gameid=${gameid} and plaform ='${plaform}'  
+		// 	and channel = array[${channel.map(a=>`'${a}'`)}]::varchar[] 
+		// 	and servername = servername`);
+		// }
+		channel = channel?` and client = array[${channel.map(a=>`'${a}'`)}]::varchar[]` :'';
+		plaform = plaform?` and plaform = '${plaform}'`:'';
+		if (!(stime && etime)){return [];}
+		let res = await dbSequelize.query(`
+		select weights as label , weights as value 
+		from gm_announcement  
+		where game_id = '${gameid}' and type = '1' ${channel} ${plaform} ${servername}
+		and  ('${stime}' BETWEEN start_time and  end_time  
+		or '${etime}' BETWEEN start_time and  end_time 
+		or start_time BETWEEN '${stime}' and  '${etime}'  
+		or end_time BETWEEN '${stime}' and  '${etime}')  `);
+		return res[0];
+	}
+	async queryservernames(data){
+		let {gameid, plaform, channel} = data;
+		 if(plaform && channel){
+			if(typeof channel ==='string'){channel = [channel];}
+			let servernames  = await dbSequelize.query(`
+				select servername as label,servername as value  from gm_server 
+				where gameid=${gameid} and plaform ='${plaform}'  
+				and channel = array[${channel.map(a=>`'${a}'`)}]::varchar[] 
+				and servername = servername`);
+			return servernames[0];
+		}
+	}
+	async putchangeoneannounced(data){
+		let  Marquee = async (data)=>{
+			let {id, text, start_time, end_time} = data;
+			let res = await dbSequelize.query(`update gm_announcement 
+			set text = '${text}',
+			start_time = '${start_time}',
+			end_time = '${end_time}'
+			where id = ${id}`);
+			return res[0];
+		};
+		let  bulletin = async (data)=>{
+			let {id, text, title, link} = data;
+			let res = await dbSequelize.query(`update gm_announcement 
+			set text = '${text}',
+				title = '${title}',
+				link = '${link}'
+			where id = ${id}`);
+			return res[0];
+		};
+		let res;
+		switch(data.type){
+			case '跑马灯':res = await Marquee(data);break;
+			case '公告板':res = await bulletin(data);break;
+		}
+		return res;
+		
 	}
 }
 export default new GmAnnouncementService();
