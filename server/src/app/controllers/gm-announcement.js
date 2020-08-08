@@ -15,7 +15,16 @@ export class GmAnnouncementController {
 			  case '2': result = await gmAnnouncementService.createBulletin(data, file, id);break;
 			  case '1': result = await gmAnnouncementService.createMarquee(data, id);break;
 		  }
-	  	ctx.body = statusCode.SUCCESS_200('新增成功', result);
+		  let {CpMsg} = result;
+		if(!CpMsg){
+			ctx.body = statusCode.SUCCESS_200('新增成功', result);
+		}else{
+			ctx.body = {
+				code:201,
+				msg:CpMsg
+			};
+		}
+	  	
 	  }
 	  @get('/query')
 	  async query(ctx) {
@@ -55,7 +64,7 @@ export class GmAnnouncementController {
 	  async putchangeoneannounced(ctx) {
 	  	let data = ctx.request.body;
 	  	let result = await gmAnnouncementService.putchangeoneannounced(data);
-	  	ctx.body = statusCode.SUCCESS_200('查找成功', result);
+	  	ctx.body = statusCode.SUCCESS_200('修改成功', result);
 	  }
 
 

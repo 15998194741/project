@@ -17,7 +17,6 @@ connection.connect();
 class rechargeService{
 	constructor() {
 		var mysql  = require('mysql');  
- 
 		var connection = mysql.createConnection({     
 			host     : '117.50.10.34',       
 			user     : 'gmfancyguo',              
@@ -29,7 +28,15 @@ class rechargeService{
 	}
 
 	async query(data){
-
+		var mysql  = require('mysql');  
+		var connection = mysql.createConnection({     
+			host     : '117.50.10.34',       
+			user     : 'gmfancyguo',              
+			password : 'gmfancyguo!',       
+			port: '3306',                   
+			database: 'sdk' 
+		}); 
+		connection.connect();
 		let {roleid, stime, plaform, servername, page, pagesize, gameid} = data;
 		gameid =22222222;
 		let srttime = data['srttime[]'];
@@ -85,6 +92,7 @@ class rechargeService{
 		});
 		res = JSON.parse(JSON.stringify(res));
 		total = total[0].total;
+		connection.end();
 		return {res, total};
 	}
 	async replenishment(data){

@@ -18,7 +18,14 @@ export class rechargeController {
     	ctx.log.resourceDesc = '充值订单补单';
     	let data = ctx.request.body;
     	let result = await rechargeService.replenishment(data);
-    	ctx.body = JSON.parse(result);
+    	try{
+    		ctx.body = JSON.parse(result);
+    	}catch{
+    		ctx.body = {
+    			code : 201,
+    			msg:'失败'
+    		};
+    	}
     }
 
 

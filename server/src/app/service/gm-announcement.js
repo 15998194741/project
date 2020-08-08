@@ -34,6 +34,16 @@ class GmAnnouncementService extends BaseService{
 		return {res, total};
 	}
 	async createBulletin(data, files, id){
+		let cpdata = data;
+		let cpfilename;
+		try{
+			 cpfilename = data.bulletinid + files.name;
+		}catch{
+			 cpfilename = '';
+		}
+		let Res = await Cp.insertBulletin(cpdata, cpfilename);
+		let  {code :CpRes, msg:CpMsg} = JSON.parse(Res);
+		if(+CpRes !== +200){return {CpMsg};}
 		const path = require('path');
 		  const file = files.images;
 		  let filePath= await new Promise((resolve, reject)=>{
@@ -65,6 +75,10 @@ class GmAnnouncementService extends BaseService{
 		return res[1];
 	}
 	async createMarquee(data, id){
+		let cpdata = data;
+		let Res = await Cp.insertMarquee(cpdata);
+		let {code :CpRes, msg:CpMsg} = JSON.parse(Res);
+		if(+CpRes !== +200){return {CpMsg};}
 		let { channel, servername } =data;
 		for(let [key, value] of Object.entries(data)){
 			if(key === 'stime' || key === 'etime'){
@@ -97,13 +111,16 @@ class GmAnnouncementService extends BaseService{
 		return res[1];
 	}
 	async updateBulletin(data){
+		let CpRes = await Cp.stopannouncement(data);
+		let {code, msg} = JSON.parse(CpRes);
+		if(code !== 200){return {msg};}
 		let res = await dbSequelize.query(`update gm_announcement set anno_status=1 where id='${data.id}'`);
 		return res[0][0];
 	}
 	async sendBulletin(datas){
 		let { data, sendtime, gameid } = datas;
 		let res = await dbSequelize.query(`update gm_announcement set sendtime='${sendtime}',anno_status =2 where id in (${data.map(item => item.id)}) `);
-		// Cp.sendBulletin(gameid, data.map(item => item.id));
+		await Cp.sendBulletin(gameid, data.map(item => item.id));
 		return res;
 	}
 	async queryweights(parmas){
@@ -116,13 +133,6 @@ class GmAnnouncementService extends BaseService{
 		if(typeof servername === 'string'){servername = [servername];}
 		servername = servername?` and servername = array[${servername.map(a=>`'${a}'`)}]::varchar[]` :'';
 		if(typeof channel ==='string'){channel = [channel];}
-		// if(plaform && channel){
-		// 	servernames  = await dbSequelize.query(`
-		// 	select servername as label,servername as value  from gm_server 
-		// 	where gameid=${gameid} and plaform ='${plaform}'  
-		// 	and channel = array[${channel.map(a=>`'${a}'`)}]::varchar[] 
-		// 	and servername = servername`);
-		// }
 		channel = channel?` and client = array[${channel.map(a=>`'${a}'`)}]::varchar[]` :'';
 		plaform = plaform?` and plaform = '${plaform}'`:'';
 		if (!(stime && etime)){return [];}
@@ -150,15 +160,22 @@ class GmAnnouncementService extends BaseService{
 	}
 	async putchangeoneannounced(data){
 		let  Marquee = async (data)=>{
-			let {id, text, start_time, end_time} = data;
+			let CpRes = await Cp.updateMarquee(data);
+			let {code, msg} = JSON.parse(CpRes);
+			if(code !== 200){return {msg};}
+			let {id, text, start_time, end_time, weights} = data;
 			let res = await dbSequelize.query(`update gm_announcement 
 			set text = '${text}',
 			start_time = '${start_time}',
-			end_time = '${end_time}'
+			end_time = '${end_time}' ,
+			weights = '${weights}'
 			where id = ${id}`);
 			return res[0];
 		};
 		let  bulletin = async (data)=>{
+			let CpRes = await Cp.updateBulletin(data);
+			let {code, msg} = JSON.parse(CpRes);
+			if(code !== 200){return {msg};}
 			let {id, text, title, link} = data;
 			let res = await dbSequelize.query(`update gm_announcement 
 			set text = '${text}',

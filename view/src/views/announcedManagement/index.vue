@@ -272,32 +272,29 @@ style="min-height: 5vh;"
              <el-date-picker
              v-model="changebulletindata['start_time']"
              type="datetime"
-             placeholder="选择日期时间">
+             placeholder="选择日期时间"
+             @change='changeQueryMarqueeweights'>
            </el-date-picker>
            </el-form-item>
          <el-form-item label="结束时间:" hide-required-asterisk>
            <el-date-picker
            v-model="changebulletindata['end_time']"
            type="datetime"
-           placeholder="选择日期时间">
+           placeholder="选择日期时间"
+           @change='changeQueryMarqueeweights'>
          </el-date-picker>
          </el-form-item>
          <el-form-item label="平台:">
            <el-select v-model="changebulletindata['plaform']" disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
-             <el-option   label='不限制' value="" ></el-option>
-             <el-option   label='安卓' value="1" ></el-option>
-               <el-option   label='苹果' value="2" ></el-option>
            </el-select>
          </el-form-item>
          <el-form-item label="客户端:">
            <el-select v-model="changebulletindata['client']" multiple disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
-             <el-option v-for="(item,index) in selectForm[1].options"   :key="index"  :label='item.label' :value="item.value" >
-             </el-option></el-select>
+            </el-select>
          </el-form-item>
          <el-form-item label="服务器:">
            <el-select v-model="changebulletindata['servername']" disabled multiple placeholder="请选择" size='small' style="border-radius: 10px;" >
-             <el-option v-for="(item,index) in selectForm[2].options"   :key="index"  :label='item.label' :value="item.value" >
-             </el-option></el-select>
+         </el-select>
          </el-form-item>
          <el-form-item label="时间间隔:">
            <el-input
@@ -308,7 +305,7 @@ style="min-height: 5vh;"
          
 
          <el-form-item label="权重:"  prop='weights'>
-          <el-select   v-model="changebulletindata['weights']" disabled placeholder="请选择" size='small' style="border-radius: 10px;" >
+          <el-select   v-model="changebulletindata['weights']"  placeholder="请选择" size='small' style="border-radius: 10px;" >
             <el-option v-for="(item,index) in Marqueeweights"   :key="index"  :label='item.label' :value="item.value" >
             </el-option></el-select>
         </el-form-item>
@@ -523,6 +520,36 @@ export default {
 
 
   methods: {
+    async changeQueryMarqueeweights(val) {
+      if (val !== 'index') {
+        this.changebulletindata['weights'] = '';
+      }
+      this.Marqueeweights = [];
+      let { start_time: stime, end_time: etime, plaform, client, servername } = this.changebulletindata;
+      switch (plaform) {
+        case '不限制':plaform = ''; break;
+        case '安卓':plaform = '1'; break;
+        case '苹果':plaform = '2'; break;
+      }
+      let res = await getqueryMarqueeweights({ stime, etime, plaform, client, servername });
+      let { data } = res;
+      this.Marqueeweights = data.filter(a => a.value);
+      let arr1 = [
+        { label: 1, value: 1 },
+        { label: 2, value: 2 },
+        { label: 3, value: 3 },
+        { label: 4, value: 4 },
+        { label: 5, value: 5 },
+        { label: 6, value: 6 },
+        { label: 7, value: 7 },
+        { label: 8, value: 8 },
+        { label: 9, value: 9 },
+        { label: 10, value: 10 }
+      ];
+      this.Marqueeweights = arr1.filter(item => {
+        return !this.Marqueeweights.some(ele => +ele.label === +item.label);
+      });
+    },
     arrayUnique(arr, name) {
       let hash = {};
       return arr.reduce(function(item, next) {
@@ -537,13 +564,9 @@ export default {
         let servername = await getqueryservernames({ channel, plaform });
         let { data } = servername;
         this.servernamesselect = this.arrayUnique(data, 'value');
-    
-        
-        
       } else {
         this.createForm['servername'] = '';
         this.servernamesselect = [];
-
       }
       let res = await getqueryMarqueeweights({ stime, etime, plaform, channel, servername });
       let { data } = res;
@@ -590,6 +613,7 @@ export default {
     placardmodify(index, row) {
       this.dialogBulletinFormchange = true;
       this.changebulletindata = deepCopy(row);
+      this.changeQueryMarqueeweights('index');
       
       // console.log(this.changebulletindata);
  
@@ -599,6 +623,11 @@ export default {
       if (+res.code === 200) {
         this.$message.success('停用成功');
         this.tableData[index].anno_status = '停用';
+        this.tableData[index].stopshow = false;
+        this.tableData[index].changeshow = false;
+
+        console.log(this);
+        // this.filterFormChangePage();
         return;
       }
       this.$message.warning('停用失败');
@@ -618,8 +647,6 @@ export default {
     async postannounced() {
       let maintext = await this.$refs['createForm'].validate().catch(err=>false);
       let allRules = this.radio ? await this.$refs['createFormMarqueeRule'].validate().catch(err=>false) : await this.$refs['createFormbulletin'].validate().catch(err=>false);
-      // let MarqueeRules = await this.$refs['createFormMarqueeRule'].validate().catch(err=>false);    
-      // let bulletinRules = await this.$refs['createFormbulletin'].validate().catch(err=>false);    
       if (!allRules) {return;}
       let a = new FormData();
       for (let [key, value] of Object.entries(this.createForm)) {
@@ -682,7 +709,7 @@ export default {
         switch (+item.anno_status) {
           case 1: item.anno_status = '停用'; item.changeshow = false; item.stopshow = false; break;
           case 2: item.anno_status = '发布中'; item.changeshow = false; item.stopshow = true; break;
-          case 3: item.anno_status = '发布失败'; item.changeshow = true; item.stopshow = false; break;
+          case 3: item.anno_status = '发布失败'; item.changeshow = false; item.stopshow = false; break;
           case 4: item.anno_status = '发布完成'; item.changeshow = false; item.stopshow = false; break;
           default:item.anno_status = '待用'; item.changeshow = true; item.stopshow = true;
         }

@@ -1,5 +1,0 @@
-[2020-08-07T10:58:22.703] [INFO] resLogger - 
-*************** log start ***************
-日志记录：{"resourceUrl":"/","resourceDesc":"","requestType":"GET","requestParams":"{}","responseCode":590,"responseMessage":"","responseDate":{"code":590,"message":"权限异常"},"serverIp":"当前服务器id","userIp":"::1","userId":null,"createTime":"2020-8-7 10:58:22 ├F10: AM┤","executionTime":0}
-*************** log end ***************
-
