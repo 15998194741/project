@@ -232,7 +232,7 @@ export default {
         let a = object_id ? object_id === item.object_id : true;
         let b = object_name ? object_name === item.object_name : true;
         let c = object_class ? object_class === item.object_class : true;
-        let e = object_type ? object_type == item.object_type : true;
+        let e = object_type ? +object_type === +item.object_type : true;
         let d = (a && b && c && e);
         return d;
 
@@ -251,15 +251,17 @@ export default {
       let tableDatas = res.data.res;
       if (tableDatas.length === 0) {this.loading = false; return;}
       this.tableData = tableDatas.map(item =>{
-        if (item.object_type == '1') {
-          item.object_number = '+' + item.object_number;
-        } else if (item.object_type == '0') {
-          item.object_number = '-' + item.object_number;
+        if (+item.object_type === +1) {
+          item['object_number'] = '+' + item.object_number;
+        } else if (+item.object_type === +0) {
+          item['object_number'] = '-' + item.object_number;
         }
         try {
           item.timestamp = +item.timestamp.toString().slice(0, -3);
           item.timestamp ? item.timestamp = dayjs(+item.timestamp).format('YYYY-MM-DD HH:mm:ss') : ''; 
-        } catch {}
+        } catch {
+          console.log(1);
+        }
         return item;
       });
       this.total = Number(res.data.total);
@@ -296,7 +298,7 @@ export default {
   },
   mounted() {
     
-    const _this = this;
+    // const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.165;
