@@ -239,7 +239,7 @@
 </template>
 
 <script>
-import { deepCopy } from '@/utils/zoneSettings';
+// import { deepCopy } from '@/utils/zoneSettings';
 import { findServername } from '@/api/character.js';
 import dayjs from 'dayjs';
 import { findComponents, findServer, stopserver, ServerMerge, serverselect, servercreate, serverUpdateToOne, serverallupdate, findServerByID, getpage } from '@/api/components.js';
@@ -621,8 +621,13 @@ export default {
     if (mergetrue) {
       // this.allselectchange['ip'] = value ? value : '';
       let res = await ServerMerge(this.allselectchange);
-      this.$message.success('合服成功!'); 
-      this.filterFormChange('flush');
+      if (+res['code'] === +200) {
+        this.$message.success('合服成功!'); 
+        this.filterFormChange('flush');
+        return;
+      }
+      this.$message.warning('合服失败!'); 
+      
     }
    
   },
@@ -691,7 +696,7 @@ export default {
     this.finservers(this.filterForm);
   },
   async filterFormChangeClick() {
-    for (let [key, value] of Object.entries(this.filterForm)) {
+    for (let key in this.filterForm) {
       if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
         continue;
       }
@@ -737,7 +742,7 @@ export default {
     });
     let req = this.filterServerIdForm;
     // console.log(req.value);
-    if (req.value == '') {
+    if (req.value === '') {
       console.log(req.value);
       this.$message({
         message: '警告哦，不可以搜索空哦',

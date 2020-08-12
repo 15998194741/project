@@ -1,7 +1,7 @@
 <template>
   <div class="role-container">
     <div class="role-container-header" >
-    <ul>
+    <ul style="margin-top: 5px;margin-bottom: -5px;">
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-upload2" size='small' class="button-with-header"  @click="serverCreatedialogFormVisible = true" >导入</el-button></li>
       <li><el-button  v-if="grade" slot="reference" icon="el-icon-download" size='small' class="button-with-header" @click='exportFile' >导出</el-button></li>
       <li><el-button  slot="reference" icon="el-icon-refresh" size='small' class="button-with-header"  @click='filterFormChange'>刷新</el-button></li>
@@ -200,8 +200,8 @@ export default {
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        'banned_type': '',
+        'banned_area': '',
         page: 1,
         pagesize: 10
       },
@@ -395,19 +395,17 @@ export default {
     },
     exportFile() {
       require.ensure([], () => {
-        const { export_json_to_excel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
+        const { export_json_to_excel: exportJsonToExcel } = require('@/Excel/Export2Excel');//注意这个Export2Excel路径
         const tHeader = ['角色ID', '账户ID', '昵称', '平台', '客户端', '设备ID', '设备类型', '区服名称', '区服ID', '等级', 'VIP等级', '付费总额', 'IP', '注册时间', '最后登录时间', '封禁类型', '封禁范围', '封禁原因', '封禁时长', '封禁时间-解封时间']; // 上面设置Excel的表格第一行的标题
-        const filterVal = ['index', 'nickName', 'name']; // 上面的index、nickName、name是tableData里对象的属性key值
+        // const filterVal = ['index', 'nickName', 'name']; // 上面的index、nickName、name是tableData里对象的属性key值
         console.log(this.tableTrue);
         var list = []; //把要导出的数据tableData存到list
         for (let i of this.tableTrue) {
           var a = [i.roleid, i.account_id, i.role_name, i.plaform, i.channel, i.distinct_id, i.machine, i.servername, i.serverid, i.level, i.vip_level, i.sum_recharge, i.ip, i.regtime, i.update_time, i.banned_type, i.banned_area, i.banned_reason, i.banned_time, i.stime_etime];
           list.push(a);
         }
-       
-     
         // const data = this.formatJson(filterVal, list);
-        export_json_to_excel(tHeader, list, '列表excel');//最后一个是表名字
+        exportJsonToExcel(tHeader, list, '列表excel');//最后一个是表名字
       });
   
     },
@@ -483,7 +481,7 @@ export default {
       this.findCharacter();
     },
     flushFilterFormChange() {
-      for (let [key, value] of Object.entries(this.filterForm)) {
+      for (let key in this.filterForm) {
         if (key === 'page' || key === 'pagesize') {
           continue;
         }
@@ -497,7 +495,7 @@ export default {
       
     },
     clickFilterFormChange() {
-      for (let [key, value] of Object.entries(this.filterForm)) {
+      for (let key in this.filterForm) {
         if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
           continue;
         }
@@ -510,15 +508,15 @@ export default {
       let res = await queryCharacter(this.filterForm);
       this.tableData = res.data.res;
       this.total = Number(res.data.total);
+      if (+this.total === +0) { this.loading = false; return;}
       this.tableData.map(item =>{
-        item.stime_etime = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
+        item['stime_etime'] = dayjs(item.stime).format('YYYY-MM-DD HH:mm:ss') + '----' + dayjs(item.stime).add(item.banned_time, 'hour').format('YYYY-MM-DD HH:mm:ss');
         item.plaform = item.plaform ? item.plaform === '1' ? '安卓' : '苹果' : '';
-        item.banned_time = item.banned_time > 24 ? (item.banned_time - item.banned_time % 24) / 24 + '天' + item.banned_time % 24 + '小时' : item.banned_time + '小时';
-        item.banned_type = item.banned_type ? item.banned_type === '1' ? '封号' : '禁言' : '';
-        item.banned_area = item.banned_area ? item.banned_area === '1' ? '角色' : item.banned_area === '2' ? '账号' : 'IP' : '';
+        item['banned_time'] = item.banned_time > 24 ? (item.banned_time - item.banned_time % 24) / 24 + '天' + item.banned_time % 24 + '小时' : item.banned_time + '小时';
+        item['banned_type'] = item.banned_type ? item.banned_type === '1' ? '封号' : '禁言' : '';
+        item['banned_area'] = item.banned_area ? item.banned_area === '1' ? '角色' : item.banned_area === '2' ? '账号' : 'IP' : '';
         item.regtime = dayjs(item.regtime).format('YYYY-MM-DD HH:mm:ss');
-        item.update_time = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
-
+        item['update_time'] = dayjs(item.update_time).format('YYYY-MM-DD HH:mm:ss'); 
         return { ...item };
       });
       this.loading = false;
@@ -557,21 +555,7 @@ export default {
 
       switch (element.offsetWidth) {
         case 1840: this.screenWidth = 158; break;
-        // case 1830: this.screenWidth = 173; break;
-        // case 1820: this.screenWidth = 172; break;
-        // case 1810: this.screenWidth = 171; break;
-        // case 1800: this.screenWidth = 170; break;
         case 1700: this.screenWidth = 145; break;
-        // case 1710: this.screenWidth = 161; break;
-        // case 1720: this.screenWidth = 162; break;
-        // case 1730: this.screenWidth = 163; break;
-        // case 1740: this.screenWidth = 164; break;
-        // case 1750: this.screenWidth = 165; break;
-        // case 1760: this.screenWidth = 166; break;
-        // case 1770: this.screenWidth = 167; break;
-        // case 1780: this.screenWidth = 168; break;
-        // case 1790: this.screenWidth = 169; break;
-
       }
       // if (element.offsetWidth === 1840) {
       //   this.screenWidth = 174;

@@ -306,7 +306,9 @@ export default {
       let res = await backPackQuery({ roleid });
       try {
         res = JSON.parse(res);
-      } catch {}
+      } catch {
+        console.log(1);
+      }
       let tableDatas = res.data;
       // console.log(res);
       // this.tableData = res.data;
@@ -342,7 +344,7 @@ export default {
   },
   mounted() {
 
-    const _this = this;
+    // const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.2429;

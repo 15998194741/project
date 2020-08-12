@@ -61,7 +61,7 @@
   <el-dialog title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false">
     <div class="container">
         <div >  
-          <el-form ref="ruleForm" :model="ruleForm" status-icon :rules="rules" label-width="100px" class="demo-ruleForm">
+          <el-form ref="ruleForm" :model="createFormMail"  status-icon :rules="createFormRules" label-width="100px" class="demo-ruleForm">
             <el-form-item  label="邮件标题" prop="pass">
               <el-input v-model='createFormMail.title'  autocomplete="off"></el-input>
             </el-form-item>
@@ -133,9 +133,7 @@ export default {
     return {
       serverCreatedialogFormVisible: false,
       dialogFormchange: false,
-      file: '',
       servernamesselect: [],
-      filelist: [],
       multipleTable: '',
       total: 0,
       createFormMail: {
@@ -157,8 +155,8 @@ export default {
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        'banned_type': '',
+        'banned_area': '',
         page: 1,
         pagesize: 10
       },
@@ -272,6 +270,14 @@ export default {
       tableTrue: []
     };
     
+  },
+  computed: {
+    grade() {
+      if (this.$route.meta.grade === 0) {
+        return false;
+      }
+      return true;
+    }
   },
   async mounted() {
     let res = await findComponents({ code: 'areaclothing', gameid: this.gameid });

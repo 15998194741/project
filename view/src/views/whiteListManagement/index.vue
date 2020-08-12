@@ -126,8 +126,8 @@ export default {
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        'banned_type': '',
+        'banned_area': '',
         page: 1,
         pagesize: 10
       },

@@ -36,7 +36,7 @@
     @selection-change="handleSelectionChange"
     >
     <el-table-column  type="selection" width="40"></el-table-column>
-    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :width="screenWidth" :label="column.label">
+    <el-table-column v-for='(column,index) in tablecolumn' :key='index' :label="column.label">
       <template slot-scope="scope">{{ scope.row[column.prop] }}</template>
     </el-table-column>
   </el-table>
@@ -85,8 +85,8 @@ export default {
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        'banned_type': '',
+        'banned_area': '',
         page: 1,
         pagesize: 10
       },
@@ -157,14 +157,10 @@ export default {
   },
   mounted() {
     
-    const _this = this;
+    // const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.2429;
-    //   switch (element.offsetWidth) {
-    //     case 1840: break;
-    //     case 1700: this.screenWidth = '30%'; break;
-    //   }
     });
 
 

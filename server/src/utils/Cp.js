@@ -106,7 +106,8 @@ class Cp{
 		};
 		return new Promise((resolve, reject)=>{
 			request(res, (error, response, body)=>{
-				return resolve(JSON.parse(body));
+				return body?resolve(JSON.parse(body)):reject('nodata');
+				 
 			});
 		}); 
 	}

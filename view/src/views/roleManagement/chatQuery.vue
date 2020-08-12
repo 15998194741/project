@@ -151,8 +151,8 @@ export default {
         plaform: '',
         channel: '',
         servername: '',
-        banned_type: '',
-        banned_area: '',
+        'banned_type': '',
+        'banned_area': '',
         page: 1,
         pagesize: 10
       },
@@ -235,28 +235,30 @@ export default {
 
       ],
       tableDataBackup: [],
-      tableData: [{
-        roleid: '', //角色ID
-        account_id: '', //用户id
-        role_name: '', //角色昵称
-        channel: '', //渠道客户端
-        distinct_id: '', //设备iD
-        machine: '', //设备类型
-        plaform: '', //平台                     新增 Android  IOS
-        serverid: '', //区服ID                   新增
-        update_time: '', //最后登录时间           新增 
-        level: '', //等级
-        vip_level: '', //vip等级
-        sum_recharge: '', //付费总额
-        ip: '', //用户Ip地址
-        regtime: '', //注册时间
-        banned_type: '', //封禁类型   pgsql
-        banned_area: '', //封禁范围    pgsql
-        banned_reason: '', //封禁原因   pgsql
-        banned_time: '', //封禁时长
-        stime_etime: ''
+      tableData: [
+      //   {
+      //   roleid: '', //角色ID
+      //   account_id: '', //用户id
+      //   role_name: '', //角色昵称
+      //   channel: '', //渠道客户端
+      //   distinct_id: '', //设备iD
+      //   machine: '', //设备类型
+      //   plaform: '', //平台                     新增 Android  IOS
+      //   serverid: '', //区服ID                   新增
+      //   update_time: '', //最后登录时间           新增 
+      //   level: '', //等级
+      //   vip_level: '', //vip等级
+      //   sum_recharge: '', //付费总额
+      //   ip: '', //用户Ip地址
+      //   regtime: '', //注册时间
+      //   banned_type: '', //封禁类型   pgsql
+      //   banned_area: '', //封禁范围    pgsql
+      //   banned_reason: '', //封禁原因   pgsql
+      //   banned_time: '', //封禁时长
+      //   stime_etime: ''
 
-      }],
+      // }
+      ],
       tablecolumn: [
         { label: '物品ID', prop: 'roleid', width: 50 },
         { label: '物品名称', prop: 'account_id', width: 50 },
@@ -273,8 +275,6 @@ export default {
     
   },
   mounted() {
-    
-    const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.2429;

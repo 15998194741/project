@@ -1,7 +1,7 @@
 <template>
   <div class="anno-container">
     <div class="role-container-header" >
-    <ul style="margin-top: 10px;">
+    <ul style="margin-top: 5px;margin-bottom: -5px;">
      
       <li><el-button slot="reference" icon="el-icon-refresh" size='small' class="button-with-header" >刷新</el-button></li>
       <li><el-button slot="reference" icon="el-icon-circle-plus-outline" size='small' class="button-with-header"  @click='dialogFormVisiblechangealter' >新建公告</el-button></li>
@@ -354,6 +354,9 @@ export default {
       if (!value) {
         return callback(new Error('请选择一个时间'));
       }
+      if (new Date() > value) {
+        return callback(new Error('不可以选择超过现在时间得时间'));
+      }
       callback();
     };
     var dateruletwo = (rule, value, callback) =>{
@@ -362,6 +365,15 @@ export default {
       }
       if (new Date(value) <= this.createForm['stime']) {
         return callback(new Error('结束时间不可等于或小于开始时间'));
+      }
+      callback();
+    };
+    var intervalFormRule = (rule, value, callback) =>{
+      if (!value) {
+        return callback(new Error('请输入时间间隔'));
+      }
+      if (!/^[0-9]*$/.test(value)) {
+        return callback(new Error('请输入纯数字'));
       }
       callback();
     };
@@ -418,7 +430,7 @@ export default {
       createFormMarqueeRules: { 
         stime: [{ validator: dateruleone, trigger: ['blur', 'change'] }],
         etime: [{ validator: dateruletwo, trigger: ['blur', 'change'] }],
-        interval: [{ validator: linkruleone, trigger: ['blur', 'change'] }],
+        interval: [{ validator: intervalFormRule, trigger: ['blur', 'change'] }],
         weights: [{ validator: linkruleone, trigger: ['blur', 'change'] }]
       },
       insertForm: {
@@ -486,23 +498,21 @@ export default {
       ],
       tableData: [],
       tablecolumn: [
-        { label: '公告ID', prop: 'bulletinid', width: 50 },
-        { label: '公告类型', prop: 'type', width: 50 },
-        { label: '平台', prop: 'plaform', width: 25 },
-        { label: '客户端', prop: 'client', width: -50 },
-        { label: '区服名称', prop: 'servername', width: -50 },
-        { label: '公告标题', prop: 'title', width: -50 },
-        { label: '公告状态', prop: 'anno_status', width: -50 },
-        { label: '开始时间', prop: 'start_time', width: -50 },
-        { label: '结束时间', prop: 'end_time', width: -50 }
+        { label: '公告ID', prop: 'bulletinid' },
+        { label: '公告类型', prop: 'type' },
+        { label: '平台', prop: 'plaform' },
+        { label: '客户端', prop: 'client' },
+        { label: '区服名称', prop: 'servername' },
+        { label: '公告标题', prop: 'title' },
+        { label: '公告状态', prop: 'anno_status' },
+        { label: '开始时间', prop: 'start_time' },
+        { label: '结束时间', prop: 'end_time' }
       ],
       fileName: '',
       screenWidth: 145,
       screenHeight: '',
       tableTrue: [],
-      Marqueeweights: [
-        
-      ]
+      Marqueeweights: []
     };
     
   }, computed: {
@@ -622,7 +632,7 @@ export default {
       let res = await putupdateAnnouncement(row);
       if (+res.code === 200) {
         this.$message.success('停用成功');
-        this.tableData[index].anno_status = '停用';
+        this.tableData[index]['anno_status'] = '停用';
         this.tableData[index].stopshow = false;
         this.tableData[index].changeshow = false;
 
@@ -646,8 +656,9 @@ export default {
     },
     async postannounced() {
       let maintext = await this.$refs['createForm'].validate().catch(err=>false);
+     
       let allRules = this.radio ? await this.$refs['createFormMarqueeRule'].validate().catch(err=>false) : await this.$refs['createFormbulletin'].validate().catch(err=>false);
-      if (!allRules) {return;}
+      if (!allRules || !maintext) {return;}
       let a = new FormData();
       for (let [key, value] of Object.entries(this.createForm)) {
         a.append(key, value);
@@ -655,7 +666,7 @@ export default {
       if (this.radio) {a.append('type', 1);} else {a.append('type', 2);}
       let res = await postcreateAnnouncement(a);
       if (res.code !== 200) {this.$message.warning('创建失败!'); return; }
-      for (let [key, value] of Object.entries(this.createForm)) {
+      for (let key in this.createForm) {
         this.createForm[key] = '';
       }
       this.file = '';
@@ -679,7 +690,7 @@ export default {
       }
     },
     filterFormChangeClick() {
-      for (let [key, value] of Object.entries(this.filterForm)) {
+      for (let key in this.filterForm) {
         if (key === 'bulletinid' || key === 'page' || key === 'pagesize') {
           continue;
         }
@@ -694,7 +705,7 @@ export default {
  
     async filterFormGET(value) {
       let res = await getqueryAnnouncement(this.filterForm);
-      if (res.code != 200) {this.tableData = []; return;} 
+      if (+res.code !== +200) {this.tableData = []; return;} 
       this.tableData = res.data.res;
       this.total = +res.data.total;
       this.tableData.map(item =>{
@@ -703,15 +714,17 @@ export default {
         item.client = JSON.stringify(item.client) === JSON.stringify(['']) ? '' : item.client;
         item.servername = JSON.stringify(item.servername) === JSON.stringify(['']) ? '' : item.servername;
         try {
-          item.start_time = item.start_time ? dayjs(item.start_time).format('YYYY-MM-DD HH:mm:ss') : '';   
-          item.end_time = item.end_time ? dayjs(item.end_time).format('YYYY-MM-DD HH:mm:ss') : '';    
-        } catch (err) {}
+          item['start_time'] = item.start_time ? dayjs(item.start_time).format('YYYY-MM-DD HH:mm:ss') : '';   
+          item['end_time'] = item.end_time ? dayjs(item.end_time).format('YYYY-MM-DD HH:mm:ss') : '';    
+        } catch (err) {
+          console.log(err);
+        }
         switch (+item.anno_status) {
-          case 1: item.anno_status = '停用'; item.changeshow = false; item.stopshow = false; break;
-          case 2: item.anno_status = '发布中'; item.changeshow = false; item.stopshow = true; break;
-          case 3: item.anno_status = '发布失败'; item.changeshow = false; item.stopshow = false; break;
-          case 4: item.anno_status = '发布完成'; item.changeshow = false; item.stopshow = false; break;
-          default:item.anno_status = '待用'; item.changeshow = true; item.stopshow = true;
+          case 1: item['anno_status'] = '停用'; item.changeshow = false; item.stopshow = false; break;
+          case 2: item['anno_status'] = '发布中'; item.changeshow = false; item.stopshow = true; break;
+          case 3: item['anno_status'] = '发布失败'; item.changeshow = false; item.stopshow = false; break;
+          case 4: item['anno_status'] = '发布完成'; item.changeshow = false; item.stopshow = false; break;
+          default:item['anno_status'] = '待用'; item.changeshow = true; item.stopshow = true;
         }
         return item;
       });
@@ -719,7 +732,7 @@ export default {
   },
 
   async mounted() {
-    const _this = this;
+    // const _this = this;
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.09;
@@ -756,6 +769,12 @@ export default {
     align-items: baseline; */
   }
 .announceddialog{
+    input{
+      width: 15vw;
+    }
+    textarea{
+      width: 15vw;
+    }
         .headradio{
           margin-left: 3%;
            margin-top: -2%;

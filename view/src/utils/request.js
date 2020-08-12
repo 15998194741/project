@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { MessageBox, Message } from 'element-ui';
 import store from '@/store';
-import { getToken } from '@/utils/cookie-utils';
+// import { getToken } from '@/utils/cookie-utils';
 
 // create an axios instance
 const service = axios.create({
@@ -64,16 +64,17 @@ service.interceptors.response.use(
           });
         });
       } else if (res.code === 500) {
-        Message({
-          message: res.message || '系统内部出错，请联系管理员',
-          type: 'error',
-          duration: 5 * 1000
-        });
+        // Message({
+        //   message: res.message,
+        //   type: 'error',
+        //   duration: 5 * 1000
+        // }        );
       }
     }
     return res;
   },
   error => {
+    
     console.log('err' + error); // for debug
     Message({
       message: error.message,

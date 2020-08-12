@@ -87,12 +87,12 @@ export default {
       filterForm: {
       
         roleid: '', //角色ID
-        object_id: '', //道具ID
-        object_method: '', //物品来源
-        object_name: '', //道具名称
-        object_type: '', //物品类型 1增加 0减少
-        object_number: '', //物品数量
-        object_class: '',
+        'object_id': '', //道具ID
+        'object_method': '', //物品来源
+        'object_name': '', //道具名称
+        'object_type': '', //物品类型 1增加 0减少
+        'object_number': '', //物品数量
+        'object_class': '',
         page: 1,
         pagesize: 500
       },
@@ -225,14 +225,14 @@ export default {
       }
     },
     async selectchange() {
-      let { object_id, object_name, object_class, object_type } = this.filterForm;
-      if (!object_id && !object_name && !object_class && !object_type) {this.tableData = this.tableDataBackup; return;}
+      let { object_id: id, object_name: name, object_class: classs, object_type: type } = this.filterForm;
+      if (!id && !name && !classs && !type) {this.tableData = this.tableDataBackup; return;}
       this.tableData = this.tableDataBackup;
       this.tableData = this.tableData.filter(item => {
-        let a = object_id ? object_id === item.object_id : true;
-        let b = object_name ? object_name === item.object_name : true;
-        let c = object_class ? object_class === item.object_class : true;
-        let e = object_type ? +object_type === +item.object_type : true;
+        let a = id ? id === item.object_id : true;
+        let b = name ? name === item.object_name : true;
+        let c = classs ? classs === item.object_class : true;
+        let e = type ? +type === +item.object_type : true;
         let d = (a && b && c && e);
         return d;
 
@@ -302,10 +302,6 @@ export default {
     const erd = elementResizeDetectorMaker();
     erd.listenTo(document.getElementById('body'), element =>{
       this.screenWidth = element.offsetWidth * 0.165;
-    //   switch (element.offsetWidth) {
-    //     case 1840: break;
-    //     case 1700: this.screenWidth = '30%'; break;
-    //   }
     });
    
 
