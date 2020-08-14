@@ -761,7 +761,7 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-.anno-container{
+  .anno-container{
   .tablesendclass{
   }
   .tablesendheader{
@@ -769,7 +769,7 @@ export default {
     align-items: baseline; */
   }
 .announceddialog{
-    input{
+    input {
       width: 15vw;
     }
     textarea{

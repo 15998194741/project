@@ -1,10 +1,6 @@
 import { controller, get, post, put, del, permission, login } from '../../lib/router-permission';
 import statusCode from '../../utils/status-code';
-import Ta from '../../utils/requests';
-// import GmDictService from '../service/gm-dict';
 import CharacterService from '../service/Character';
-import { path } from 'ramda';
-// import Components from '../service/Components';
 
 
 @controller('/character')
