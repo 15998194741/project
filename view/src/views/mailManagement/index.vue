@@ -35,8 +35,16 @@
     </el-table-column>
     <el-table-column  prop='status' label="操作">
       <template slot-scope="scope">
-        <el-button  v-show='scope.row["changeshow"]' @click="placardmodify(scope.$index,scope.row)">修改</el-button>
-        <el-button  v-show='scope.row["changeshow"]' @click="placardmodify(scope.$index,scope.row)">发布</el-button>
+        <div style=" display: flex;">
+        <el-button  @click="mailmessageChange(scope.$index,scope.row)">修改</el-button>
+        <el-dropdown>
+  <el-button  @click="mailmessageSend(scope.$index,scope.row)">发布</el-button>
+  <el-dropdown-menu slot="dropdown">
+     <div style="width:100px"  @click="mailmessageChange(scope.$index,scope.row)">定时发送</div>
+  </el-dropdown-menu>
+</el-dropdown>
+        
+        </div>
       </template>
     </el-table-column>
   </el-table>
@@ -55,7 +63,7 @@
     @size-change="filterFormChange('pagechange')"
     @current-change="filterFormChange('pagechange')" ></el-pagination>
   </div>
-  <el-dialog title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"  :close-on-click-modal="false">
+  <el-dialog title="新建邮件" :visible.sync="dialogFormchange" class="announceddialog"   :close-on-click-modal="false">
     <div class="container">
         <div >  
           <el-form ref="createFormRulesLeft" :model="createFormMail"  status-icon :rules="createFormRulesLeft" label-width="100px" class="demo-ruleForm">
@@ -134,7 +142,7 @@
               </div>
    </div>
      <div slot="footer" class="dialog-footer">
-       <el-button @click="dialogFormchange = false">取 消</el-button>
+       <el-button @click="createFormMailCancel">取 消</el-button>
        <el-button type="primary" @click='createFormMailSubmit'>确 定</el-button>
      </div>
    </el-dialog>
@@ -143,9 +151,9 @@
 
 <script>
 import { findComponents } from '@/api/components.js';
-import { findServername } from '@/api/character.js';
 import { getQueryAnnexOptions, getQueryMail, getQueryAnnexOptionsLazy, postMailToCreate, getPlaformChannelToservername, getQueryAnnexServernames } from '@/api/mail.js';
 import { annexAllQuery } from '@/api/mail.js';
+import dayjs from 'dayjs';
 
 export default {
   name: 'rolequery',
@@ -165,7 +173,7 @@ export default {
       serverName,
       serverCreatedialogFormVisible: false,
       dialogFormchange: false,
-    
+      createLock: false,
       annexProps: {
         lazy: true,
         async lazyLoad(node, resolve) {
@@ -252,15 +260,15 @@ export default {
       ],
       servernamesselect: [],
       tablecolumn: [
-        { label: '邮件ID', prop: 'roleid' },
-        { label: '邮件标题', prop: 'plaform' },
+        { label: '邮件ID', prop: 'smtp_id' },
+        { label: '邮件标题', prop: 'title' },
         { label: '平台', prop: 'plaform' },
-        { label: '客户端', prop: 'plaform' },
-        { label: '区服名', prop: 'plaform' },
-        { label: '玩家ID', prop: 'plaform' },
-        { label: '邮件内容', prop: 'plaform' },
-        { label: '附件', prop: 'plaform' },
-        { label: '发送时间', prop: 'plaform' }
+        { label: '客户端', prop: 'channel' },
+        { label: '区服名', prop: 'servernames' },
+        { label: '玩家ID', prop: 'roleid' },
+        { label: '邮件内容', prop: 'text' },
+        { label: '附件', prop: 'annex' },
+        { label: '发送时间', prop: 'sendtime' }
       ]
     };
   },
@@ -277,22 +285,40 @@ export default {
     
     createFormRulesRight() {
     
-      return { mailLink: [{ validator: this.mailLink, trigger: ['blur', 'change'] }],
-        text: [{ validator: this.text, trigger: ['blur', 'change'] }]
+      return { mailLink: [{ validator: this.mailLink, trigger: ['blur'] }],
+        text: [{ validator: this.text, trigger: ['blur'] }]
       };
     },
     createFormRulesLeft() {
       if (this.createFormMail.allServerTrue) {
-        return { title: [{ validator: this.title, trigger: ['blur', 'change'] }],
-          text: [{ validator: this.text, trigger: ['blur', 'change'] }]
+        return { title: [{ validator: this.title, trigger: ['blur'] }],
+          text: [{ validator: this.text, trigger: ['blur'] }]
         };
       }
-      return { title: [{ validator: this.title, trigger: ['blur', 'change'] }],
-        text: [{ validator: this.text, trigger: ['blur', 'change'] }],
-        roleId: [{ validator: this.age, trigger: ['blur', 'change'] }] };
+      return { title: [{ validator: this.title, trigger: ['blur'] }],
+        text: [{ validator: this.text, trigger: ['blur'] }],
+        roleId: [{ validator: this.age, trigger: ['blur'] }] };
     }
   },
   methods: {
+    async createFormMailCancel() {
+      this.dialogFormchange = false;
+      for (let i in this.createFormMail) {
+        this.createFormMail[i] = '';
+      }
+    },
+    async mailmessageChange(index, row) {
+      console.log(row);
+      this.dialogFormchange = true;
+      this.createFormMail = JSON.parse(JSON.stringify(row));
+      this.createFormMail['mailLink'] = row.link;
+      this.createFormMail['roleId'] = row['roleid'];
+    
+    },
+    async mailmessageSend(index, row) {
+      console.log(index);
+      console.log(row);
+    },
     async plaformChannelToservername() {
       let plaform = this.createFormMail['plaform'];
       let channel = this.createFormMail['channel'];
@@ -333,17 +359,22 @@ export default {
 
     },
     async createFormMailSubmit() {
+      if (this.createLock) {
+        this.$message.warning('正在提交中。');
+        return;
+      }
+      this.createLock = true;
       let right = await this.$refs['createFormRulesRight'].validate().catch(err=>false);
       let left = await this.$refs['createFormRulesLeft'].validate().catch(err=>false);
       if (this.createFormMail.allServerTrue) {
         this.createFormMail.roleId = '';
-        // this.createFormMail.serverName = '';
         this.createFormMail.channel = '';
         this.createFormMail.plaform = '';
       }
       if (!(right && left)) {return;}
       if (this.createFormMail.allServerTrue && this.createFormMail.serverName.length === 0) {
         this.$message.warning('请选择区服');
+        this.createLock = false;
         return;
       }
       let a = [];
@@ -351,10 +382,11 @@ export default {
         for (let i of this.annexList) {
           if (!(i.annexName && i.annexNumber)) {
             this.$message.warning('附件不完整。');
-          
+            this.createLock = false;
             return;
           }
-          a.push({ ID: i.annexName.slice(-1)[0], number: i.annexNumber });
+          console.log(i);
+          a.push({ ID: i.annexName.slice(-1)[0], name: i.annexName[0], number: i.annexNumber });
         }
         this.createFormMail['Annex'] = this.createFormMail.carryAnnex ? a : '';
       }
@@ -362,9 +394,19 @@ export default {
       let { code, message } = res;
       if (code === 200) {
         this.$message.success(message);
+        for (let i in this.createFormMail) {
+          this.createFormMail[i] = '';
+        }
         this.dialogFormchange = false;
+        this.createLock = false;
+        this.annexList = [
+          { annexName: '', annexNumber: '' }
+        ]; 
+        this.createFormMail['mailLink'] = '';
+        this.createFormMail['carryAnnex'] = false;
         return;
       }
+      this.createLock = false;
       this.$message.info('创建失败!');
       
     },
@@ -373,8 +415,16 @@ export default {
         case 'click':this.filterFormChangeClick(); break;
         case 'change':this.filterFormChangeChange(); break;
         case 'pagechange':this.filterFormChangeChange(); break;
-        default: break;
+        default:this.filterFormChangeFlush();
       }
+    },
+    filterFormChangeFlush() {
+      for (let i in this.filterForm) {
+        this.filterForm[i] = '';
+      }
+      this.filterForm['pagesize'] = 50;
+      this.tableData = [];
+      this.total = 0;
     },
     filterFormChangeClick() {
       for (let i in this.filterForm) {
@@ -393,9 +443,14 @@ export default {
       if (code !== 200) {
         this.$message.warning('查找失败');
         this.tableData = [];
-        
       }
-      this.tableData = data;
+      let { data: datas, total } = data;
+      datas.map(item =>{
+        item.plaform = +item.plaform === +1 ? '安卓' : +item.plaform === +2 ? '苹果' : '不限制'; 
+        item.sendtime = item.sendtime ? dayjs(item.sendtime).format('YYYY-MM-DD HH:mm:ss') : '未发送';    
+      });
+      this.tableData = datas;
+      this.total = Number(total);
     }
   },
   async mounted() {
@@ -406,11 +461,12 @@ export default {
     }));
     this.selectForm[1].options = this.selectForm[1].options.concat(components);
     this.clientOptions = components;
-    let { data } = await findServername();
-    data.map(item =>{
-      this.selectForm[2].options.find(ele => ele.label === item.label) || !item.label
-        ? item : this.selectForm[2].options.push(item);
-    });
+    let { data } = await getQueryAnnexServernames();
+    this.selectForm[2].options = this.selectForm[2].options.concat(data);
+    // data.map(item =>{
+    //   this.selectForm[2].options.find(ele => ele.label === item.label) || !item.label
+    //     ? item : this.selectForm[2].options.push(item);
+    // });
     let { data: annexdata } = await annexAllQuery();
     this.selectForm[3].options = this.selectForm[3].options.concat(annexdata);
 

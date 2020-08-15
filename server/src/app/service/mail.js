@@ -4,12 +4,11 @@ const Sequelize = require('sequelize');
 
 class MailService{
 	constructor() {
-		
 	}
 	async queryByParms(data){
 		console.log('data: ', data);
 
-		let {createTime, channel, servername } = data;
+		let {createTime, channel, servername, annex } = data;
 		let {gameid:game_id, Id:roleid, plaform, pagesize, page} = data; 
 		let condition  = {game_id, roleid, plaform };
 		let where = 'where '; 
@@ -18,17 +17,38 @@ class MailService{
 			if(!condition[i]){continue;}
 			whereObj.push( ` ${i}= '${condition[i]}'`);
 		}
+		
 		where += whereObj.join('  and  '); 
-		// where += 
+		channel = channel ?typeof channel === 'string'? [channel]:channel:false;
+		servername = servername ?typeof servername === 'string'? [servername]:servername:false;
+		annex = annex ?typeof annex === 'string'? [annex]:annex:false;
+		where += !createTime?'':` and create_time between '${createTime[0]}' and  '${createTime[1]}'`;
+		where += !channel ? '': ` and channel @> '[${channel.map(item => `"${item}"`)}]'::jsonb  `;
+		where += !annex ? '': ` and annex @> '[${annex.map(item => `{"ID":"${item}"}`).join(',')}]'::jsonb  `;
+		where += !servername ? '': ` and servername @> '[${servername.map(item => `${item}`).join(',')}]'::jsonb  `;
 		console.log('where: ', where);
 		console.log('whereObj: ', whereObj);
 		let sql = `
-        select * from gm_smtp ${where}
-        `;
+			with asd as (			
+				select * from gm_smtp ${where}
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+		`;
+		console.log(sql);
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
-		return res[0];
+		let totalsql = `
+		select count(*) as total from gm_smtp ${where}
+		`;
+		let ress = await dbSequelize.query(totalsql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
+		return {data:res, total:ress[0].total?ress[0].total:0};
 	}
 	async getQueryAnnexOptions(data){
 		let {gameid } = data;
@@ -47,7 +67,7 @@ class MailService{
         tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
         tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
         tablemain as (select * from gm_server)
-        select id as value ,servername as label from  tablemain where   tablemain.gameid = ${gameid} and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)  `);
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = ${gameid} and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)  `);
 		return res[0];
 	}
 	async getPlaformChannelToservername(data){
@@ -60,21 +80,19 @@ class MailService{
 		return res[0];
 	}
 	async postMailToCreate(data){
-		console.log('data: ', data);
 		let {gameid, title, text, mailLink:link, channel, plaform, Annex, serverName, roleId} =data;
 		if(Annex){
 			for(let i in Annex){
 				Annex[i] = JSON.stringify(Annex[i]);
 			}
-			// Annex =JSON.stringify(Annex);
 		}
-      
+		console.log(data);
         
 		let sql = ` 
         insert into  gm_smtp  
         (game_id,title,text,link,channel,plaform,annex,serverName,roleid)
         values
-        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},'${plaform}',${Annex?Annex.length >1?`'[${Annex}]'` :`'${Annex}'`:null},${serverName?`'${serverName}'`:null},'${roleId}')
+        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},'${plaform}',${Annex?Annex.length >1?`'[${Annex}]'` :`'${Annex}'`:null},${serverName?serverName.length >1?`'[${serverName}]'`:`'${serverName}'`:null},'${roleId}')
         `;
 		let res = await dbSequelize.query(sql);
 		return res[1];
@@ -89,6 +107,13 @@ class MailService{
         `);
 		return res[0];
         
+	}
+	async findServerName(data){
+		let {gameid } = data;
+		let sql = ' select * from ';
+		let res = await dbSequelize.query(sql, {
+			replacements:['active'], type:Sequelize.QueryTypes.SELECT
+		});
 	}
 
 

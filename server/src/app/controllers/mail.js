@@ -52,6 +52,12 @@ export class CharacterController {
     	let result = await MailService.annexAllQuery(data);
     	ctx.body = statusCode.SUCCESS_200('创建成功', result);
     }
-
+	@get('/findServerName')
+    async findServerName(ctx) {
+    	ctx.log.resourceDesc = '附件查找';
+    	let data = ctx.query;
+    	let result = await MailService.findServerName(data);
+    	ctx.body = statusCode.SUCCESS_200('创建成功', result);
+    }
 
 }
