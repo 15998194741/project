@@ -58,3 +58,14 @@ export function annexAllQuery(params) {
     params
   });
 }
+
+
+
+
+export function mailSend(data) { 
+  return request({
+    url: `mail/mailSend`,
+    method: 'post',
+    data
+  });
+}

@@ -38,9 +38,9 @@
         <div style=" display: flex;">
         <el-button  @click="mailmessageChange(scope.$index,scope.row)">修改</el-button>
         <el-dropdown>
-  <el-button  @click="mailmessageSend(scope.$index,scope.row)">发布</el-button>
+  <el-button  @click="mailmessageSend(scope.$index,scope.row,true)">发布</el-button>
   <el-dropdown-menu slot="dropdown">
-     <el-button  class='intervalBUttonClass' @click="mailmessageSend(scope.$index,scope.row)">定时发布</el-button>
+     <el-button  class='intervalBUttonClass' @click="mailmessageSend(scope.$index,scope.row,false)">定时发布</el-button>
   </el-dropdown-menu>
 </el-dropdown>
         
@@ -152,7 +152,7 @@
 <script>
 import { findComponents } from '@/api/components.js';
 import { getQueryAnnexOptions, getQueryMail, getQueryAnnexOptionsLazy, postMailToCreate, getPlaformChannelToservername, getQueryAnnexServernames } from '@/api/mail.js';
-import { annexAllQuery } from '@/api/mail.js';
+import { annexAllQuery, mailSend } from '@/api/mail.js';
 import dayjs from 'dayjs';
 
 export default {
@@ -315,7 +315,11 @@ export default {
       this.createFormMail['roleId'] = row['roleid'];
     
     },
-    async mailmessageSend(index, row) {
+    async mailmessageSend(index, row, sendTime) {
+      if (sendTime) {
+        let res = await mailSend(row);
+        console.log(11111111, res);
+      }
       console.log(index);
       console.log(row);
     },

@@ -115,6 +115,9 @@ class MailService{
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 	}
+	async mailSend(data){
+		
+	}
 
 
 }
