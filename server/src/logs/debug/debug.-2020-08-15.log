@@ -2627,3 +2627,425 @@
 			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
 [2020-08-15T16:02:30.729] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
 [2020-08-15T16:05:25.299] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:09:19.912] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:09:19.976] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:09:20.038] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:09:23.413] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:09:23.423] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:09:24.387] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:09:28.304] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:09:47.079] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:09:47.151] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:09:47.512] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:15:49.888] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:15:49.891] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:15:54.403] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:15:54.412] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:22:15.183] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:22:16.732] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:22:54.064] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:24:28.252] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:24:28.304] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:24:28.651] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:24:31.302] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:24:31.313] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:24:32.396] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:24:32.439] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:25:24.560] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:25:24.791] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:25:24.936] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:25:25.605] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:25:25.803] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:25:25.871] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:25:26.238] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:25:26.369] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:25:29.526] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:25:29.535] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:25:31.248] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:26:21.945] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:26:21.992] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:26:22.049] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:26:23.877] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:26:23.888] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:26:25.184] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:27:00.317] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:27:00.388] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:27:02.738] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:27:02.754] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:02.769] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:27:03.053] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:03.056] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:27:03.065] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:27:03.255] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:03.276] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:27:03.277] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:27:03.397] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:27:04.233] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:04.241] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:27:05.584] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:27:31.322] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:27:31.670] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:27:31.920] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:27:32.567] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:27:32.874] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:27:35.239] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:35.248] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:27:35.459] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:27:35.469] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:28:21.661] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:28:21.916] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:28:22.004] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:28:57.181] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:28:57.236] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:28:57.602] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:29:07.219] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:29:07.228] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:29:11.461] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:29:16.951] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:36:43.331] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:36:43.678] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:36:43.929] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:36:44.612] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:36:44.622] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:37:42.978] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:37:42.987] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:37:43.000] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:37:44.175] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:37:44.239] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:37:44.298] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:37:45.913] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:37:45.922] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:39:05.228] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:39:05.237] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:39:05.251] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:39:06.945] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:39:07.010] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:39:07.072] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:39:08.590] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:39:08.604] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:40:24.343] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:40:24.436] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:40:24.489] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:40:24.986] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:40:25.237] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:40:25.319] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:40:26.365] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:40:26.374] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:41:39.167] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:41:39.178] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:41:39.189] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:41:40.377] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:41:40.427] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:41:40.489] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:41:42.574] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:41:42.582] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:41:44.212] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:41:47.627] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:41:47.638] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:41:47.650] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:41:49.685] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:41:49.747] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:41:49.806] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:41:52.209] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:41:52.222] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:42:50.135] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:42:50.143] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:42:50.154] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:42:51.528] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:42:51.592] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:42:51.653] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:42:55.755] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:42:55.763] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:42:57.578] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:44:17.747] [DEBUG] debugLogger - Executing (default): SELECT gm_game.game_name,gm_game.id from (gm_user LEFT JOIN gm_purview on gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id = gm_purview.gid where gm_user.id=1
+[2020-08-15T16:44:17.758] [DEBUG] debugLogger - Executing (default): select gm_url_purview.grede AS meta,gm_url.name,gm_url.url,gm_url.id AS urlid,gm_url.pid  from (((gm_user LEFT JOIN gm_purview ON gm_purview.uid=gm_user.id) LEFT JOIN gm_game on gm_game.id= gm_purview.gid)LEFT JOIN gm_url_purview on gm_url_purview.purview_id = gm_purview.id )left join gm_url on gm_url.id = gm_url_purview.url_id where gm_user.id=1 and gm_game.game_name = '空翼冒险团'
+[2020-08-15T16:44:17.770] [DEBUG] debugLogger - Executing (default): select id from gm_game where game_name='空翼冒险团'
+[2020-08-15T16:44:19.403] [DEBUG] debugLogger - Executing (default): select channel  as  values from gm_game_token where type='areaclothing'  and  gameid='1'
+[2020-08-15T16:44:19.494] [DEBUG] debugLogger - Executing (default): with tableone as (select servername from gm_server GROUP BY servername having count(servername)>1),
+        tabletwo as (select min(id) from gm_server GROUP BY servername HAVING count(servername)>1),
+        tablethere as (select min(id) from gm_server GROUP BY servername HAVING count(servername)=1),
+        tablemain as (select * from gm_server)
+        select serverid as value ,servername as label from  tablemain where   tablemain.gameid = 1 and  tablemain.id in (select * from tablethere ) or  tablemain.servername in  (select * from  tableone) and tablemain.id in (select * from  tabletwo)
+[2020-08-15T16:44:19.566] [DEBUG] debugLogger - Executing (default): select 
+        name as label ,
+        article_id as value  from gm_article where gameid=1
+[2020-08-15T16:44:21.022] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:44:21.035] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'
+[2020-08-15T16:44:23.985] [DEBUG] debugLogger - Executing (default): select name as label , article_id as value  , TRUE as leaf  from gm_article where gameid =1 and classification = 'undefined'
+[2020-08-15T16:44:28.560] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:44:30.985] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:44:38.827] [DEBUG] debugLogger - Executing (default): select classification as label , classification as value from gm_article where gameid =1 GROUP BY classification
+[2020-08-15T16:45:24.099] [DEBUG] debugLogger - Executing (default): with asd as (			
+				select * from gm_smtp where  game_id= '1'
+			)	,
+			dsa as (select * from gm_server),
+			ssss as( 
+			select asd.servername, string_to_array(string_agg(dsa.servername, ','),',') as servernames from asd LEFT JOIN dsa on dsa.serverid::jsonb <@ (asd.servername)
+			GROUP BY  asd.servername)
+			select asd.* ,ssss.servernames from asd left join ssss on ssss.servername = asd.servername
+[2020-08-15T16:45:24.108] [DEBUG] debugLogger - Executing (default): select count(*) as total from gm_smtp where  game_id= '1'

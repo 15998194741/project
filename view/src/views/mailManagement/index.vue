@@ -40,7 +40,7 @@
         <el-dropdown>
   <el-button  @click="mailmessageSend(scope.$index,scope.row)">发布</el-button>
   <el-dropdown-menu slot="dropdown">
-     <div style="width:100px"  @click="mailmessageChange(scope.$index,scope.row)">定时发送</div>
+     <el-button  class='intervalBUttonClass' @click="mailmessageSend(scope.$index,scope.row)">定时发布</el-button>
   </el-dropdown-menu>
 </el-dropdown>
         
@@ -482,6 +482,10 @@ export default {
 
 <style lang="scss" rel="stylesheet/scss">
 .mail-container{
+  .intervalBUttonClass{
+    width: 100%;
+    height: 100%;
+  }
   .demo-ruleForm{
     .annexList{
       margin-left: 0;
