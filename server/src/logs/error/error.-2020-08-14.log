@@ -417,3 +417,99 @@ err stack: SequelizeDatabaseError: 语法错误 在 "[" 或附近的
     at processImmediate (internal/timers.js:456:21)
 *************** error log end ***************
 
+[2020-08-14T18:20:02.156] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/query?Id=&plaform=&channel=&annex=&serverName=&createTime=&page=1&pagesize=50&servername=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"Id":"","plaform":"","channel":"","annex":"","serverName":"","createTime":"","page":"1","pagesize":"50","servername":"","gameid":"1"}
+response time: 1597400402155
+err name: SequelizeDatabaseError
+err message: 语法错误 在 "undefined" 或附近的
+err stack: SequelizeDatabaseError: 语法错误 在 "undefined" 或附近的
+    at Query.formatError (G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (G:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (G:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (G:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (G:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (G:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (G:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (G:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (G:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (G:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-14T18:20:04.188] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/query?Id=&plaform=&channel=&annex=&serverName=&createTime=&page=1&pagesize=50&servername=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"Id":"","plaform":"","channel":"","annex":"","serverName":"","createTime":"","page":"1","pagesize":"50","servername":"","gameid":"1"}
+response time: 1597400404188
+err name: SequelizeDatabaseError
+err message: 语法错误 在 "undefined" 或附近的
+err stack: SequelizeDatabaseError: 语法错误 在 "undefined" 或附近的
+    at Query.formatError (G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (G:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (G:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (G:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (G:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (G:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (G:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (G:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (G:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (G:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-14T18:20:11.439] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/query?Id=&plaform=&channel=&annex=&serverName=&createTime=&page=1&pagesize=50&servername=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"Id":"","plaform":"","channel":"","annex":"","serverName":"","createTime":"","page":"1","pagesize":"50","servername":"","gameid":"1"}
+response time: 1597400411439
+err name: SequelizeDatabaseError
+err message: 语法错误 在 "undefined" 或附近的
+err stack: SequelizeDatabaseError: 语法错误 在 "undefined" 或附近的
+    at Query.formatError (G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (G:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (G:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (G:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (G:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (G:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (G:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (G:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (G:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (G:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+
+[2020-08-14T18:42:50.034] [ERROR] errorLogger - 
+*************** error log start ***************
+request method: GET
+request originalUrl:  /api/mail/query?Id=&plaform=&channel=&annex=&serverName=&createTime=&page=1&pagesize=50&servername=
+request client ip:  ::ffff:127.0.0.1
+request query:  {"Id":"","plaform":"","channel":"","annex":"","serverName":"","createTime":"","page":"1","pagesize":"50","servername":"","gameid":"1"}
+response time: 1597401770033
+err name: SequelizeDatabaseError
+err message: 语法错误 在 "undefined" 或附近的
+err stack: SequelizeDatabaseError: 语法错误 在 "undefined" 或附近的
+    at Query.formatError (G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:366:16)
+    at G:\third\project\server\node_modules\sequelize\lib\dialects\postgres\query.js:72:18
+    at tryCatcher (G:\third\project\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (G:\third\project\server\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (G:\third\project\server\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (G:\third\project\server\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (G:\third\project\server\node_modules\bluebird\js\release\promise.js:725:18)
+    at _drainQueueStep (G:\third\project\server\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (G:\third\project\server\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (G:\third\project\server\node_modules\bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (G:\third\project\server\node_modules\bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+*************** error log end ***************
+

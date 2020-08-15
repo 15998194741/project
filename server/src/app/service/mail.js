@@ -19,7 +19,7 @@ class MailService{
 			whereObj.push( ` ${i}= '${condition[i]}'`);
 		}
 		where += whereObj.join('  and  '); 
-		where += 
+		// where += 
 		console.log('where: ', where);
 		console.log('whereObj: ', whereObj);
 		let sql = `
@@ -28,6 +28,7 @@ class MailService{
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
+		return res[0];
 	}
 	async getQueryAnnexOptions(data){
 		let {gameid } = data;
