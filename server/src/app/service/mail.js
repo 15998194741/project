@@ -86,14 +86,20 @@ class MailService{
 				Annex[i] = JSON.stringify(Annex[i]);
 			}
 		}
-		console.log(data);
-        
+		if(typeof serverName == 'string'){
+			serverName = null;
+		}else if(serverName.length >1){
+			serverName = `'[${serverName}]'`;
+		}else{
+			serverName = `'${serverName}'`;
+		}
 		let sql = ` 
         insert into  gm_smtp  
         (game_id,title,text,link,channel,plaform,annex,serverName,roleid)
         values
-        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},'${plaform}',${Annex?Annex.length >1?`'[${Annex}]'` :`'${Annex}'`:null},${serverName?serverName.length >1?`'[${serverName}]'`:`'${serverName}'`:null},'${roleId}')
-        `;
+        (${gameid},'${title}','${text}','${link}',${channel.length?`'${JSON.stringify(channel)}'`:null},'${plaform}',${Annex?Annex.length >1?`'[${Annex}]'` :`'${Annex}'`:null},${serverName},'${roleId}')
+		`;
+		console.log(sql);
 		let res = await dbSequelize.query(sql);
 		return res[1];
 	}
@@ -109,16 +115,20 @@ class MailService{
         
 	}
 	async findServerName(data){
-		let {gameid } = data;
+		let { gameid } = data;
 		let sql = ' select * from ';
 		let res = await dbSequelize.query(sql, {
 			replacements:['active'], type:Sequelize.QueryTypes.SELECT
 		});
 	}
-	async mailSend(data){
-		
+	async mailSendTimely(data){
+		console.log('及时发送');
+		console.log(data);
 	}
-
+	async mailSendTiming(data){
+		console.log('定时发送');
+		console.log(data);
+	}
 
 }
 export default new MailService();

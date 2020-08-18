@@ -570,368 +570,156 @@ export default {
 
   },
 
-  methods: { changes() {
-    console.log(this.formchange.display, this.formchange.index);
-  },
-  async loadpid(tree, treeNode, resolve) {
+  methods: { 
+    changes() {
+      console.log(this.formchange.display, this.formchange.index);
+    },
+    async loadpid(tree, treeNode, resolve) {
    
-    let res = await findServerByID(tree);
-    resolve(res.data.map(item=>{
-      delete item.pid;
-      item['childertrue'] = true;
-      return item;
-    }));
-  },
-  //合服
-  async mergeServer() {
-    let [obj, ...arr] = this.allselectchange;
-    let dispalys = obj.display !== '3';
-    if (dispalys) {
-      await this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
-      return;
-    }
-    obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
-    
-    let mergeTrue = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
-   
-    if (!mergeTrue) {
-      this.$message.warning('不同平台，不同客户端，不可以合服!');
-      return;
-    }
-    let mergetrue = await this.$confirm('是否确认合并区服?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning' })
-      .catch(err => false);
-    if (!mergetrue) {return;}
-    // let mergeIP = await this.$confirm('是否统一IP?', '提示', {
-    //   confirmButtonText: '确定',
-    //   cancelButtonText: '取消',
-    //   type: 'warning' })
-    //   .catch(err => false);
-    // let newip = '';
-    // if (mergeIP) {
-    //   newip = await this.$prompt('请输入新Ip地址', '提示', {
-    //     confirmButtonText: '确定',
-    //     cancelButtonText: '取消'
-    //   }).catch(err => false);
-    //   if (!newip) {return;} 
-    // }
-    // let { value } = newip;
-    if (mergetrue) {
-      // this.allselectchange['ip'] = value ? value : '';
-      let res = await ServerMerge(this.allselectchange);
-      if (+res['code'] === +200) {
-        this.$message.success('合服成功!'); 
-        this.filterFormChange('flush');
+      let res = await findServerByID(tree);
+      resolve(res.data.map(item=>{
+        delete item.pid;
+        item['childertrue'] = true;
+        return item;
+      }));
+    },
+    //合服
+    async mergeServer() {
+      let [obj, ...arr] = this.allselectchange;
+      let dispalys = obj.display !== '3';
+      if (dispalys) {
+        await this.$message.warning('请修改区服状态为维护状态，才可以合服哦~');
         return;
       }
-      this.$message.warning('合服失败!'); 
-      
-    }
-   
-  },
-
-
-  //重置创建表单
-  createFormResetForm(formName) {
-    this.$refs[formName].resetFields();
-  },
-  handleSizeChange(val) {
-    console.log(val);
-  },
-  //提交创建表单
-  createFormSubmitForm(formName) {
-    this.$refs[formName].validate(async(valid) => {
-      if (valid) {
-        //二次确定
-        let doubleTrue = await this.$confirm('是否确认创建区服?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning' })
-          .catch(err => false);
-        if (!doubleTrue) {
-          return;
-        }
-        this.filterFormChange('flush');
-        let { code, message } = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
-        this.$message({
-          type: code === 200 ? 'success' : 'warning',
-          message: message
-        });
-        if (code === 200) {
-          this.newCreateServer();
-          this.$refs[formName].resetFields();
-          this.filterFormChange('flush');
-        }
-        let continueCreate = await this.$confirm('是否确认创建区服?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning' })
-          .catch(err => false);
-        if (!continueCreate) {this.serverCreatedialogFormVisible = false;}
-      }
-    });
-
-  },
-  async filterFormChange(val) {
-
-    switch (val) {
-      case 'click':this.filterFormChangeClick(); break;
-      case 'flush':this.filterFormChangeFlush(); break;
-      case 'page':this.filterFormChangePage(); break;
-
-      default:this.filterForm.value = ''; findServer(this.filterForm).then(res=>{this.inserttable(res);});
-    }
+      obj = JSON.stringify({ plaform: obj.plaform, display: obj.display, channel: obj.channel });
     
-     
-  },
-  async finservers(findForm) {
-    let res = await findServer(findForm);
-    this.inserttable(res); 
-  },
+      let mergeTrue = arr.every(({ plaform, display, channel }) => obj === JSON.stringify({ plaform, display, channel }));
    
-  async filterFormChangePage() {
-   
-    this.finservers(this.filterForm);
-  },
-  async filterFormChangeClick() {
-    for (let key in this.filterForm) {
-      if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
-        continue;
+      if (!mergeTrue) {
+        this.$message.warning('不同平台，不同客户端，不可以合服!');
+        return;
       }
-      this.filterForm[key] = '';
-    }
-    this.finservers(this.filterForm);
-  },
-
-  async filterFormChangeFlush() {
-    this.filterForm = {
-      plaform: '',
-      display: '',
-      load: '',
-      channel: '',
-      srttime: '',
-      key: 'serverid',
-      value: '',
-      test: '',
-      mergeserver: '',
-      page: 1,
-      pagesize: 20
-    };
-    this.tableData = [{
-      plaform: '',
-      display: '',
-      load: '',
-      channel: '',
-      srttime: '',
-      key: '',
-      value: '',
-      test: '',
-      mergeserver: '',
-      page: '',
-      pagesize: '',
-      gameid: ''
-    }];
-    findServer(this.filterForm).then(res=>{this.inserttable(res);});
-    
-  },
-  async filterFormClick() {
-    this.filterForm = this.filterForm.map(item=>{
-      return '';
-    });
-    let req = this.filterServerIdForm;
-    // console.log(req.value);
-    if (req.value === '') {
-      console.log(req.value);
-      this.$message({
-        message: '警告哦，不可以搜索空哦',
-        type: 'warning'
-      });
-      return;
-    }
-    let res = await findServerByID(req);
-    this.tableData = res.data;
-    this.displayNum = '';
-    this.total = res.data.length;
-    return;
-  },
-
-  tableRowClassName({ row, rowIndex }) {
-  
-    if (row.display === '5') {
-      return 'success-row';
-    } 
-    if (row.childertrue) {
-      return 'childer-row';
-    }
-    if (!row.pid) {
-      return 'pid-row';
-    } 
-   
-  },
-  //按钮新建区服
-  newCreateServer() {
-    this.serverCreatedialogFormVisible = true;
-    let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
-    this.createForm['serverid'] = serverid;
-  },
-  idRandom(lengths) {
-    let randomString = '';
-    for (let i = 0; i < lengths; i++) {
-      randomString += Math.ceil(Math.random() * 10).toString();
-    }
-    return randomString;
-  },
-  plaformFilterTag(value, row) {
-    return row['plaform'] === value;
-  },
-  channelFilterTag(value, row) {
-    let a = row.channel;
-    return a.includes(value);
-  },
-  displatFilterTag(value, row) {
-    return row.display === value;
-  },
-  loadFilterTag(value, row) {
-    return row.load === value;
-  },
-  //修改传参
-  changeHandleEdit(index, row) {
-    this.formchange = {
-      ...row,
-      // display: +row.display,
-      index
-    };
-    this.dialogFormVisiblechange = true;
-    //row为数据 
-  },
-  //停用传参
-  async handleStop(index, row) {
-    // console.log(index,);
-    let mergetrue = await this.$confirm('是否确认停用区服?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning' })
-      .catch(err => false);
-    if (!mergetrue) {return;}
-    let res = await stopserver({ ...row, gameid: this.gameid });
-    if (res.code === 200) {
-      this.filterFormChange('flush');
-      findServer(this.filterForm).then(res=>{this.inserttable(res);});
-    }
-  },
-
-  //区服创建
-  createserver() {
-
-    let a = this.$confirm('是否继续?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning'
-    }).then(() => {
-
-      let a = servercreate({ ...this.form, 'gamename': this.gamename, 'gameid': this.gameid }).then(res => {
-        if (res.code === 200) {
-          this.$message({
-            type: 'success',
-            message: '创建成功!'
-          });
-          return Promise.resolve(true);
-        } else {
-          this.$message({
-            type: 'info',
-            message: '创建失败!'
-          });
-          return Promise.resolve(false);
-        }
-      }).catch((error) => {
-        // console.log(error);
-      });
-      return Promise.resolve(a);
-    });
-    a.then(res => {
-      if (res) {
-        getpage({ gameid: this.gameid }).then(res => {
-          this.tableData = res.data;
-        });
-        this.serverCreatedialogFormVisible = false;
-        for (let key in this.form) {
-          this.form[key] = '';
-        }
-      }
-    });
-
-
-
-  },
-  handleSelectionChange(val,) {
-    let a = [];
-    for (let i of val) {
-      if (i.display === '5' || i.childertrue) {
-        continue;
-      } else {
-        a.push(i);
-      }
-    }
-
-    this.allselectchange = a;
-  },
-  updateserver() {
-    //批量操作
-    // console.log(this.radio2, this.radio3);
-    // console.log(...this.allselectchange);
-    let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
-    this.$confirm('是否继续?', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning'
-    }).then(() => {
-      serverallupdate(data).then(res => {
-        if (res.code === 200) {
-          this.tableData.map(item=>{
-            if (this.allselectchange.find(_item=> _item.id === item.id)) {
-              item.display = this.radio3;
-              return item;
-            } 
-            return item;
-          });
-  
-          this.dialogFormchange = false;
-          this.$message({
-            type: 'success',
-            message: '成功!'
-          });
-          return true;
-        }
-      });
-    }).catch(() => {
-      this.$message({
-        type: 'info',
-        message: '已取消'
-      });
-    });
-
-  },
-  //区服修改
-  async updateServerToOne() {
-    try {
-      await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
+      let mergetrue = await this.$confirm('是否确认合并区服?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
-        type: 'warning'
+        type: 'warning' })
+        .catch(err => false);
+      if (!mergetrue) {return;}
+      // let mergeIP = await this.$confirm('是否统一IP?', '提示', {
+      //   confirmButtonText: '确定',
+      //   cancelButtonText: '取消',
+      //   type: 'warning' })
+      //   .catch(err => false);
+      // let newip = '';
+      // if (mergeIP) {
+      //   newip = await this.$prompt('请输入新Ip地址', '提示', {
+      //     confirmButtonText: '确定',
+      //     cancelButtonText: '取消'
+      //   }).catch(err => false);
+      //   if (!newip) {return;} 
+      // }
+      // let { value } = newip;
+      if (mergetrue) {
+      // this.allselectchange['ip'] = value ? value : '';
+        let res = await ServerMerge(this.allselectchange);
+        if (+res['code'] === +200) {
+          this.$message.success('合服成功!'); 
+          this.filterFormChange('flush');
+          return;
+        }
+        this.$message.warning('合服失败!'); 
+      
+      }
+   
+    },
+
+
+    //重置创建表单
+    createFormResetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+    handleSizeChange(val) {
+      console.log(val);
+    },
+    //提交创建表单
+    createFormSubmitForm(formName) {
+      this.$refs[formName].validate(async(valid) => {
+        if (valid) {
+        //二次确定
+          let doubleTrue = await this.$confirm('是否确认创建区服?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning' })
+            .catch(err => false);
+          if (!doubleTrue) {
+            return;
+          }
+          this.filterFormChange('flush');
+          let { code, message } = await servercreate({ ...this.createForm, 'gamename': this.gamename, 'gameid': this.gameid });
+          this.$message({
+            type: code === 200 ? 'success' : 'warning',
+            message: message
+          });
+          if (code === 200) {
+            this.newCreateServer();
+            this.$refs[formName].resetFields();
+            this.filterFormChange('flush');
+          }
+          let continueCreate = await this.$confirm('是否确认创建区服?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning' })
+            .catch(err => false);
+          if (!continueCreate) {this.serverCreatedialogFormVisible = false;}
+        }
       });
-      this.loading = true;
-      let { code } = await serverUpdateToOne({ ...this.formchange });
-      if (code !== 200) { return;}
-      this.$message({
-        type: 'success',
-        message: '成功'
-      });
-      // 获取最新任务列表
-      let index = this.formchange.index;
-      // console.log(this.tableData[index]);
-      this.tableData[index].display = this.formchange.display;
+
+    },
+    async filterFormChange(val) {
+
+      switch (val) {
+        case 'click':this.filterFormChangeClick(); break;
+        case 'flush':this.filterFormChangeFlush(); break;
+        case 'page':this.filterFormChangePage(); break;
+
+        default:this.filterForm.value = ''; findServer(this.filterForm).then(res=>{this.inserttable(res);});
+      }
+    
+     
+    },
+    async finservers(findForm) {
+      let res = await findServer(findForm);
+      this.inserttable(res); 
+    },
+   
+    async filterFormChangePage() {
+   
+      this.finservers(this.filterForm);
+    },
+    async filterFormChangeClick() {
+      for (let key in this.filterForm) {
+        if (key === 'key' || key === 'value' || key === 'page' || key === 'pagesize') {
+          continue;
+        }
+        this.filterForm[key] = '';
+      }
+      this.finservers(this.filterForm);
+    },
+
+    async filterFormChangeFlush() {
+      this.filterForm = {
+        plaform: '',
+        display: '',
+        load: '',
+        channel: '',
+        srttime: '',
+        key: 'serverid',
+        value: '',
+        test: '',
+        mergeserver: '',
+        page: 1,
+        pagesize: 20
+      };
       this.tableData = [{
         plaform: '',
         display: '',
@@ -946,30 +734,243 @@ export default {
         pagesize: '',
         gameid: ''
       }];
-      this.filterFormChange('flush');
-      this.loading = false;
-      this.dialogFormVisiblechange = false;
-    } catch (error) {
-      console.log(error);
-      this.loading = false;
-      this.$message({
-        type: 'info',
-        message: '修改失败'
+      findServer(this.filterForm).then(res=>{this.inserttable(res);});
+    
+    },
+    async filterFormClick() {
+      this.filterForm = this.filterForm.map(item=>{
+        return '';
+      });
+      let req = this.filterServerIdForm;
+      // console.log(req.value);
+      if (req.value === '') {
+        console.log(req.value);
+        this.$message({
+          message: '警告哦，不可以搜索空哦',
+          type: 'warning'
+        });
+        return;
+      }
+      let res = await findServerByID(req);
+      this.tableData = res.data;
+      this.displayNum = '';
+      this.total = res.data.length;
+      return;
+    },
+
+    tableRowClassName({ row, rowIndex }) {
+  
+      if (row.display === '5') {
+        return 'success-row';
+      } 
+      if (row.childertrue) {
+        return 'childer-row';
+      }
+      if (!row.pid) {
+        return 'pid-row';
+      } 
+   
+    },
+    //按钮新建区服
+    newCreateServer() {
+      this.serverCreatedialogFormVisible = true;
+      let serverid = dayjs(new Date()).format('YYMMDDHHmmss') + this.idRandom(4);
+      this.createForm['serverid'] = serverid;
+    },
+    idRandom(lengths) {
+      let randomString = '';
+      for (let i = 0; i < lengths; i++) {
+        randomString += Math.ceil(Math.random() * 10).toString();
+      }
+      return randomString;
+    },
+    plaformFilterTag(value, row) {
+      return row['plaform'] === value;
+    },
+    channelFilterTag(value, row) {
+      let a = row.channel;
+      return a.includes(value);
+    },
+    displatFilterTag(value, row) {
+      return row.display === value;
+    },
+    loadFilterTag(value, row) {
+      return row.load === value;
+    },
+    //修改传参
+    changeHandleEdit(index, row) {
+      this.formchange = {
+        ...row,
+        // display: +row.display,
+        index
+      };
+      this.dialogFormVisiblechange = true;
+    //row为数据 
+    },
+    //停用传参
+    async handleStop(index, row) {
+    // console.log(index,);
+      let mergetrue = await this.$confirm('是否确认停用区服?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning' })
+        .catch(err => false);
+      if (!mergetrue) {return;}
+      let res = await stopserver({ ...row, gameid: this.gameid });
+      if (res.code === 200) {
+        this.filterFormChange('flush');
+        findServer(this.filterForm).then(res=>{this.inserttable(res);});
+      }
+    },
+
+    //区服创建
+    createserver() {
+
+      let a = this.$confirm('是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+
+        let a = servercreate({ ...this.form, 'gamename': this.gamename, 'gameid': this.gameid }).then(res => {
+          if (res.code === 200) {
+            this.$message({
+              type: 'success',
+              message: '创建成功!'
+            });
+            return Promise.resolve(true);
+          } else {
+            this.$message({
+              type: 'info',
+              message: '创建失败!'
+            });
+            return Promise.resolve(false);
+          }
+        }).catch((error) => {
+        // console.log(error);
+        });
+        return Promise.resolve(a);
+      });
+      a.then(res => {
+        if (res) {
+          getpage({ gameid: this.gameid }).then(res => {
+            this.tableData = res.data;
+          });
+          this.serverCreatedialogFormVisible = false;
+          for (let key in this.form) {
+            this.form[key] = '';
+          }
+        }
+      });
+
+
+
+    },
+    handleSelectionChange(val,) {
+      let a = [];
+      for (let i of val) {
+        if (i.display === '5' || i.childertrue) {
+          continue;
+        } else {
+          a.push(i);
+        }
+      }
+
+      this.allselectchange = a;
+    },
+    updateserver() {
+    //批量操作
+    // console.log(this.radio2, this.radio3);
+    // console.log(...this.allselectchange);
+      let data = { 'server': this.allselectchange, 'merge': this.radio2, 'showstatus': this.radio3, 'gameid': this.gameid };
+      this.$confirm('是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        serverallupdate(data).then(res => {
+          if (res.code === 200) {
+            this.tableData.map(item=>{
+              if (this.allselectchange.find(_item=> _item.id === item.id)) {
+                item.display = this.radio3;
+                return item;
+              } 
+              return item;
+            });
+  
+            this.dialogFormchange = false;
+            this.$message({
+              type: 'success',
+              message: '成功!'
+            });
+            return true;
+          }
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消'
+        });
+      });
+
+    },
+    //区服修改
+    async updateServerToOne() {
+      try {
+        await this.$confirm('您正在修改数据，请谨慎处理！是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        });
+        this.loading = true;
+        let { code } = await serverUpdateToOne({ ...this.formchange });
+        if (code !== 200) { return;}
+        this.$message({
+          type: 'success',
+          message: '成功'
+        });
+        // 获取最新任务列表
+        let index = this.formchange.index;
+        // console.log(this.tableData[index]);
+        this.tableData[index].display = this.formchange.display;
+        this.tableData = [{
+          plaform: '',
+          display: '',
+          load: '',
+          channel: '',
+          srttime: '',
+          key: '',
+          value: '',
+          test: '',
+          mergeserver: '',
+          page: '',
+          pagesize: '',
+          gameid: ''
+        }];
+        this.filterFormChange('flush');
+        this.loading = false;
+        this.dialogFormVisiblechange = false;
+      } catch (error) {
+        console.log(error);
+        this.loading = false;
+        this.$message({
+          type: 'info',
+          message: '修改失败'
+        });
+      }
+    },
+    inserttable(res) {
+      let data = res.data;
+      this.tableData = data.table;
+      this.formchange.page = Number(data.page);
+      this.displayNum = data.displayNum;
+      this.total = Number(data.total);
+    },
+    selectservers() {
+      serverselect(this.flush).then(res => {
+        this.tableData = res;
       });
     }
-  },
-  inserttable(res) {
-    let data = res.data;
-    this.tableData = data.table;
-    this.formchange.page = Number(data.page);
-    this.displayNum = data.displayNum;
-    this.total = Number(data.total);
-  },
-  selectservers() {
-    serverselect(this.flush).then(res => {
-      this.tableData = res;
-    });
-  }
   },  
   async mounted() {
     findComponents({ code: 'areaclothing', gameid: this.gameid }).then(res => {

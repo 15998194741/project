@@ -308,7 +308,6 @@ export default {
       }
     },
     async mailmessageChange(index, row) {
-      console.log(row);
       this.dialogFormchange = true;
       this.createFormMail = JSON.parse(JSON.stringify(row));
       this.createFormMail['mailLink'] = row.link;
@@ -317,9 +316,15 @@ export default {
     },
     async mailmessageSend(index, row, sendTime) {
       if (sendTime) {
-        let res = await mailSend(row);
-        console.log(11111111, res);
+        let sendtrue = await this.$confirm('是否确认立即发送?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning' })
+          .catch(err => false);
+        if (!sendtrue) {return;}
       }
+      row['theway'] = sendTime;
+      let res = await mailSend(row);
       console.log(index);
       console.log(row);
     },
@@ -375,7 +380,7 @@ export default {
         this.createFormMail.channel = '';
         this.createFormMail.plaform = '';
       }
-      if (!(right && left)) {return;}
+      if (!(right && left)) {this.createLock = false; return;}
       if (this.createFormMail.allServerTrue && this.createFormMail.serverName.length === 0) {
         this.$message.warning('请选择区服');
         this.createLock = false;
@@ -408,6 +413,7 @@ export default {
         ]; 
         this.createFormMail['mailLink'] = '';
         this.createFormMail['carryAnnex'] = false;
+        this.createFormMail['allServerTrue'] = false;
         return;
       }
       this.createLock = false;

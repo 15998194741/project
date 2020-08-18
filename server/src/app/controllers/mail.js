@@ -62,8 +62,16 @@ export class CharacterController {
 	@post('/mailSend')
 	async mailSend(ctx) {
     	ctx.log.resourceDesc = '附件查找';
-    	let data = ctx.request.body;
-    	let result = await MailService.mailSend(data);
+		let data = ctx.request.body;
+		let { theway } = data;
+		let result;
+		if(theway){
+			result = await MailService.mailSendTimely(data);
+		}else {
+			result = await MailService.mailSendTiming(data);
+
+		}
+    	 
     	ctx.body = statusCode.SUCCESS_200('创建成功', result);
 	}
 
